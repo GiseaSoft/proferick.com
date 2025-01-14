@@ -14,17 +14,21 @@ $clr-gray: #DDD;
 $clr-gray-dark: #444;
 $clr-black: #2A2A2A;
 
-/*$clr-primary: #F0E2CC;*/
+/*$clr-primary: #F0E2CC;
+$clr-accent: #FF6F61;*/
 $clr-primary: #fff4e3;
 $clr-secondary: #014E6B;
-/*$clr-accent: #FF6F61;*/
 $clr-accent: #DA3A2F;
 
 $clr-error: #C30E0E;
 
 /* Shapes */
+$box-shadow: 2px 2px 4px 0 $clr-black;
 $border-radius: 4px;
 $round: 100%;
+$gap: 15px;
+$gap-half: calc($gap / 2);
+$gap-double: calc($gap * 2);
 
 %container {
     margin-inline: auto;

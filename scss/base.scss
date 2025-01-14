@@ -49,12 +49,24 @@ body {
 }
 .contentContainer {
     @extend %container;
-    padding-block: 5rem;
+    padding-bottom: 5rem;
     min-height: 75vh;
     isolation: isolate;
+    > section {
+        padding-top: calc($gap-double + $gap);
+    }
+}
+.heading {
+    margin-block: $gap-double;
+    font-size: 30px;
+}
+.subheading {
+    margin-block: $gap;
+    font-size: 18px;
 }
 footer {
-    background-color: $clr-secondary;
+    background: $clr-secondary; /* Fallback */
+    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
     color: $clr-white;
     position: relative;
     margin-top: 2.5vw;
@@ -115,9 +127,29 @@ footer {
 /****************/
 
 /* Accordions */
-.accordion, .accordion * {outline: 1pt solid red}
 .accordion {
-    padding: 20px
+    --thisRadius: 5px;
+    padding: 10px;
+    border-radius: var(--thisRadius);
+    box-shadow: $box-shadow;
+    &_item {
+        &:first-child {
+            border-radius: var(--thisRadius) var(--thisRadius) 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0 var(--thisRadius) var(--thisRadius);
+        }
+        overflow: hidden;
+        border: 1pt solid $clr-gray-dark;
+    }
+    &_item-head {
+        padding: 10px;
+        font-size: 18px;
+        border-bottom: 1pt solid $clr-gray-dark;
+    }
+    &_item-body {
+        padding: 20px 10px;
+    }
 }
 
 /* Code Editor */
@@ -143,12 +175,14 @@ footer {
         }
         &-ico {
             width: 15px;
-            margin-right: 10px;
         }
         a {
             display: block;
             padding: 15px;
-            color: $clr-white
+            color: $clr-white;
+            span {
+                margin-left: 10px;
+            }
         }
     }
     &_display {
@@ -163,7 +197,7 @@ footer {
     border-radius: $border-radius;
     overflow: hidden;
     outline: 1pt solid $clr-gray;
-    box-shadow: 2px 2px 4px 0 $clr-black;
+    box-shadow: $box-shadow;
     background-color: $clr-white;
     fieldset {
         border: none;
