@@ -9,6 +9,10 @@ $font-family: Inter, sans-serif;
 /* Components */
 @import './components/buttons';
 
+/*************************/
+/*** Header and Footer ***/
+/*************************/
+
 body {
     font-family: $font-family;
     font-size: $fs-6;
@@ -16,6 +20,7 @@ body {
 #mainHeader {
     position: sticky;
     top: 0;
+    z-index: 2;
     background-color: $clr-primary;
     border-bottom: 1pt solid $clr-black;
     .innerHeader {
@@ -46,6 +51,7 @@ body {
     @extend %container;
     padding-block: 5rem;
     min-height: 75vh;
+    isolation: isolate;
 }
 footer {
     background-color: $clr-secondary;
@@ -103,6 +109,54 @@ footer {
         opacity: 0;
     }
 }
+
+/****************/
+/*** Sections ***/
+/****************/
+
+/* Accordions */
+.accordion, .accordion * {outline: 1pt solid red}
+.accordion {
+    padding: 20px
+}
+
+/* Code Editor */
+.editor {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    background: $clr-gray-dark;
+    &_tabset {
+        list-style-type: none;
+        display: flex;
+        li[aria-selected="true"] {
+            position: relative;
+            background: $clr-black;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: $clr-accent;
+            }
+        }
+        &-ico {
+            width: 15px;
+            margin-right: 10px;
+        }
+        a {
+            display: block;
+            padding: 15px;
+            color: $clr-white
+        }
+    }
+    &_display {
+        background: $clr-black
+    }
+}
+
+/* Contact Form */
 .contactForm {
     width: min(35rem, 100%);
     padding: 1rem;

@@ -1,7 +1,6 @@
 function formValidator () {
     this.init = function () {
         myFormValidator.validate();
-        console.log('This is running');
     }
 
     this.validatedInputs = {

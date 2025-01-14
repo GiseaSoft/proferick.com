@@ -8,12 +8,13 @@
     <meta name="description" content="Ingeniero de software con 9 años de experiencia en la industria en puestos como front end/back end/fullstack.">
 
     <!-- Styles -->
-    <link href="./assets/css/base.css" rel="stylesheet">
-    <link href="./assets/css/mobile.css" rel="stylesheet" media="(max-width:64em)">
-    <link href="./assets/css/desktop.css" rel="stylesheet" media="(min-width:64em)">
+    <link rel="stylesheet" href="./assets/css/base.css" media="all">
+    <link rel="stylesheet" href="./assets/css/mobile.css" media="screen and (max-width:64em)">
+    <link rel="stylesheet" href="./assets/css/desktop.css" media="screen and (min-width:64em)">
+    <link rel="stylesheet" href="./assets/css/prism.css" media="all">
 
     <!-- Icons -->
-    <link href="./assets/css/profeRickIcons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/profeRickIcons.css">
 
     <!-- Favicon -->
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon">
@@ -22,22 +23,22 @@
     <a class="sr-only" href="#content">Omitir menu e ir al contenido</a>
     <header id="mainHeader">
         <div class="innerHeader">
-            <a href="./index.html">
+            <a href="#index">
                 <img class="logo" src="./assets/img/imagotype_dark.svg" alt="proferick.com">
             </a>
             <nav id="primaryNav" class="primaryNav">
                 <ul>
                     <li class="subMenu">
-                        <a href="#">Servicios <i class="pri icon-down"></i></a>
+                        <a href="#services">Servicios <i class="pri icon-down"></i></a>
                         <ul>
                             <li><a href="#">Mentorias Front End</a></li>
                             <li><a href="#">Mentorioas Back End</a></li>
                             <li><a href="#">Reclutamiento en TI</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Sobre mí</a></li>
-                    <li><a href="#" class="contact">Contacto</a></li>
+                    <li><a href="#courses">Cursos</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#contact" class="contact">Contacto</a></li>
                 </ul>
             </nav>
             <button id="menuButton" class="mobileOnly" aria-label="Open Menu">
@@ -50,10 +51,145 @@
     
     <main id="content">
         <div class="contentContainer">
-            <section class="grid-2">
+            <section id="index">
+                <h2>Profe Rick</h2>
+                <p class="subhead">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga hic deleniti provident culpa distinctio ullam cumque voluptatem rerum, officiis laborum libero architecto aliquid! Dolores pariatur debitis architecto iure error reprehenderit.
+                </p>
+            </section>
+            <section id="services">
+                <h2>Servicios</h2>
+                <p class="subhead">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio culpa voluptatibus cupiditate officiis ab iusto fugiat? Placeat atque culpa, modi voluptatem iste voluptates voluptatibus, ipsam sint minus ullam ipsum mollitia.
+                </p>
+
+                <div class="accordion">
+                    <div class="accordion_item">
+                        <div class="accordion_item-head">Elemento #1</div>
+                        <div class="accordion_item-body">
+                            <b>This is the first item's accordion body.</b> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="accordion_item-head">Elemento #2</div>
+                        <div class="accordion_item-body">
+                            <b>This is the SEGUNDO item's accordion body.</b> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="accordion_item-head">Elemento #3</div>
+                        <div class="accordion_item-body">
+                            This is the TERCERO item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="courses">
+                <h2 class="heading">Cursos</h2>
+                <p class="subhead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis laudantium enim placeat commodi maiores deleniti deserunt harum sit quasi laborum distinctio, quibusdam dignissimos sed illum nulla. Rem nemo quam itaque.
+                </p>
+
+                <div class="editor">
+                    <ul class="editor_tabset">
+                        <li><a href="#editor_tab-html"><img class="editor_tabset-ico" src="./assets/img/thirds/html.png" alt="">HTML5</a></li>
+                        <li><a href="#editor_tab-css"><img class="editor_tabset-ico" src="./assets/img/thirds/css.png" alt="">CSS</a></li>
+                        <li><a href="#editor_tab-sass"><img class="editor_tabset-ico" src="./assets/img/thirds/sass.png" alt="">SASS</a></li>
+                        <li><a href="#editor_tab-js"><img class="editor_tabset-ico" src="./assets/img/thirds/javascript.png" alt="">JavaScript</a></li>
+                        <li><a href="#editor_tab-php"><img class="editor_tabset-ico" src="./assets/img/thirds/php.png" alt="">PHP</a></li>
+                    </ul>
+                    <div class="editor_display">
+                        <div id="editor_tab-html" class="editor_display-language">
+                            <pre>
+                                <code class="language-markup">
+                                    &lt;!DOCTYPE html&gt;
+                                    &lt;h1 class="titulo"&gt;Profe Rick&lt;/h1&gt;
+                                    &lt;span class="titulo_slogan"&gt;Ingeniero de Software&lt;/span&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_tab-css" class="editor_display-language">
+                            <pre>
+                                <code class="language-css">
+                                    /* Declarando variables */
+                                    :root {
+                                        --font-size-100: 40px;
+                                        --font-size-200: 32px;
+                                        --font-size-300: 22px;
+                                        --font-size-400: 18px;
+                                    }
+                                    
+                                    /* Estilos */
+                                    .titulo {
+                                        font-size: var(--font-size-100);
+                                    }
+                                    .titulo_slogan {
+                                        font-size: var(--font-size-300);
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_tab-sass" class="editor_display-language">
+                            <pre>
+                                <code class="language-css">
+                                    /* Declarando variables */
+                                    $font-size-100: 40px;
+                                    $font-size-200: 32px;
+                                    $font-size-300: 22px;
+                                    $font-size-400: 18px;
+
+                                    /* Estilos */
+                                    .titulo {
+                                        font-size: $font-size-100;
+                                        &_slogan {
+                                            font-size: $font-size-300;
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_tab-js" class="editor_display-language">
+                            <pre>
+                                <code class="language-js">
+                                    const curso = {
+                                        lenguaje: 'Javascript',
+                                        profesor: 'El Profe Rick'
+                                    }
+
+                                    if (curso.profesor == 'El Profe Rick') {
+                                        curso.dificultad = 'fácil'
+                                    }
+
+                                    console.log(`Estoy aprendiendo ${curso.lenguaje} de forma ${curso.dificultad} con ${curso.profesor}`)
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_tab-php" class="editor_display-language">
+                            <pre>
+                                <code class="language-php">
+                                    &lt;?php
+                                        $nombre = "Rick";
+                                    
+                                        echo "¡Hola, $nombre!";
+                                    ?&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </section>
+            <section id="about">
+                <h2>Sobre Mí</h2>
+                <p class="subhead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quibusdam minus sunt corrupti voluptatum facilis enim eum a assumenda, officia consequatur vero eligendi dolor qui labore. Reprehenderit possimus iure deserunt?
+                </p>
+            </section>
+            <section id="contact" class="grid-2">
                 <div>
-                    <h1>Contacto</h1>
-                    <br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, accusamus ab, autem corporis culpa debitis suscipit rem magnam adipisci voluptatum necessitatibus qui, nemo facere eligendi. Ducimus tempora ut optio aliquid.</p>
+                    <h2>Contacto</h2>
+                    <p class="subhead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, accusamus ab, autem corporis culpa debitis suscipit rem magnam adipisci voluptatum necessitatibus qui, nemo facere eligendi. Ducimus tempora ut optio aliquid.</p>
                 </div>
 
                 <form id="contactForm" class="contactForm">
@@ -119,7 +255,8 @@
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">
         <i class="pri icon-backToTop"></i>
     </button>
-    <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/validator.js"></script>
+    <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/validator.js" defer></script>
+    <script src="./assets/js/prism.js" defer></script>
 </body>
 </html>
