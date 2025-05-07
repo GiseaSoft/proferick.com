@@ -76,4 +76,12 @@
             box-shadow: 0 0 0 100vmax #000d;
         }
     }
+    .hero {
+        .heading {
+            font-size: $fs-title-mobile;
+        }
+        .subheading {
+            font-size: $fs-4;
+        }
+    }
 }

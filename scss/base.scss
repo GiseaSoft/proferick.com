@@ -1,6 +1,8 @@
 /* Import Fonts */
 @import './fonts/inter';
-$font-family: Inter, sans-serif;
+$font-body: 'Inter', sans-serif;
+@import './fonts/satisfy';
+$font-title: 'Satisfy', 'Inter', sans-serif;
 
 /* Abstract */
 @import './abstract/variables';
@@ -14,8 +16,9 @@ $font-family: Inter, sans-serif;
 /*************************/
 
 body {
-    font-family: $font-family;
+    font-family: $font-body;
     font-size: $fs-6;
+    background-color: $clr-bg;
 }
 #mainHeader {
     position: sticky;
@@ -49,38 +52,22 @@ body {
 }
 .contentContainer {
     @extend %container;
-    padding-bottom: 5rem;
-    min-height: 75vh;
-    isolation: isolate;
     > section {
         padding-top: calc($gap-double + $gap);
     }
 }
 .heading {
-    margin-block: $gap-double;
-    font-size: 30px;
+    margin-block: $gap-double $gap;
+    font-size: $fs-2;
 }
 .subheading {
-    margin-block: $gap;
-    font-size: 18px;
+    margin-block: 0 $gap-double;
+    font-size: $fs-5;
 }
 footer {
-    background: $clr-secondary; /* Fallback */
-    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
     color: $clr-white;
-    position: relative;
-    margin-top: 2.5vw;
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: -50px;
-        width: 100%;
-        height: 200px;
-        background: inherit;
-        z-index: -1;
-        transform: skew(0deg, -3deg);
-    }
+    background: $clr-secondary;
+    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
     .innerFooter {
         @extend %container;
         .logo {
@@ -126,10 +113,45 @@ footer {
 /*** Sections ***/
 /****************/
 
+/* Hero */
+.hero {
+    padding: $gap-double;
+    color: $clr-white;
+    background: $clr-secondary;
+    background: linear-gradient(90deg, #014E6B 0, #012938 70%);
+    .heading {
+        font-family: $font-title;
+        font-size: $fs-title;
+    }
+    .subheading {
+        font-size: $fs-3;
+    }
+    &_image {
+        width: 60%;
+        aspect-ratio: 1/1.25;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+    }
+    &_brands {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $gap-double;
+        img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: contain;
+            border-radius: $border-radius;
+        }
+    }
+}
+
 /* Accordions */
 .accordion {
     --thisRadius: 5px;
     padding: 10px;
+    background-color: $clr-white;
     border-radius: var(--thisRadius);
     box-shadow: $box-shadow;
     &_item {
@@ -146,9 +168,17 @@ footer {
         padding: 10px;
         font-size: 18px;
         border-bottom: 1pt solid $clr-gray-dark;
+        background-color: $clr-primary;
+        cursor: pointer;
+        user-select: none;
     }
     &_item-body {
-        padding: 20px 10px;
+        height: 0;
+        overflow: hidden;
+        &.open {
+            padding: 20px 10px;
+            height: fit-content;
+        }
     }
 }
 
@@ -160,17 +190,23 @@ footer {
     &_tabset {
         list-style-type: none;
         display: flex;
-        li[aria-selected="true"] {
-            position: relative;
-            background: $clr-black;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                display: block;
-                width: 100%;
-                height: 2px;
-                background: $clr-accent;
+        li {
+            transition: $transition-time-fast;
+            &:hover {
+                background: $clr-black;
+            }
+            &[aria-selected="true"] {
+                position: relative;
+                background: $clr-black;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: $clr-accent;
+                }
             }
         }
         &-ico {
@@ -186,7 +222,27 @@ footer {
         }
     }
     &_display {
-        background: $clr-black
+        width: 100%;
+        background: $clr-black;
+        overflow-x: auto;
+        scrollbar-width: thin;
+    }
+    &_window {
+        position: relative;
+        &-toolbar {
+            position: absolute;
+            top: $gap-half;
+            right: $gap-half;
+            &-button {
+                padding: 3px 5px;
+                font-size: $fs-caption;
+                color: $clr-gray;
+                border: none;
+                cursor: pointer;
+                border-radius: $border-radius;
+                background: $clr-gray-dark;
+            }
+        }
     }
 }
 

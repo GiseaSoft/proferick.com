@@ -20,6 +20,24 @@
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
+
+<!---
+    cursos: añadir bootstrap, git y github, laravel, vuejs
+
+
+    responsive:
+    arreglar boton de cerrar menu
+    arreglar el editor de codigo
+
+    agregar un link de instagram en el footer CONTACTO,
+    efecto hover cuando se acerque ell mouse cambia a los colores reales de IG   y escalarlo
+    abajo del logotipo mostrar correo electronico
+
+    quitar seccion contacto
+
+    agregar modo nocturno
+-->
+
     <a class="sr-only" href="#content">Omitir menu e ir al contenido</a>
     <header id="mainHeader">
         <div class="innerHeader">
@@ -34,6 +52,8 @@
                             <li><a href="#">Mentorias Front End</a></li>
                             <li><a href="#">Mentorioas Back End</a></li>
                             <li><a href="#">Reclutamiento en TI</a></li>
+                            <li><a href="#">Creación de CV</a></li>
+                            <li><a href="#">Perfil TI</a></li>
                         </ul>
                     </li>
                     <li><a href="#courses">Cursos</a></li>
@@ -48,15 +68,26 @@
             </button>
         </div>
     </header>
-    
     <main id="content">
+        <section id="index" class="hero" data-skew="1" skew-type="bottom">
+            <div class="contentContainer grid-2">
+                <div>
+                    <h1 class="heading ">Profe Rick</h1>
+                    <p class="subheading">
+                        Ingeniero de software con <script>document.write(new Date().getFullYear() - 2015)</script> años de experiencia en la industria en puestos como front end/back end/fullstack.
+                    </p>
+                    <div class="hero_brands">
+                        <img src="./assets/img/brands/ford.png" alt="Ford">
+                        <img src="./assets/img/brands/lincoln.png" alt="Lincoln">
+                        <img src="./assets/img/brands/bridgestone.png" alt="bridgestone">
+                        <img src="./assets/img/brands/vml.png" alt="VML">
+                    </div>
+                </div>
+                <img class="hero_image" src="./assets/img/proferick.jpg" alt="">
+            </div>
+        </section>
+
         <div class="contentContainer">
-            <section id="index">
-                <h2 class="heading">Profe Rick</h2>
-                <p class="subheading">
-                    Ingeniero de software con 9 años de experiencia en la industria en puestos como front end/back end/fullstack.
-                </p>
-            </section>
             <section id="services">
                 <h2 class="heading">Servicios</h2>
                 <p class="subheading">
@@ -77,10 +108,31 @@
                         </div>
                     </div>
                     <div class="accordion_item">
-                        <div class="accordion_item-head">Elemento #3</div>
                         <div class="accordion_item-body">
                             This is the TERCERO item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                         </div>
+                        <div class="accordion_item-head">Elemento #3</div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion_item">
+                        <div class="accordion_item-head">Elemento #4</div>
+                        <div class="accordion_item-body">
+                            <b>This is the first item's accordion body.</b> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="accordion_item-head">Elemento #5</div>
+                        <div class="accordion_item-body">
+                            <b>This is the SEGUNDO item's accordion body.</b> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="accordion_item-body">
+                            This is the TERCERO item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                        </div>
+                        <div class="accordion_item-head">Elemento #6</div>
                     </div>
                 </div>
             </section>
@@ -92,15 +144,15 @@
 
                 <div class="editor">
                     <ul class="editor_tabset">
-                        <li><a href="#editor_tab-html"><img class="editor_tabset-ico" src="./assets/img/thirds/html.png" alt=""><span class="desktopOnly">HTML5</span></a></li>
-                        <li><a href="#editor_tab-css"><img class="editor_tabset-ico" src="./assets/img/thirds/css.png" alt=""><span class="desktopOnly">CSS</span></a></li>
-                        <li><a href="#editor_tab-sass"><img class="editor_tabset-ico" src="./assets/img/thirds/sass.png" alt=""><span class="desktopOnly">SASS</span></a></li>
-                        <li><a href="#editor_tab-js"><img class="editor_tabset-ico" src="./assets/img/thirds/javascript.png" alt=""><span class="desktopOnly">JavaScript</span></a></li>
-                        <li><a href="#editor_tab-php"><img class="editor_tabset-ico" src="./assets/img/thirds/php.png" alt=""><span class="desktopOnly">PHP</span></a></li>
+                        <li><a href="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/tech/html.png" alt=""><span class="desktopOnly">HTML5</span></a></li>
+                        <li><a href="#editor_window-css"><img class="editor_tabset-ico" src="./assets/img/tech/css.png" alt=""><span class="desktopOnly">CSS</span></a></li>
+                        <li><a href="#editor_window-sass"><img class="editor_tabset-ico" src="./assets/img/tech/sass.png" alt=""><span class="desktopOnly">SASS</span></a></li>
+                        <li><a href="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/tech/javascript.png" alt=""><span class="desktopOnly">JavaScript</span></a></li>
+                        <li><a href="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/tech/php.png" alt=""><span class="desktopOnly">PHP</span></a></li>
                     </ul>
                     <div class="editor_display">
-                        <div id="editor_tab-html" class="editor_display-language">
-                            <pre>
+                        <div id="editor_window-html" class="editor_window">
+                            <pre class="language-markup">
                                 <code class="language-markup">
                                     &lt;!DOCTYPE html&gt;
                                     &lt;h1 class="titulo"&gt;Profe Rick&lt;/h1&gt;
@@ -108,8 +160,8 @@
                                 </code>
                             </pre>
                         </div>
-                        <div id="editor_tab-css" class="editor_display-language">
-                            <pre>
+                        <div id="editor_window-css" class="editor_window">
+                            <pre class="language-css">
                                 <code class="language-css">
                                     /* Declarando variables */
                                     :root {
@@ -129,8 +181,8 @@
                                 </code>
                             </pre>
                         </div>
-                        <div id="editor_tab-sass" class="editor_display-language">
-                            <pre>
+                        <div id="editor_window-sass" class="editor_window">
+                            <pre class="language-css">
                                 <code class="language-css">
                                     /* Declarando variables */
                                     $font-size-100: 40px;
@@ -148,8 +200,8 @@
                                 </code>
                             </pre>
                         </div>
-                        <div id="editor_tab-js" class="editor_display-language">
-                            <pre>
+                        <div id="editor_window-js" class="editor_window">
+                            <pre class="language-js">
                                 <code class="language-js">
                                     const curso = {
                                         lenguaje: 'Javascript',
@@ -164,8 +216,8 @@
                                 </code>
                             </pre>
                         </div>
-                        <div id="editor_tab-php" class="editor_display-language">
-                            <pre>
+                        <div id="editor_window-php" class="editor_window">
+                            <pre class="language-php">
                                 <code class="language-php">
                                     &lt;?php
                                         $nombre = "Rick";
@@ -233,8 +285,7 @@
             </section>
         </div>
     </main>
-
-    <footer id="mainFooter">
+    <footer id="mainFooter" data-skew="1" skew-type="top">
         <div class="innerFooter">
             <a class="logo" href="./index.html">
                 <img src="./assets/img/imagotype_white.svg" alt="proferick.com">

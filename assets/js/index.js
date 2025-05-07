@@ -30,7 +30,27 @@ window.addEventListener('scroll', () => {
     } else {
         backToTop.classList.add('invisible');
     }
-})
+});
+
+/******************/
+/*** Accordions ***/
+/******************/
+
+const accordions = document.querySelectorAll('.accordion');
+
+accordions.forEach( acc => {
+    const acc_item = acc.querySelectorAll('.accordion_item');
+    console.log(acc)
+
+    acc_item.forEach(item => {
+        const item_head = item.querySelector('.accordion_item-head');
+        const item_body = item.querySelector('.accordion_item-body');
+
+        item_head.addEventListener('click', e => {
+            item_body.classList.toggle('open')
+        })
+    })
+});
 
 /****************************/
 /*** Code Editor and Tabs ***/
@@ -39,18 +59,16 @@ window.addEventListener('scroll', () => {
 let code_editors = document.querySelectorAll('.editor');
 
 code_editors.forEach(editor => {
-    let editorTabset = editor.querySelector('.editor_tabset');
-    let editorTabs = editorTabset.querySelectorAll('li');
+    let editorTabset  = editor.querySelector('.editor_tabset');
+    let editorTabs    = editorTabset.querySelectorAll('li');
     let editorDisplay = editor.querySelector('.editor_display');
-    let editorLanguages = editorDisplay.querySelectorAll('.editor_display-language');
-
-    console.log(editorLanguages)
+    let editorWindows = editorDisplay.querySelectorAll('.editor_window');
 
     editorTabs.forEach((tab, i) => {
         if (i === 0) {
             tab.setAttribute('aria-selected', 'true');
         } else {
-            editorLanguages[i].setAttribute('hidden', '');
+            editorWindows[i].setAttribute('hidden', '');
         }
     });
 
@@ -66,7 +84,7 @@ code_editors.forEach(editor => {
             tab.setAttribute('aria-selected', 'false');
         })
 
-        editorLanguages.forEach(language => {
+        editorWindows.forEach(language => {
             language.setAttribute('hidden', '');
         });
 
