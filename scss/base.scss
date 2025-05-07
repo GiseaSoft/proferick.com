@@ -151,7 +151,7 @@ footer {
 .accordion {
     --thisRadius: 5px;
     padding: 10px;
-    background-color: $clr-white;
+    background-color: #FFF;
     border-radius: var(--thisRadius);
     box-shadow: $box-shadow;
     &_item {
@@ -252,9 +252,9 @@ footer {
     padding: 1rem;
     border-radius: $border-radius;
     overflow: hidden;
-    outline: 1pt solid $clr-gray;
+    outline: 1pt solid $clr-gray-light;
     box-shadow: $box-shadow;
-    background-color: $clr-white;
+    background-color: #FFF;
     fieldset {
         border: none;
         label {

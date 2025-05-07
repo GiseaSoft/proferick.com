@@ -5,7 +5,8 @@
         position: relative;
         width: 2.5rem;
         aspect-ratio: 1;
-        background: none;
+        background: $clr-primary;
+        border-radius: $border-radius;
         border: none;
         cursor: pointer;
         span {

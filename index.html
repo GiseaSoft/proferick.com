@@ -22,13 +22,6 @@
 <body>
 
 <!---
-    cursos: añadir bootstrap, git y github, laravel, vuejs
-
-
-    responsive:
-    arreglar boton de cerrar menu
-    arreglar el editor de codigo
-
     agregar un link de instagram en el footer CONTACTO,
     efecto hover cuando se acerque ell mouse cambia a los colores reales de IG   y escalarlo
     abajo del logotipo mostrar correo electronico
@@ -141,7 +134,7 @@
                 <p class="subheading">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis laudantium enim placeat commodi maiores deleniti deserunt harum sit quasi laborum distinctio, quibusdam dignissimos sed illum nulla. Rem nemo quam itaque.
                 </p>
-
+                <!--cursos: añadir bootstrap, git y github, laravel, vuejs--->
                 <div class="editor">
                     <ul class="editor_tabset">
                         <li><a href="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/tech/html.png" alt=""><span class="desktopOnly">HTML5</span></a></li>
@@ -149,10 +142,14 @@
                         <li><a href="#editor_window-sass"><img class="editor_tabset-ico" src="./assets/img/tech/sass.png" alt=""><span class="desktopOnly">SASS</span></a></li>
                         <li><a href="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/tech/javascript.png" alt=""><span class="desktopOnly">JavaScript</span></a></li>
                         <li><a href="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/tech/php.png" alt=""><span class="desktopOnly">PHP</span></a></li>
+                        <li><a href="#editor_window-bootstrap"><img class="editor_tabset-ico" src="./assets/img/tech/bootstrap.png" alt=""><span class="desktopOnly">Bootstrap</span></a></li>
+                        <li><a href="#editor_window-git"><img class="editor_tabset-ico" src="./assets/img/tech/git.png" alt=""><span class="desktopOnly">Git y Github</span></a></li>
+                        <li><a href="#editor_window-laravel"><img class="editor_tabset-ico" src="./assets/img/tech/php.png" alt=""><span class="desktopOnly">Laravel</span></a></li>
+                        <li><a href="#editor_window-vuejs"><img class="editor_tabset-ico" src="./assets/img/tech/vue.png" alt=""><span class="desktopOnly">Vue.js</span></a></li>
                     </ul>
                     <div class="editor_display">
                         <div id="editor_window-html" class="editor_window">
-                            <pre class="language-markup">
+                            <pre>
                                 <code class="language-markup">
                                     &lt;!DOCTYPE html&gt;
                                     &lt;h1 class="titulo"&gt;Profe Rick&lt;/h1&gt;
@@ -161,7 +158,7 @@
                             </pre>
                         </div>
                         <div id="editor_window-css" class="editor_window">
-                            <pre class="language-css">
+                            <pre>
                                 <code class="language-css">
                                     /* Declarando variables */
                                     :root {
@@ -182,7 +179,7 @@
                             </pre>
                         </div>
                         <div id="editor_window-sass" class="editor_window">
-                            <pre class="language-css">
+                            <pre>
                                 <code class="language-css">
                                     /* Declarando variables */
                                     $font-size-100: 40px;
@@ -201,7 +198,7 @@
                             </pre>
                         </div>
                         <div id="editor_window-js" class="editor_window">
-                            <pre class="language-js">
+                            <pre>
                                 <code class="language-js">
                                     const curso = {
                                         lenguaje: 'Javascript',
@@ -217,7 +214,7 @@
                             </pre>
                         </div>
                         <div id="editor_window-php" class="editor_window">
-                            <pre class="language-php">
+                            <pre>
                                 <code class="language-php">
                                     &lt;?php
                                         $nombre = "Rick";
@@ -227,10 +224,77 @@
                                 </code>
                             </pre>
                         </div>
+                        <div id="editor_window-bootstrap" class="editor_window">
+                            <pre>
+                                <code class="language-markup">
+                                    &lt;!-- Botón con Bootstrap --&gt;
+                                    &lt;button type="button" class="btn btn-primary"&gt;
+                                        Enviar formulario
+                                    &lt;/button&gt;
+                                
+                                    &lt;!-- Alerta --&gt;
+                                    &lt;div class="alert alert-success" role="alert"&gt;
+                                        Operación completada con éxito
+                                    &lt;/div&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_window-git" class="editor_window">
+                            <pre>
+                                <code class="language-bash">
+                                    # Clonar un repositorio
+                                    git clone https://github.com/usuario/proyecto.git
+                                
+                                    # Crear una nueva rama
+                                    git checkout -b nueva-rama
+                                
+                                    # Hacer commit y subir cambios
+                                    git add .
+                                    git commit -m "Agrega nueva funcionalidad"
+                                    git push origin nueva-rama
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_window-laravel" class="editor_window">
+                            <pre>
+                                <code class="language-php">
+                                    // Ruta en web.php
+                                    Route::get('/usuarios', [UsuarioController::class, 'index']);
+                                
+                                    // Controlador
+                                    class UsuarioController extends Controller {
+                                        public function index() {
+                                            $usuarios = Usuario::all();
+                                            return view('usuarios.index', compact('usuarios'));
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_window-vuejs" class="editor_window">
+                            <pre>
+                                <code class="language-markup">
+                                    &lt;template&gt;
+                                        &lt;div&gt;
+                                            &lt;p&gt;Hola {{ nombre }}&lt;/p&gt;
+                                            &lt;input v-model="nombre" /&gt;
+                                        &lt;/div&gt;
+                                    &lt;/template&gt;
+                                
+                                    &lt;script&gt;
+                                        export default {
+                                            data() {
+                                                return {
+                                                    nombre: "Rick"
+                                                };
+                                            }
+                                        }
+                                    &lt;/script&gt;
+                                </code>
+                            </pre>
+                          </div>
                     </div>
                 </div>
-                
-
             </section>
             <section id="about">
                 <h2 class="heading">Sobre Mí</h2>
