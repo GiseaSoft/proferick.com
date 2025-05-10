@@ -4,10 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:base": "sass --watch --style=compressed ./scss/base.scss ./assets/css/base.css",
-    "sass:desktop": "sass --watch --style=compressed ./scss/desktop.scss ./assets/css/desktop.css",
-    "sass:mobile": "sass --watch --style=compressed ./scss/mobile.scss ./assets/css/mobile.css",
-    "sass": "npm-run-all --parallel sass:base sass:desktop sass:mobile"
+    "sass:base": "sass --style=compressed ./scss/base.scss ./assets/css/base.css",
+    "sass:desktop": "sass --style=compressed ./scss/desktop.scss ./assets/css/desktop.css",
+    "sass:mobile": "sass --style=compressed ./scss/mobile.scss ./assets/css/mobile.css",
+    "sass": "npm-run-all --parallel sass:base sass:desktop sass:mobile",
+
+    "sass:watch:base": "sass --watch --style=expanded ./scss/base.scss ./assets/css/base.css",
+    "sass:watch:desktop": "sass --watch --style=expanded ./scss/desktop.scss ./assets/css/desktop.css",
+    "sass:watch:mobile": "sass --watch --style=expanded ./scss/mobile.scss ./assets/css/mobile.css",
+    "sass:watch": "npm-run-all --parallel sass:watch:base sass:watch:desktop sass:watch:mobile",
+
+    "js:build": "node minify-js.js",
+    "js:watch": "nodemon --watch js --ext js --exec \"npm run js:build\"",
+
+    "dev": "npm-run-all --parallel sass:watch js:watch",
+    "build": "npm-run-all sass js:build",
+    "start": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +32,8 @@
   },
   "homepage": "https://github.com/Salegomx/proferick.com",
   "devDependencies": {
+    "esbuild": "^0.25.4",
+    "nodemon": "^3.1.10",
     "npm-run-all": "^4.1.5"
   }
 }

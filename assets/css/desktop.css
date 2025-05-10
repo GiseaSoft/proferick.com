@@ -1,1 +1,60 @@
-.primaryNav ul .contact{display:block;padding:5px 15px;color:#f5f5f5;background-color:#da3a2f;border:1pt solid #2a2a2a;cursor:pointer;border-radius:4px}.primaryNav ul{display:flex;align-items:center;gap:2rem}.primaryNav ul li.subMenu{position:relative}.primaryNav ul li.subMenu ul{display:none;width:15rem;position:absolute;top:1.25rem;border-radius:4px;background-color:#f5f5f5;outline:1pt solid #ddd}.primaryNav ul li.subMenu ul a{display:block;padding:.75rem;width:100%;border-bottom:1pt solid #ddd}.primaryNav ul li.subMenu.subMenu:hover a i.icon-down{transform:rotate(0.5turn);transition:350ms}.primaryNav ul li.subMenu.subMenu:hover ul{display:block}.primaryNav ul a:hover:not(.contact){opacity:.75}.grid-2{grid-template-columns:55% 1fr}/*# sourceMappingURL=desktop.css.map */
+/* Sizes */
+/* 32px */
+/* 24px */
+/* 22px */
+/* 20px */
+/* 18px */
+/* 16px */
+/* 14px */
+/* Colors */
+/* Shapes */
+.primaryNav ul .contact {
+  display: block;
+  padding: 5px 15px;
+  color: #F5F5F5;
+  background-color: #DA3A2F;
+  border: 1pt solid #2A2A2A;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Media Queries */
+/* Time */
+.primaryNav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.primaryNav ul li.subMenu {
+  position: relative;
+}
+.primaryNav ul li.subMenu ul {
+  display: none;
+  width: 15rem;
+  position: absolute;
+  top: 1.25rem;
+  border-radius: 4px;
+  background-color: #F5F5F5;
+  outline: 1pt solid #DDD;
+}
+.primaryNav ul li.subMenu ul a {
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-bottom: 1pt solid #DDD;
+}
+.primaryNav ul li.subMenu.subMenu:hover a i.icon-down {
+  transform: rotate(0.5turn);
+  transition: 150ms;
+}
+.primaryNav ul li.subMenu.subMenu:hover ul {
+  display: block;
+}
+.primaryNav ul a:hover:not(.contact) {
+  opacity: 0.75;
+}
+.grid-2 {
+  grid-template-columns: 55% 1fr;
+}
+
+/*# sourceMappingURL=desktop.css.map */

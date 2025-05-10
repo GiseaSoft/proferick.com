@@ -66,17 +66,35 @@ body {
 }
 footer {
     color: $clr-white;
-    background: $clr-secondary;
+    background: $clr-secondary; // fallback
     background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
+    a {
+        color: inherit;
+    }
+    .logo, .footerEmail {
+        display: block;
+        max-width: 20rem;
+        margin-inline: auto;
+        text-align: center;
+        text-decoration: underline;
+    }
     .innerFooter {
         @extend %container;
-        .logo {
-            display: block;
-            max-width: 20rem;
-            margin-inline: auto;
-        }
-        a {
-            color: inherit;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: $gap;
+        padding-block: $gap-double;
+        .footerNav ul {
+            list-style: inside;
+            display: flex;
+            flex-direction: column;
+            gap: $gap-half;
+            .footerNavTitle {
+                margin-bottom: $gap-half;
+                font-size: $fs-3;
+                font-weight: 700;
+            }
         }
     }
     .footerCopy {
@@ -84,6 +102,10 @@ footer {
         text-align: center;
         a {
             text-decoration: underline;
+            transition: $transition-time;
+            &:hover {
+                color: $clr-primary;
+            }
         }
     }
 }
@@ -117,8 +139,8 @@ footer {
 .hero {
     padding: $gap-double;
     color: $clr-white;
-    background: $clr-secondary;
-    background: linear-gradient(90deg, #014E6B 0, #012938 70%);
+    background: url("../img/hero.png") center;
+    text-shadow: 2px 2px 2px $clr-black;
     .heading {
         font-family: $font-title;
         font-size: $fs-title;
@@ -149,35 +171,46 @@ footer {
 
 /* Accordions */
 .accordion {
-    --thisRadius: 5px;
+    --thisRadius: #{$border-radius};
     padding: 10px;
     background-color: #FFF;
+    border: 1pt solid $clr-gray;
     border-radius: var(--thisRadius);
-    box-shadow: $box-shadow;
     &_item {
+        overflow: clip; // for border-radius
         &:first-child {
-            border-radius: var(--thisRadius) var(--thisRadius) 0 0;
+            .accordion_item-head {
+                border-radius: var(--thisRadius) var(--thisRadius) 0 0;
+            }
         }
         &:last-child {
-            border-radius: 0 0 var(--thisRadius) var(--thisRadius);
+            .accordion_item-head {
+                border-bottom: 1pt solid $clr-gray;
+                border-radius: 0 0 var(--thisRadius) var(--thisRadius);
+            }
         }
-        overflow: hidden;
-        border: 1pt solid $clr-gray-dark;
-    }
-    &_item-head {
-        padding: 10px;
-        font-size: 18px;
-        border-bottom: 1pt solid $clr-gray-dark;
-        background-color: $clr-primary;
-        cursor: pointer;
-        user-select: none;
-    }
-    &_item-body {
-        height: 0;
-        overflow: hidden;
-        &.open {
-            padding: 20px 10px;
-            height: fit-content;
+        &-head {
+            padding: 10px;
+            font-size: $fs-5;
+            border: 1pt solid $clr-gray;
+            border-bottom: none;
+            background-color: $clr-primary;
+            cursor: pointer;
+            user-select: none;
+            &[aria-selected="true"] {
+                background-color: darken($clr-primary, 5%);
+            }
+        }
+        &-body {
+            display: none;
+            border: 1pt solid $clr-gray;
+            border-bottom: none;
+            overflow: hidden;
+            &[aria-expanded="true"] {
+                display: block;
+                padding: 20px 10px;
+                height: fit-content;
+            }
         }
     }
 }
@@ -186,18 +219,19 @@ footer {
 .editor {
     display: grid;
     grid-template-rows: 50px 1fr;
-    background: $clr-gray-dark;
+    background: darken($clr-secondary, 10%);
     &_tabset {
         list-style-type: none;
         display: flex;
+        background: darken($clr-secondary, 5%);
         li {
             transition: $transition-time-fast;
             &:hover {
-                background: $clr-black;
+                background: $clr-secondary;
             }
             &[aria-selected="true"] {
                 position: relative;
-                background: $clr-black;
+                background: $clr-secondary;
                 &::after {
                     content: '';
                     position: absolute;
@@ -223,7 +257,7 @@ footer {
     }
     &_display {
         width: 100%;
-        background: $clr-black;
+        background: darken($clr-secondary, 10%);
         overflow-x: auto;
         scrollbar-width: thin;
     }
@@ -240,7 +274,7 @@ footer {
                 border: none;
                 cursor: pointer;
                 border-radius: $border-radius;
-                background: $clr-gray-dark;
+                background: darken($clr-secondary, 15%);
             }
         }
     }

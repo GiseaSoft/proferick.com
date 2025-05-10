@@ -23,6 +23,10 @@ $clr-secondary: #014E6B;
 $clr-accent: #DA3A2F;
 $clr-error: #C30E0E;
 
+$clr-editor-bg: #444;
+$clr-editor-display: #000;
+$clr-highlight-tab: $clr-accent;
+
 /* Shapes */
 $box-shadow: 2px 2px 4px 0 $clr-black;
 $border-radius: 4px;
@@ -51,5 +55,5 @@ $mobile: 48rem;
 $desktop: 64rem;
 
 /* Time */
-$transition-time: 350ms;
+$transition-time: 150ms;
 $transition-time-fast: calc($transition-time / 2);
