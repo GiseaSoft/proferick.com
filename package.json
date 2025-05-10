@@ -13,12 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/Salegomx/proferick.com.git"
   },
-  "author": "",
+  "author": "@salegomx | sergiogomez.mx",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Salegomx/proferick.com/issues"
   },
-  "homepage": "https://github.com/Salegomx/proferick.com#readme",
+  "homepage": "https://github.com/Salegomx/proferick.com",
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   }
