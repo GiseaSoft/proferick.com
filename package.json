@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass:icons": "sass --style=compressed ./scss/fonts/profeRickIcons.scss ./assets/css/profeRickIcons.css",
+    "sass:prism": "sass --style=compressed ./scss/prism.scss ./assets/css/prism.css",
     "sass:base": "sass --style=compressed ./scss/base.scss ./assets/css/base.css",
     "sass:desktop": "sass --style=compressed ./scss/desktop.scss ./assets/css/desktop.css",
     "sass:mobile": "sass --style=compressed ./scss/mobile.scss ./assets/css/mobile.css",
-    "sass": "npm-run-all --parallel sass:base sass:desktop sass:mobile",
+    "sass": "npm-run-all --parallel sass:icons sass:prism sass:base sass:desktop sass:mobile",
 
+    "sass:watch:icons": "sass --watch --style=expanded ./scss/fonts/profeRickIcons.scss ./assets/css/profeRickIcons.css",
+    "sass:watch:prism": "sass --watch --style=expanded ./scss/prism.scss ./assets/css/prism.css",
     "sass:watch:base": "sass --watch --style=expanded ./scss/base.scss ./assets/css/base.css",
     "sass:watch:desktop": "sass --watch --style=expanded ./scss/desktop.scss ./assets/css/desktop.css",
     "sass:watch:mobile": "sass --watch --style=expanded ./scss/mobile.scss ./assets/css/mobile.css",
-    "sass:watch": "npm-run-all --parallel sass:watch:base sass:watch:desktop sass:watch:mobile",
+    "sass:watch": "npm-run-all --parallel sass:watch:icons sass:watch:prism sass:watch:base sass:watch:desktop sass:watch:mobile",
 
     "js:build": "node minify-js.js",
     "js:watch": "nodemon --watch js --ext js --exec \"npm run js:build\"",

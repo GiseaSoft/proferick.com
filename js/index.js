@@ -2,65 +2,45 @@
 /*** Menu Button ***/
 /*******************/
 
-const menuButton = document.getElementById('menuButton');
 const primaryNav = document.querySelector('.primaryNav');
+const menuButton = document.getElementById('menuButton');
 
 menuButton.addEventListener('click', () => {
-    menuButton.classList.toggle('menuOpen');
-    primaryNav.classList.toggle('menuOpen');
-});
-
-/********************/
-/*** Current Year ***/
-/********************/
-
-const year = document.getElementById('year');
-
-year.innerText = new Date().getFullYear();
-
-/*******************/
-/*** Scroll Menu ***/
-/*******************/
-
-window.addEventListener('scroll', () => {
-    scrollpos = window.scrollY;
-
-    if (scrollpos >= 200) {
-        backToTop.classList.remove('invisible');
-    } else {
-        backToTop.classList.add('invisible');
-    }
+    primaryNav.classList.toggle('open');
+    menuButton.classList.toggle('open');
 });
 
 /******************/
 /*** Accordions ***/
 /******************/
 
-const accorion_tabs = document.querySelectorAll('.accordion_item-head');
+const accordions = document.querySelectorAll('.accordion');
 
-accorion_tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const parentAccordion = tab.closest('.accordion');
-        const container = tab.closest('.accordion_item');
-        const current_item_body = container.querySelector('.accordion_item-body');
-        const isExpanded = current_item_body.getAttribute('aria-expanded') === 'true';
+accordions.forEach(accordion => {
+    const items = accordion.querySelectorAll('.accordion_item');
 
-        parentAccordion.querySelectorAll('.accordion_item-body[aria-expanded]').forEach(item_body => {
-            if (item_body !== current_item_body) {
-                item_body.removeAttribute('aria-expanded');
-            }
+    items.forEach(item => {
+        const itemHead = item.querySelector('.accordion_item-head');
+        const itemBody = item.querySelector('.accordion_item-body');
+
+        itemHead.addEventListener('click', () => {
+            const isActive = itemBody.getAttribute('aria-expanded') === 'true';
+            closeItemsInAccordion(accordion);
+            itemHead.setAttribute('aria-selected', !isActive);
+            itemBody.setAttribute('aria-expanded', !isActive);
         });
-
-        parentAccordion.querySelectorAll('.accordion_item-head[aria-selected]').forEach(item_head => {
-            if (item_head !== tab) {
-                item_head.removeAttribute('aria-selected');
-            }
-        });
-
-        tab.setAttribute('aria-selected', !isExpanded);
-        current_item_body.setAttribute('aria-expanded', !isExpanded);
     });
 });
+
+const closeItemsInAccordion = (thisAccordion) => {
+    const itemHeads = thisAccordion.querySelectorAll('.accordion_item-head');
+    const itemBodies = thisAccordion.querySelectorAll('.accordion_item-body');
+
+    itemHeads.forEach(item => item.removeAttribute('aria-selected'));
+    itemBodies.forEach(item => item.removeAttribute('aria-expanded'));
+};
+
+
 
 /****************************/
 /*** Code Editor and Tabs ***/
@@ -109,6 +89,16 @@ code_editors.forEach(editor => {
 /*******************/
 
 const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= 200) {
+        backToTop.setAttribute('aria-hidden', 'false');
+    } else {
+        backToTop.setAttribute('aria-hidden', 'true');
+    }
+});
 
 backToTop.addEventListener('click', () => {
     document.querySelector('#content').scrollIntoView({

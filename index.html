@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proferick.com</title>
     <meta name="author" content="sergiogomez.mx">
-    <meta name="description" content="Ingeniero de software con 9 años de experiencia en la industria en puestos como front end/back end/fullstack.">
+    <meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack.">
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/base.css" media="all">
-    <link rel="stylesheet" href="./assets/css/mobile.css" media="screen and (max-width:64em)">
-    <link rel="stylesheet" href="./assets/css/desktop.css" media="screen and (min-width:64em)">
+    <link rel="stylesheet" href="./assets/css/mobile.css" media="(max-width:64em)">
+    <link rel="stylesheet" href="./assets/css/desktop.css" media="(min-width:64em)">
     <link rel="stylesheet" href="./assets/css/prism.css" media="all">
 
     <!-- Icons -->
@@ -64,10 +64,10 @@
     <main id="content">
         <section id="index" class="hero" data-skew="1" skew-type="bottom">
             <div class="contentContainer grid-2">
-                <div>
-                    <h1 class="heading ">Profe Rick</h1>
+                <div class="hero_text">
+                    <h1 class="heading">Profe Rick</h1>
                     <p class="subheading">
-                        Ingeniero de software con <script>document.write(new Date().getFullYear() - 2015)</script> años de experiencia en la industria en puestos como desarrollador front end, back end y fullstack.
+                        Ingeniero de software con <script>document.write(new Date().getFullYear() - 2015)</script> años de experiencia en la industria en puestos como desarrollador Front End, Back End y Fullstack.
                     </p>
                     <div class="hero_brands">
                         <img src="./assets/img/brands/ford.png" alt="Ford">
@@ -76,10 +76,9 @@
                         <img src="./assets/img/brands/vml.png" alt="VML">
                     </div>
                 </div>
-                <img class="hero_image" src="./assets/img/proferick.jpg" alt="">
+                <img class="hero_picture" src="./assets/img/proferick.jpg" alt="">
             </div>
         </section>
-
         <div class="contentContainer">
             <section id="services">
                 <h2 class="heading">Servicios</h2>
@@ -139,14 +138,47 @@
                         <li><a href="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/tech/php.png" alt=""><span class="desktopOnly">PHP</span></a></li>
                         <li><a href="#editor_window-laravel"><img class="editor_tabset-ico" src="./assets/img/tech/php.png" alt=""><span class="desktopOnly">Laravel</span></a></li>
                         <li><a href="#editor_window-git"><img class="editor_tabset-ico" src="./assets/img/tech/git.png" alt=""><span class="desktopOnly">Git y Github</span></a></li>
+                        <li><a href="#editor_window-json"><img class="editor_tabset-ico" src="./assets/img/tech/javascript.png" alt=""><span class="desktopOnly">JSON</span></a></li>
+                        <li><a href="#editor_window-sql"><img class="editor_tabset-ico" src="./assets/img/tech/sql.png" alt=""><span class="desktopOnly">SQL</span></a></li>
                     </ul>
-                    <div class="editor_display">
+                    <div class="editor_display line-numbers">
                         <div id="editor_window-html" class="editor_window">
                             <pre>
                                 <code class="language-markup">
                                     &lt;!DOCTYPE html&gt;
-                                    &lt;h1 class="titulo"&gt;Profe Rick&lt;/h1&gt;
-                                    &lt;span class="titulo_slogan"&gt;Ingeniero de Software&lt;/span&gt;
+                                    &lt;html&gt;
+                                        &lt;head&gt;
+                                            &lt;meta charset="UTF-8"&gt;
+                                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                                            &lt;meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack."&gt;
+
+                                            &lt;title&gt;Proferick.com&lt;/title&gt;
+
+                                            &lt;!-- Estilos --&gt;
+                                            &lt;link rel="stylesheet" href="./css/styles.css" media="screen only"&gt;
+                                            &lt;link rel="stylesheet" href="./css/mobile.css" media="(max-width:64em)"&gt;
+                                            &lt;link rel="stylesheet" href="./css/desktop.css" media="(min-width:64em)"&gt;
+
+                                            &lt;!-- Icono --&gt;
+                                            &lt;link href="./favicon.ico" rel="icon" type="image/x-icon"&gt;
+
+                                            &lt;!-- Estilos en linea --&gt;
+                                            &lt;style&gt;
+                                                body {
+                                                    background-color: #f0f0f0;
+                                                }
+                                            &lt;/style&gt;
+                                        &lt;/head&gt;
+                                        &lt;body&gt;
+                                            &lt;h1 class="titulo" &gt;Profe Rick&lt;/h1&gt;
+                                            &lt;span class="titulo_slogan"&gt;Ingeniero de Software&lt;/span&gt;
+                                            
+                                            &lt;!-- JavaScript en linea --&gt;
+                                            &lt;script&gt;
+                                                console.log("Aprendiendo con el Profe Rick");
+                                            &lt;/script&gt;
+                                        &lt;/body&gt;
+                                    &lt;/html&gt;
                                 </code>
                             </pre>
                         </div>
@@ -165,8 +197,15 @@
                                     .titulo {
                                         font-size: var(--font-size-100);
                                     }
+
                                     .titulo_slogan {
                                         font-size: var(--font-size-300);
+                                    }
+
+                                    @media (min-width: 767px) {
+                                        .mobileOnly {
+                                            display; none !important;
+                                        }
                                     }
                                 </code>
                             </pre>
@@ -176,32 +215,88 @@
                                 <code class="language-js">
                                     const curso = {
                                         lenguaje: 'Javascript',
-                                        profesor: 'El Profe Rick'
+                                        profesor: 'El Profe Rick',
+                                        dificultad: 'dificil'
+                                    };
+
+                                    if (curso.profesor === 'El Profe Rick') {
+                                        curso.dificultad = 'fácil';
                                     }
 
-                                    if (curso.profesor == 'El Profe Rick') {
-                                        curso.dificultad = 'fácil'
+                                    function print() {
+                                        console.log(`Estoy aprendiendo ${curso.lenguaje} de forma ${curso.dificultad} con ${curso.profesor}`);
                                     }
-
-                                    console.log(`Estoy aprendiendo ${curso.lenguaje} de forma ${curso.dificultad} con ${curso.profesor}`)
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-sass" class="editor_window">
                             <pre>
-                                <code class="language-css">
-                                    /* Declarando variables */
-                                    $font-size-100: 40px;
-                                    $font-size-200: 32px;
-                                    $font-size-300: 22px;
-                                    $font-size-400: 18px;
+                                <code class="language-scss">
+                                    // Importamoso 'defaults' usando un alias
+                                    @use 'defaults' as d;
 
-                                    /* Estilos */
-                                    .titulo {
-                                        font-size: $font-size-100;
-                                        &_slogan {
-                                            font-size: $font-size-300;
+                                    // Variables
+                                    $primary-color: #3498db;
+                                    $secondary-color: #2ecc71;
+                                    $font-stack: 'Helvetica Neue', sans-serif;
+                                    $base-padding: 1rem;
+
+                                    // Mixins
+                                    @mixin button($bg-color) {
+                                        background-color: $bg-color;
+                                        color: #fff;
+                                        padding: $base-padding;
+                                        border: none;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            opacity: 0.85;
                                         }
+                                    }
+
+                                    // Funciones
+                                    @function rem($px) {
+                                        @return $px / 16 * 1rem;
+                                    }
+
+                                    // Anidación de selectores y herencia
+                                    .card {
+                                        font-family: $font-stack;
+                                        padding: rem(24);
+                                        border: 1px solid lighten($primary-color, 30%);
+
+                                        h2 {
+                                            color: $primary-color;
+                                            margin-bottom: rem(12);
+                                        }
+
+                                        p {
+                                            color: darken($primary-color, 20%);
+                                        }
+                                    }
+
+                                    // Extends
+                                    %flex-center {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                    .header {
+                                        @extend %flex-center;
+
+                                        background: $secondary-color;
+                                        height: rem(60);
+                                    }
+
+                                    // Usando un mixin
+                                    .btn-primary {
+                                        @include button($primary-color);
+                                    }
+
+                                    .btn-secondary {
+                                        @include button($secondary-color);
                                     }
                                 </code>
                             </pre>
@@ -247,9 +342,14 @@
                             <pre>
                                 <code class="language-php">
                                     &lt;?php
-                                        $nombre = "Rick";
-                                    
-                                        echo "¡Hola, $nombre!";
+                                    $users = [
+                                        ["name" =&gt; "Ana", "email" =&gt; "ana@example.com"],
+                                        ["name" =&gt; "Luis", "email" =&gt; "luis@example.com"],
+                                    ];
+
+                                    foreach ($users as $user) {
+                                        echo "Usuario: " . $user["name"] . "&lt;br&gt;";
+                                    }
                                     ?&gt;
                                 </code>
                             </pre>
@@ -280,9 +380,75 @@
                                     git checkout -b nueva-rama
                                 
                                     # Hacer commit y subir cambios
-                                    git add .
+                                    git add -A
                                     git commit -m "Agrega nueva funcionalidad"
-                                    git push origin nueva-rama
+                                    git push origin main
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_window-json" class="editor_window">
+                            <pre>
+                                <code class="language-json">
+                                    [
+                                        {
+                                            "id": 1,
+                                            "nombre": "Juan Pérez",
+                                            "email": "juan.perez@example.com",
+                                            "activo": true,
+                                            "rol": "administrador",
+                                            "telefono": "+52 55 1234 5678",
+                                            "direccion": {
+                                                "calle": "Av. Reforma",
+                                                "numero": 123,
+                                                "ciudad": "Ciudad de México",
+                                                "codigo_postal": "01000"
+                                            }
+                                        },
+                                        {
+                                            "id": 2,
+                                            "nombre": "Ana Gómez",
+                                            "email": "ana.gomez@example.com",
+                                            "activo": false,
+                                            "rol": "editor",
+                                            "telefono": "+52 33 9876 5432",
+                                            "direccion": {
+                                                "calle": "Calle Independencia",
+                                                "numero": 456,
+                                                "ciudad": "Guadalajara",
+                                                "codigo_postal": "44100"
+                                            }
+                                        },
+                                        {
+                                            "id": 3,
+                                            "nombre": "Carlos Martínez",
+                                            "email": "carlos.martinez@example.com",
+                                            "activo": true,
+                                            "rol": "usuario",
+                                            "telefono": "+52 81 1122 3344",
+                                            "direccion": {
+                                                "calle": "Blvd. Solidaridad",
+                                                "numero": 789,
+                                                "ciudad": "Monterrey",
+                                                "codigo_postal": "64000"
+                                            }
+                                        }
+                                    ]
+                                </code>
+                            </pre>
+                        </div>
+                        <div id="editor_window-sql" class="editor_window">
+                            <pre>
+                                <code class="language-sql">
+                                    CREATE TABLE users (
+                                        id INT PRIMARY KEY AUTO_INCREMENT,
+                                        name VARCHAR(50),
+                                        email VARCHAR(100) UNIQUE
+                                    );
+
+                                    INSERT INTO users (name, email)
+                                    VALUES ('Ana', 'ana@example.com'), ('Luis', 'luis@example.com');
+
+                                    SELECT * FROM users WHERE email LIKE '%@example.com';
                                 </code>
                             </pre>
                         </div>
@@ -382,7 +548,7 @@
             </nav>
         </div>
         <div class="footerCopy">
-            <span>© <span id="year"></span> proferick.com</span> | <span>Diseñado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
+            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span> | <span>Diseñado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
         </div>
     </footer>
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">

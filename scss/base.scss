@@ -1,31 +1,90 @@
-/* Import Fonts */
-@import './fonts/inter';
-$font-body: 'Inter', sans-serif;
-@import './fonts/satisfy';
-$font-title: 'Satisfy', 'Inter', sans-serif;
-
 /* Abstract */
-@import './abstract/variables';
-@import './abstract/utilities';
+@use './abstract/variables' as var;
+@use './abstract/utilities';
 
-/* Components */
-@import './components/buttons';
+// import defaults and using an alias
+//@use 'defaults' as d;
+
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Helvetica Neue', sans-serif;
+$base-padding: 1rem;
+
+// Mixin
+@mixin button($bg-color) {
+    background-color: $bg-color;
+    color: #fff;
+    padding: $base-padding;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+// Function
+    @function rem($px) {
+    @return $px / 16 * 1rem;
+}
+
+// Nesting & Selector Inheritance
+.card {
+    font-family: $font-stack;
+    padding: rem(24);
+    border: 1px solid lighten($primary-color, 30%);
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: rem(12);
+    }
+
+    p {
+        color: darken($primary-color, 20%);
+    }
+}
+
+// Extend
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    @extend %flex-center;
+
+    background: $secondary-color;
+    height: rem(60);
+}
+
+// Using mixin
+.btn-primary {
+    @include button($primary-color);
+}
+
+.btn-secondary {
+    @include button($secondary-color);
+}
 
 /*************************/
 /*** Header and Footer ***/
 /*************************/
 
 body {
-    font-family: $font-body;
-    font-size: $fs-6;
-    background-color: $clr-bg;
+    font-family: var.$font-body;
+    font-size: var.$fs-6;
+    background-color: var.$clr-bg;
 }
 #mainHeader {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    inset: 0 0 auto 0;
     z-index: 2;
-    background-color: $clr-primary;
-    border-bottom: 1pt solid $clr-black;
+    height: var.$header-height;
+    background-color: var.$clr-primary;
+    border-bottom: 1pt solid var.$clr-black;
     .innerHeader {
         @extend %container;
         display: flex;
@@ -34,40 +93,69 @@ body {
         .logo {
             height: 3.25rem;
         }
-    }   
-}
-.primaryNav {
-    li {
-        a {
-            color: $clr-black;
-            &.contact {
-                color: $clr-white;
-                background-color: $clr-accent;
+        .primaryNav {
+            li {
+                a {
+                    color: var.$clr-black;
+                    &.contact {
+                        color: var.$clr-white;
+                        background-color: var.$clr-accent;
+                        border: 1pt solid var.$clr-black;
+                    }
+                }
+                &.subMenu .icon-down {
+                    font-size: 15px
+                }
             }
         }
-        &.subMenu .icon-down {
-            font-size: 15px
-        }
-    }
+    }   
 }
-.contentContainer {
-    @extend %container;
-    > section {
-        padding-top: calc($gap-double + $gap);
+#content {
+    padding-top: var.$header-height;
+    .contentContainer {
+        @extend %container;
+        > section {
+            padding-top: calc(var.$gap-double + var.$gap);
+        }
     }
 }
 .heading {
-    margin-block: $gap-double $gap;
-    font-size: $fs-2;
+    margin-block: var.$gap-double var.$gap;
+    font-size: var.$fs-2;
 }
 .subheading {
-    margin-block: 0 $gap-double;
-    font-size: $fs-5;
+    margin-block: 0 var.$gap-double;
+    font-size: var.$fs-5;
+}
+#backToTop {
+    --thisOffset: 2rem;
+    position: fixed;
+    bottom: var(--thisOffset);
+    right: var(--thisOffset);
+    width: 4rem;
+    aspect-ratio: 1;
+    border-radius: var.$round;
+    background-color: var.$clr-accent;
+    cursor: pointer;
+    border: none;
+    transition: var.$transition-time;
+    .icon-backToTop {
+        color: var.$clr-white;
+        font-size: 35px;
+    }
+    &[aria-hidden="true"] {
+        visibility: hidden;
+        opacity: 0;
+    }
+    &[aria-hidden="false"] {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 footer {
-    color: $clr-white;
-    background: $clr-secondary; // fallback
-    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
+    color: var.$clr-white;
+    background: var.$clr-secondary; // fallback
+    background: linear-gradient(90deg, var.$clr-secondary 0, darken(var.$clr-secondary, 10%) 70%);
     a {
         color: inherit;
     }
@@ -83,16 +171,16 @@ footer {
         display: flex;
         justify-content: space-around;
         align-items: baseline;
-        gap: $gap;
-        padding-block: $gap-double;
+        gap: var.$gap;
+        padding-block: var.$gap-double;
         .footerNav ul {
             list-style: inside;
             display: flex;
             flex-direction: column;
-            gap: $gap-half;
+            gap: var.$gap-half;
             .footerNavTitle {
-                margin-bottom: $gap-half;
-                font-size: $fs-3;
+                margin-bottom: var.$gap-half;
+                font-size: var.$fs-3;
                 font-weight: 700;
             }
         }
@@ -100,34 +188,14 @@ footer {
     .footerCopy {
         padding-block: 0.5rem;
         text-align: center;
+        background-color: darken(var.$clr-secondary, 15%);
         a {
             text-decoration: underline;
-            transition: $transition-time;
+            transition: var.$transition-time;
             &:hover {
-                color: $clr-primary;
+                color: var.$clr-primary;
             }
         }
-    }
-}
-#backToTop {
-    --thisOffset: 2rem;
-    position: fixed;
-    bottom: var(--thisOffset);
-    right: var(--thisOffset);
-    width: 4rem;
-    aspect-ratio: 1;
-    border-radius: $round;
-    background-color: $clr-accent;
-    cursor: pointer;
-    border: none;
-    transition: $transition-time;
-    .icon-backToTop {
-        color: $clr-white;
-        font-size: 35px;
-    }
-    &.invisible {
-        visibility: hidden;
-        opacity: 0;
     }
 }
 
@@ -137,44 +205,50 @@ footer {
 
 /* Hero */
 .hero {
-    padding: $gap-double;
-    color: $clr-white;
+    padding: var.$gap-double;
+    color: var.$clr-white;
     background: url("../img/hero.png") center;
-    text-shadow: 2px 2px 2px $clr-black;
+    background-attachment: fixed;
+    text-shadow: 2px 2px 2px var.$clr-black;
     .heading {
-        font-family: $font-title;
-        font-size: $fs-title;
+        font-family: var.$font-title;
+        font-size: var.$fs-title;
     }
     .subheading {
-        font-size: $fs-3;
+        font-size: var.$fs-3;
     }
-    &_image {
+    &_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    &_brands {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var.$gap-double;
+        img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: contain;
+            border-radius: var.$border-radius;
+        }
+    }
+    &_picture {
         width: 60%;
         aspect-ratio: 1/1.25;
         object-fit: cover;
         object-position: center;
         border-radius: 100%;
     }
-    &_brands {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: $gap-double;
-        img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: contain;
-            border-radius: $border-radius;
-        }
-    }
 }
 
 /* Accordions */
 .accordion {
-    --thisRadius: #{$border-radius};
+    --thisRadius: #{var.$border-radius};
     padding: 10px;
     background-color: #FFF;
-    border: 1pt solid $clr-gray;
+    border: 1pt solid var.$clr-gray;
     border-radius: var(--thisRadius);
     &_item {
         overflow: clip; // for border-radius
@@ -185,25 +259,26 @@ footer {
         }
         &:last-child {
             .accordion_item-head {
-                border-bottom: 1pt solid $clr-gray;
+                border-bottom: 1pt solid var.$clr-gray;
                 border-radius: 0 0 var(--thisRadius) var(--thisRadius);
             }
         }
         &-head {
             padding: 10px;
-            font-size: $fs-5;
-            border: 1pt solid $clr-gray;
+            font-size: var.$fs-6;
+            border: 1pt solid var.$clr-gray;
             border-bottom: none;
-            background-color: $clr-primary;
+            background-color: var.$clr-primary;
             cursor: pointer;
             user-select: none;
             &[aria-selected="true"] {
-                background-color: darken($clr-primary, 5%);
+                font-weight: 700;
+                background-color: darken(var.$clr-primary, 5%);
             }
         }
         &-body {
             display: none;
-            border: 1pt solid $clr-gray;
+            border: 1pt solid var.$clr-gray;
             border-bottom: none;
             overflow: hidden;
             &[aria-expanded="true"] {
@@ -219,19 +294,20 @@ footer {
 .editor {
     display: grid;
     grid-template-rows: 50px 1fr;
-    background: darken($clr-secondary, 10%);
+    border-radius: var.$border-radius;
+    overflow: clip; // for border-radius
     &_tabset {
         list-style-type: none;
         display: flex;
-        background: darken($clr-secondary, 5%);
+        background: var.$clr-editor-tabs;
         li {
-            transition: $transition-time-fast;
+            transition: var.$transition-time-fast;
             &:hover {
-                background: $clr-secondary;
+                background: var.$clr-editor-active-tab;
             }
             &[aria-selected="true"] {
                 position: relative;
-                background: $clr-secondary;
+                background: var.$clr-editor-active-tab;
                 &::after {
                     content: '';
                     position: absolute;
@@ -239,7 +315,7 @@ footer {
                     display: block;
                     width: 100%;
                     height: 2px;
-                    background: $clr-accent;
+                    background: var.$clr-accent;
                 }
             }
         }
@@ -249,7 +325,7 @@ footer {
         a {
             display: block;
             padding: 15px;
-            color: $clr-white;
+            color: var.$clr-white;
             span {
                 margin-left: 10px;
             }
@@ -257,26 +333,13 @@ footer {
     }
     &_display {
         width: 100%;
-        background: darken($clr-secondary, 10%);
+        height: 350px;
+        background: var.$clr-editor-display;
         overflow-x: auto;
         scrollbar-width: thin;
     }
     &_window {
         position: relative;
-        &-toolbar {
-            position: absolute;
-            top: $gap-half;
-            right: $gap-half;
-            &-button {
-                padding: 3px 5px;
-                font-size: $fs-caption;
-                color: $clr-gray;
-                border: none;
-                cursor: pointer;
-                border-radius: $border-radius;
-                background: darken($clr-secondary, 15%);
-            }
-        }
     }
 }
 
@@ -284,10 +347,10 @@ footer {
 .contactForm {
     width: min(35rem, 100%);
     padding: 1rem;
-    border-radius: $border-radius;
+    border-radius: var.$border-radius;
     overflow: hidden;
-    outline: 1pt solid $clr-gray-light;
-    box-shadow: $box-shadow;
+    outline: 1pt solid var.$clr-gray-light;
+    box-shadow: var.$box-shadow;
     background-color: #FFF;
     fieldset {
         border: none;
@@ -295,14 +358,14 @@ footer {
             display: block;
         }
         span {
-            font-size: $fs-5;
+            font-size: var.$fs-5;
             cursor: pointer;
             &[aria-errormessage] { /* Hidden by default */ 
                 visibility: hidden;
                 display: none;
                 margin-block: -0.5rem 1.5rem;
-                font-size: $fs-6;
-                color: $clr-error;
+                font-size: var.$fs-6;
+                color: var.$clr-error;
             }
         }
         input:not([type="submit"]), textarea {
@@ -310,14 +373,14 @@ footer {
             width: 100%;
             padding: 0.25rem;
             border: none;
-            outline: 1pt solid $clr-gray;
-            border-radius: $border-radius;
-            background-color: $clr-gray-light;
+            outline: 1pt solid var.$clr-gray;
+            border-radius: var.$border-radius;
+            background-color: var.$clr-gray-light;
             &:focus {
-                outline: 2px solid $clr-secondary;
+                outline: 2px solid var.$clr-secondary;
             }
             &[aria-invalid] {
-                outline: 2px solid $clr-error !important;
+                outline: 2px solid var.$clr-error !important;
                 & + span[aria-errormessage] {
                     visibility: visible;
 		            display: block;
@@ -331,6 +394,8 @@ footer {
         }
         input[type="submit"] {
             margin-inline: auto 0;
+            background-color: var.$clr-accent;
+            border: 1pt solid var.$clr-black;
         }
     }   
 }

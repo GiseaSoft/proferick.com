@@ -1,4 +1,16 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/inter.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satisfy";
+  src: url("../fonts/satisfy/satisfy-regular.ttf");
+  font-display: swap;
+}
+/* Colors */
 /* Sizes */
+/* Font Sizes */
 /* 32px */
 /* 24px */
 /* 22px */
@@ -6,20 +18,18 @@
 /* 18px */
 /* 16px */
 /* 14px */
-/* Colors */
 /* Shapes */
-.primaryNav ul .contact {
+/* Media Queries */
+/* Time */
+/* Extends */
+.primaryNav ul .contact, .btn {
   display: block;
   padding: 5px 15px;
   color: #F5F5F5;
-  background-color: #DA3A2F;
-  border: 1pt solid #2A2A2A;
   cursor: pointer;
   border-radius: 4px;
 }
 
-/* Media Queries */
-/* Time */
 .primaryNav ul {
   display: flex;
   align-items: center;

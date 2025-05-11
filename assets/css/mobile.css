@@ -1,4 +1,16 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/inter.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satisfy";
+  src: url("../fonts/satisfy/satisfy-regular.ttf");
+  font-display: swap;
+}
+/* Colors */
 /* Sizes */
+/* Font Sizes */
 /* 32px */
 /* 24px */
 /* 22px */
@@ -6,10 +18,18 @@
 /* 18px */
 /* 16px */
 /* 14px */
-/* Colors */
 /* Shapes */
 /* Media Queries */
 /* Time */
+/* Extends */
+.btn {
+  display: block;
+  padding: 5px 15px;
+  color: #F5F5F5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 @media (max-width: 64rem) {
   #menuButton {
     position: relative;
@@ -38,14 +58,14 @@
   #menuButton span.bottom {
     top: 75%;
   }
-  #menuButton.menuOpen span.top {
+  #menuButton.open span.top {
     top: 50%;
     rotate: 45deg;
   }
-  #menuButton.menuOpen span.center {
+  #menuButton.open span.center {
     opacity: 0;
   }
-  #menuButton.menuOpen span.bottom {
+  #menuButton.open span.bottom {
     top: 50%;
     rotate: -45deg;
   }
