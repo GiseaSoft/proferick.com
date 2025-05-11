@@ -340,9 +340,6 @@ footer .footerCopy a:hover {
   border: 1pt solid #DDD;
   border-radius: var(--thisRadius);
 }
-.accordion_item {
-  overflow: clip;
-}
 .accordion_item:first-child .accordion_item-head {
   border-radius: var(--thisRadius) var(--thisRadius) 0 0;
 }
@@ -361,7 +358,9 @@ footer .footerCopy a:hover {
 }
 .accordion_item-head[aria-selected=true] {
   font-weight: 700;
-  background-color: #ffeaca;
+  text-decoration: underline;
+  text-decoration-thickness: 2pt;
+  text-decoration-color: #DA3A2F;
 }
 .accordion_item-body {
   display: none;

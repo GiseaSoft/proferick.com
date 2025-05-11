@@ -251,7 +251,6 @@ footer {
     border: 1pt solid var.$clr-gray;
     border-radius: var(--thisRadius);
     &_item {
-        overflow: clip; // for border-radius
         &:first-child {
             .accordion_item-head {
                 border-radius: var(--thisRadius) var(--thisRadius) 0 0;
@@ -273,7 +272,9 @@ footer {
             user-select: none;
             &[aria-selected="true"] {
                 font-weight: 700;
-                background-color: darken(var.$clr-primary, 5%);
+                text-decoration: underline;
+                text-decoration-thickness: 2pt;
+                text-decoration-color: var.$clr-accent
             }
         }
         &-body {
