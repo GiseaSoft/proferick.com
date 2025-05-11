@@ -1,1 +1,6 @@
+#node modules
 /node_modules
+
+#these can be build with "run dev" for expanded or "run build" for minified
+/assets/css
+/assets/js

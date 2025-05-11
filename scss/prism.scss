@@ -1,13 +1,13 @@
 /* PrismJS 1.30.0 https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+bash+ignore+javadoclike+jsdoc+js-extras+json+js-templates+markup-templating+php+phpdoc+php-extras+plsql+jsx+tsx+scss+sql+typescript+typoscript+uri&plugins=line-numbers+normalize-whitespace */
 
 /**********************************************************/
-/*         prism.js Custom theme for proferick.com        */
+/*   prism.js Custom theme for proferick.com @dark-mode   */
 /*          Author: @salegomx | sergiogomez.mx            */
 /*    Heavily inspired on 'Nihgt Owl' theme for VSCode    */
 /**********************************************************/
 
 code[class*="language-"], pre[class*="language-"] {
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: Consolas, Monaco, 'Ubuntu Mono', monospace;
 	font-size: 1.05em;
 	color: white;
 	line-height: 1.5;
@@ -49,16 +49,15 @@ pre[class*="language-"] {
 	}
 	&.tag,
 	&.boolean,
-	&.number,
-	&.deleted {
-		color: #ef6479;
-	}
-	&.keyword,
+	&.deleted
 	&.selector,
 	&.constant,
 	&.symbol,
 	&.builtin {
 		color: #ef6479;
+	}
+	&.number {
+		color: #ff8b24;
 	}
 	&.property {
 		color: #40b28f;
@@ -69,17 +68,20 @@ pre[class*="language-"] {
 	&.operator,
 	&.entity,
 	&.url,
-	&.string,
 	&.variable,
 	&.inserted {
 		color: #48cfa6;
 	}
-	&.atrule {
+	&.atrule,
+	&.function,
+	&.string,
+	&.regex {
 		color: #ffd883;
 	}
-	&.regex,
+	&.keyword,
+	&.function,
 	&.important {
-		color: hsl(42, 75%, 65%);
+		color: #f39eff;
 	}
 	&.important,
 	&.bold {
@@ -126,7 +128,6 @@ pre[class*="language-"] {
 		&.punctuation {
 			color: #ffd700;
 		}
-		&.string,
 		&.function {
 			color: #ffd883;
 		}
@@ -158,9 +159,6 @@ pre[class*="language-"] {
 		&.punctuation {
 			color: #ffd700;
 		}
-		&.string {
-			color: #ffd883;
-		}
 		&.function,
 		&.boolean {
 			color: #ef6479;
@@ -186,10 +184,36 @@ pre[class*="language-"] {
 		&.punctuation {
 			color: #ffd700;
 		}
-		&.string,
 		&.function {
 			color: #ffd883;
 		}
+		&.number {
+			color: #ff8b24;
+		}
+	}
+}
+
+.language-sql {
+	.token {
+		&.keyword {
+			color: #f39eff;
+		}
+		&.punctuation {
+			color: #ffd700;
+		}
+		&.function {
+			color: #09cb8f;
+		}
+		&.number {
+			color: #ff8b24;
+		}&.operator {
+			color: #a0fcf3;
+		}
+	}
+}
+:is(.language-bash, .language.sh, .language-shell) {
+	.token:not(.comment, .prolog, .cdata, .string, .function) {
+		color: #fff;
 	}
 }
 
