@@ -38,7 +38,9 @@
         @extend %btn
     }
 }
-
 .grid-2 {
     grid-template-columns: 55% 1fr;
+}
+#courses.grid-2 { // code editor and courses text
+    grid-template-columns: 70% 1fr;
 }

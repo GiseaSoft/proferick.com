@@ -17,6 +17,10 @@
 :where(ul, ol) {
     list-style: none;
 }
+:is(h1, h2, h3, h4, h5, h6) {
+    font-size: 1em;
+    font-weight: 400;
+}
 .grid-2 {
     display: grid;
     justify-items: center;

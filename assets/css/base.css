@@ -13,7 +13,7 @@
 /* Colors */
 /* Sizes */
 /* Font Sizes */
-/* 32px */
+/* 40px */
 /* 24px */
 /* 22px */
 /* 20px */
@@ -59,6 +59,11 @@
 
 :where(ul, ol) {
   list-style: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .grid-2 {
@@ -121,6 +126,8 @@
 body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
+  color: #2A2A2A;
+  line-height: 1.5;
   background-color: #FDFDFD;
 }
 
@@ -156,43 +163,13 @@ body {
   padding-top: 3.75rem;
 }
 #content .contentContainer > section {
-  padding-top: 45px;
+  padding-top: 75px;
 }
-
-.heading {
-  margin-block: 30px 15px;
-  font-size: 1.5rem;
-}
-
-.subheading {
-  margin-block: 0 30px;
-  font-size: 1.125rem;
-}
-
-#backToTop {
-  --thisOffset: 2rem;
-  position: fixed;
-  bottom: var(--thisOffset);
-  right: var(--thisOffset);
-  width: 4rem;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  background-color: #DA3A2F;
-  cursor: pointer;
-  border: none;
-  transition: 150ms;
-}
-#backToTop .icon-backToTop {
-  color: #F5F5F5;
-  font-size: 35px;
-}
-#backToTop[aria-hidden=true] {
-  visibility: hidden;
-  opacity: 0;
-}
-#backToTop[aria-hidden=false] {
-  visibility: visible;
-  opacity: 1;
+#content .contentContainer :is(a, a:visited, a:focus) {
+  color: #DA3A2F;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: 350ms;
 }
 
 footer {
@@ -203,12 +180,11 @@ footer {
 footer a {
   color: inherit;
 }
-footer .logo, footer .footerEmail {
+footer .logo, footer .logoEmail {
   display: block;
   max-width: 20rem;
   margin-inline: auto;
   text-align: center;
-  text-decoration: underline;
 }
 footer .innerFooter {
   display: flex;
@@ -233,12 +209,60 @@ footer .footerCopy {
   text-align: center;
   background-color: #00171f;
 }
-footer .footerCopy a {
-  text-decoration: underline;
-  transition: 150ms;
+
+/**********************/
+/*** General styles ***/
+/**********************/
+.heading {
+  margin-bottom: 7.5px;
+  font-family: "Satisfy", "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
-footer .footerCopy a:hover {
-  color: #fff4e3;
+
+.subheading {
+  margin-block: 0 15px;
+  font-size: 1.375rem;
+}
+
+.list {
+  padding-block: 15px;
+  list-style: inside;
+}
+
+.paragraph {
+  margin-block: 7.5px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #DA3A2F;
+}
+
+#backToTop {
+  --thisOffset: 2rem;
+  position: fixed;
+  bottom: var(--thisOffset);
+  right: var(--thisOffset);
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: #DA3A2F;
+  cursor: pointer;
+  border: none;
+  transition: 350ms;
+}
+#backToTop .icon-backToTop {
+  color: #F5F5F5;
+  font-size: 35px;
+}
+#backToTop[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+}
+#backToTop[aria-hidden=false] {
+  visibility: visible;
+  opacity: 1;
 }
 
 /****************/
@@ -314,14 +338,16 @@ footer .footerCopy a:hover {
   text-underline-offset: 5px;
 }
 .accordion_item-body {
-  display: none;
+  height: 0;
+  padding-inline: 10px;
   border: 1pt solid #DDD;
   border-bottom: none;
   overflow: hidden;
+  transition: 350ms;
 }
 .accordion_item-body[aria-expanded=true] {
   display: block;
-  padding: 20px 10px;
+  padding-block: 20px;
   height: fit-content;
 }
 
@@ -329,16 +355,23 @@ footer .footerCopy a:hover {
 .editor {
   display: grid;
   grid-template-rows: 50px 1fr;
+  width: 100%;
   border-radius: 4px;
   overflow: clip;
+  scrollbar-width: thin;
+  scrollbar-color: #fff4e3 transparent; /* thumb | track */
 }
 .editor_tabset {
   list-style-type: none;
   display: flex;
+  overflow-y: clip;
+  overflow-x: auto;
   background: #013c52;
 }
 .editor_tabset li {
-  transition: 75ms;
+  flex-shrink: 0;
+  width: fit-content;
+  transition: 175ms;
 }
 .editor_tabset li:hover {
   background: #014E6B;
@@ -362,17 +395,16 @@ footer .footerCopy a:hover {
 .editor_tabset a {
   display: block;
   padding: 15px;
-  color: #F5F5F5;
 }
 .editor_tabset a span {
   margin-left: 10px;
+  color: #F5F5F5;
 }
 .editor_display {
   width: 100%;
-  height: 350px;
+  height: 400px;
   background: #012938;
   overflow-x: auto;
-  scrollbar-width: thin;
 }
 .editor_window {
   position: relative;

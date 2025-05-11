@@ -25,12 +25,12 @@ code[class*="language-"], pre[class*="language-"] {
 	-ms-hyphens: none;
 	hyphens: none;
 	scroll-behavior: contain;
+	scrollbar-width: thin;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 0.5em;
-	overflow: auto;
 	/* Firefox */
 	& ::-moz-selection {
 		background: #305971;

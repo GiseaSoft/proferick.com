@@ -11,7 +11,7 @@
 /* Colors */
 /* Sizes */
 /* Font Sizes */
-/* 32px */
+/* 40px */
 /* 24px */
 /* 22px */
 /* 20px */
@@ -55,7 +55,7 @@
 }
 .primaryNav ul li.subMenu.subMenu:hover a i.icon-down {
   transform: rotate(0.5turn);
-  transition: 150ms;
+  transition: 350ms;
 }
 .primaryNav ul li.subMenu.subMenu:hover ul {
   display: block;
@@ -65,6 +65,10 @@
 }
 .grid-2 {
   grid-template-columns: 55% 1fr;
+}
+
+#courses.grid-2 {
+  grid-template-columns: 70% 1fr;
 }
 
 /*# sourceMappingURL=desktop.css.map */
