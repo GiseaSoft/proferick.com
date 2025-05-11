@@ -1,4 +1,4 @@
-@import './abstract/variables';
+@use './abstract/variables' as var;
 
 .primaryNav ul {
     display: flex;
@@ -11,20 +11,20 @@
             width: 15rem;
             position: absolute;
             top: 1.25rem;
-            border-radius: $border-radius;
-            background-color: $clr-white;
-            outline: 1pt solid $clr-gray;
+            border-radius: var.$border-radius;
+            background-color: var.$clr-white;
+            outline: 1pt solid var.$clr-gray;
             a {
                 display: block;
                 padding: 0.75rem;
                 width: 100%;
-                border-bottom: 1pt solid $clr-gray;
+                border-bottom: 1pt solid var.$clr-gray;
             }
         }
         &.subMenu:hover {
             a i.icon-down {
                 transform: rotate(0.5turn);
-                transition: $transition-time;
+                transition: var.$transition-time;
             }
             ul {
                 display: block;
@@ -41,6 +41,12 @@
 .grid-2 {
     grid-template-columns: 55% 1fr;
 }
-#courses.grid-2 { // code editor and courses text
+
+/*****************************/
+/* Component specific styles */
+/*****************************/
+
+// code editor and courses text
+#courses.grid-2 {
     grid-template-columns: 70% 1fr;
 }

@@ -6,8 +6,8 @@ const primaryNav = document.querySelector('.primaryNav');
 const menuButton = document.getElementById('menuButton');
 
 menuButton.addEventListener('click', () => {
-    primaryNav.classList.toggle('open');
-    menuButton.classList.toggle('open');
+    primaryNav.toggleAttribute('aria-expanded');
+    menuButton.toggleAttribute('aria-expanded');
 });
 
 /******************/
@@ -49,10 +49,16 @@ const closeItemsInAccordion = (thisAccordion) => {
 let code_editors = document.querySelectorAll('.editor');
 
 code_editors.forEach(editor => {
-    let editorTabset  = editor.querySelector('.editor_tabset');
-    let editorTabs    = editorTabset.querySelectorAll('li');
-    let editorDisplay = editor.querySelector('.editor_display');
-    let editorWindows = editorDisplay.querySelectorAll('.editor_window');
+    const editorTabset  = editor.querySelector('.editor_tabset');
+    const editorTabs    = editorTabset.querySelectorAll('li');
+    const editorDisplay = editor.querySelector('.editor_display');
+    const editorWindows = editorDisplay.querySelectorAll('.editor_window');
+
+    // for dragging the tabs
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false;
 
     editorTabs.forEach((tab, i) => {
         if (i === 0) {
@@ -63,12 +69,13 @@ code_editors.forEach(editor => {
     });
 
     editorTabset.addEventListener('click', (e) => {
-        e.preventDefault();
-        let clickedLi = e.target.closest('li');
-        if (!clickedLi) return;
+        if (isDragging) return;
 
-        let clickedTab = clickedLi.querySelector('a');
-        let activeLanguage = document.querySelector(clickedTab.getAttribute('href'));
+        const clickedLi = e.target.closest('li');
+        const clickedTab = clickedLi.querySelector('span');
+        const activeLanguage = document.querySelector(clickedTab.getAttribute('data-target'));
+
+        if (!clickedLi) return;
 
         editorTabs.forEach(tab => {
             tab.setAttribute('aria-selected', 'false');
@@ -81,8 +88,42 @@ code_editors.forEach(editor => {
         activeLanguage.removeAttribute('hidden');
         clickedLi.setAttribute('aria-selected', 'true');
     });
-});
 
+    editorTabset.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false;
+        startX = e.pageX - editorTabset.offsetLeft;
+        scrollLeft = editorTabset.scrollLeft;
+    });
+
+    editorTabset.addEventListener('mouseleave', () => {
+        isDown = false;
+        editorTabset.classList.remove('dragging');
+    });
+
+    editorTabset.addEventListener('mouseup', () => {
+        isDown = false;
+        isDragging = false;
+        editorTabset.classList.remove('dragging');
+    });
+
+    editorTabset.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true;
+        editorTabset.classList.add('dragging');
+        const x = e.pageX - editorTabset.offsetLeft;
+        const walk = x - startX;
+        editorTabset.scrollLeft = scrollLeft - walk;
+    });
+
+    // Evitar que se activen los links si se está arrastrando
+    editorTabset.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            if (isDragging) e.preventDefault();
+        });
+    });
+});
 
 /*******************/
 /*** Back To Top ***/

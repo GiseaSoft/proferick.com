@@ -149,17 +149,17 @@
             <section id="courses" class="grid-2">
                 <div class="editor">
                     <ul class="editor_tabset">
-                        <li><a href="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/code_editor/html.png" alt=""><span>HTML5</span></a></li>
-                        <li><a href="#editor_window-css"><img class="editor_tabset-ico" src="./assets/img/code_editor/css.png" alt=""><span>CSS</span></a></li>
-                        <li><a href="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/code_editor/javascript.png" alt=""><span>JavaScript</span></a></li>
-                        <li><a href="#editor_window-sass"><img class="editor_tabset-ico" src="./assets/img/code_editor/sass.png" alt=""><span>SASS</span></a></li>
-                        <li><a href="#editor_window-bootstrap"><img class="editor_tabset-ico" src="./assets/img/code_editor/bootstrap.png" alt=""><span>Bootstrap</span></a></li>
-                        <li><a href="#editor_window-vuejs"><img class="editor_tabset-ico" src="./assets/img/code_editor/vue.png" alt=""><span>Vue.js</span></a></li>
-                        <li><a href="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/code_editor/php.png" alt=""><span>PHP</span></a></li>
-                        <li><a href="#editor_window-laravel"><img class="editor_tabset-ico" src="./assets/img/code_editor/laravel.png" alt=""><span>Laravel</span></a></li>
-                        <li><a href="#editor_window-git"><img class="editor_tabset-ico" src="./assets/img/code_editor/git.png" alt=""><span>Git y Github</span></a></li>
-                        <li><a href="#editor_window-json"><img class="editor_tabset-ico" src="./assets/img/code_editor/json.png" alt=""><span>JSON</span></a></li>
-                        <li><a href="#editor_window-sql"><img class="editor_tabset-ico" src="./assets/img/code_editor/sql.png" alt=""><span>SQL</span></a></li>
+                        <li><span data-target="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/code_editor/html.png" alt=""><span>HTML5</span></span></li>
+                        <li><span data-target="#editor_window-css"><img class="editor_tabset-ico" src="./assets/img/code_editor/css.png" alt=""><span>CSS</span></span></li>
+                        <li><span data-target="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/code_editor/javascript.png" alt=""><span>JavaScript</span></span></li>
+                        <li><span data-target="#editor_window-sass"><img class="editor_tabset-ico" src="./assets/img/code_editor/sass.png" alt=""><span>SASS</span></span></li>
+                        <li><span data-target="#editor_window-bootstrap"><img class="editor_tabset-ico" src="./assets/img/code_editor/bootstrap.png" alt=""><span>Bootstrap</span></span></li>
+                        <li><span data-target="#editor_window-vuejs"><img class="editor_tabset-ico" src="./assets/img/code_editor/vue.png" alt=""><span>Vue.js</span></span></li>
+                        <li><span data-target="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/code_editor/php.png" alt=""><span>PHP</span></span></li>
+                        <li><span data-target="#editor_window-laravel"><img class="editor_tabset-ico" src="./assets/img/code_editor/laravel.png" alt=""><span>Laravel</span></span></li>
+                        <li><span data-target="#editor_window-git"><img class="editor_tabset-ico" src="./assets/img/code_editor/git.png" alt=""><span>Git y Github</span></span></li>
+                        <li><span data-target="#editor_window-json"><img class="editor_tabset-ico" src="./assets/img/code_editor/json.png" alt=""><span>JSON</span></span></li>
+                        <li><span data-target="#editor_window-sql"><img class="editor_tabset-ico" src="./assets/img/code_editor/sql.png" alt=""><span>SQL</span></span></li>
                     </ul>
                     <div class="editor_display line-numbers">
                         <div id="editor_window-html" class="editor_window">
@@ -573,14 +573,20 @@
             </nav>
             <nav class="footerNav">
                 <ul>
-                    <h2 class="footerNavTitle">Cursos</h2>
+                    <h2 class="footerNavTitle">Cursos Front End</h2>
                     <li><a href="#">HTML</a></li>
                     <li><a href="#">CSS</a></li>
                     <li><a href="#">JavaScript</a></li>
                     <li><a href="#">SASS</a></li>
                     <li><a href="#">Bootstrap</a></li>
+                </ul>
+            </nav>
+            <nav class="footerNav">
+                <ul>
+                    <h2 class="footerNavTitle">Cursos Back End</h2>
                     <li><a href="#">PHP</a></li>
                     <li><a href="#">Laravel</a></li>
+                    <li><a href="#">SQL</a></li>
                     <li><a href="#">GIT & GitHub</a></li>
                 </ul>
             </nav>
@@ -595,7 +601,7 @@
             </nav>
         </div>
         <div class="footerCopy">
-            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span> | <span>Diseñado por el alumno <a class="linkEffect" href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
+            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">|</span><span>Diseñado por el alumno <a class="linkEffect" href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
         </div>
     </footer>
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">

@@ -59,7 +59,7 @@ body {
         }
     }
 }
-footer {
+#mainFooter {
     color: var.$clr-white;
     background: var.$clr-secondary; // fallback
     background: linear-gradient(90deg, var.$clr-secondary 0, darken(var.$clr-secondary, 10%) 70%);
@@ -77,13 +77,16 @@ footer {
         display: flex;
         justify-content: space-around;
         align-items: baseline;
-        gap: var.$gap;
+        flex-wrap: wrap;
+        gap: var.$gap-double;
         padding-block: var.$gap-double;
         .footerNav ul {
+            flex-basis: 300px;
             list-style: inside;
             display: flex;
             flex-direction: column;
             gap: var.$gap-half;
+            margin-bottom: var.$gap-double;
             .footerNavTitle {
                 margin-bottom: var.$gap-half;
                 font-size: var.$fs-3;
@@ -92,8 +95,11 @@ footer {
         }
     }
     .footerCopy {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: var.$gap-half;
         padding-block: 0.5rem;
-        text-align: center;
         background-color: darken(var.$clr-secondary, 15%);
     }
 }
@@ -250,17 +256,36 @@ a:hover {
     border-radius: var.$border-radius;
     overflow: clip; // for border-radius
 	scrollbar-width: thin;
-    scrollbar-color: var.$clr-primary transparent; /* thumb | track */
+    scrollbar-color: var.$clr-primary darken(var.$clr-secondary, 12.5%); /* thumb | track */
     &_tabset {
         list-style-type: none;
         display: flex;
         overflow-y: clip;
         overflow-x: auto;
         background: var.$clr-editor-tabs;
+        scrollbar-width: none;
+        &.dragging {
+            user-select: none !important;
+            li { 
+                cursor: grabbing !important;
+            }
+        }
+        &-ico {
+            width: 15px;
+        }
         li {
             flex-shrink: 0;
             width: fit-content;
             transition: var.$transition-time-fast;
+            cursor: pointer;
+            > span {
+                display: block;
+                padding: 15px;
+                span {
+                    margin-left: 10px;
+                    color: var.$clr-white;
+                }
+            }
             &:hover {
                 background: var.$clr-editor-active-tab;
             }
@@ -276,17 +301,6 @@ a:hover {
                     height: 2px;
                     background: var.$clr-accent;
                 }
-            }
-        }
-        &-ico {
-            width: 15px;
-        }
-        a {
-            display: block;
-            padding: 15px;
-            span {
-                margin-left: 10px;
-                color: var.$clr-white;
             }
         }
     }

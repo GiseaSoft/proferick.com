@@ -1,12 +1,12 @@
-@import './abstract/variables';
+@use './abstract/variables' as var;
 
-@media (max-width: $desktop) {
+@media (max-width: var.$desktop) {
     #menuButton {
         position: relative;
         width: 2.5rem;
         aspect-ratio: 1;
-        background: $clr-primary;
-        border-radius: $border-radius;
+        background: var.$clr-primary;
+        border-radius: var.$border-radius;
         border: none;
         cursor: pointer;
         span {
@@ -15,8 +15,8 @@
             height: 2px;
             width: 80%;
             left: 10%;
-            background-color: $clr-black;
-            transition: $transition-time;
+            background-color: var.$clr-black;
+            transition: var.$transition-time;
             &.top {
                 top: 25%;
             }
@@ -27,7 +27,7 @@
                 top: 75%;
             }
         }
-        &.open {
+        &[aria-expanded] {
             span {
                 &.top {
                     top: 50%;
@@ -49,19 +49,19 @@
         top: 5rem;
         right: 1rem;
         width: 90%;
-        background-color: $clr-white;
-        border-radius: $border-radius;
+        background-color: var.$clr-white;
+        border-radius: var.$border-radius;
         overflow: hidden;
-        outline: 1pt solid $clr-gray;
+        outline: 1pt solid var.$clr-gray;
         li {
             a {
                 display: block;
                 width: 100%;
                 padding: 1rem;
-                border-bottom: 1pt solid $clr-gray;
+                border-bottom: 1pt solid var.$clr-gray;
                 &.contact {
-                    color: $clr-white;
-                    background-color: $clr-accent;
+                    color: var.$clr-white;
+                    background-color: var.$clr-accent;
                 }
             }
             &.subMenu {
@@ -72,17 +72,41 @@
                 }
             }
         }
-        &.menuOpen {
+        &[aria-expanded] {
             display: block;
             box-shadow: 0 0 0 100vmax #000d;
         }
     }
     .hero {
         .heading {
-            font-size: $fs-title-mobile;
+            font-size: var.$fs-title-mobile;
         }
         .subheading {
-            font-size: $fs-4;
+            font-size: var.$fs-4;
         }
+    }
+    /*.innerFooter {
+        flex-direction: column;
+        .footerNav ul {
+            list-style: inside;
+            display: flex;
+            flex-direction: column;
+            gap: var.$gap-half;
+            .footerNavTitle {
+                margin-bottom: var.$gap-half;
+                font-size: var.$fs-3;
+                font-weight: 700;
+            }
+        }
+    }*/
+
+    /*****************************/
+    /* Component specific styles */
+    /*****************************/
+
+    // invert order of text and code editor
+    #courses.grid-2 {
+        display: flex;
+        flex-direction: column-reverse;
     }
 }

@@ -1,3 +1,4 @@
+/* Import Fonts */
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter/inter.ttf");
@@ -58,14 +59,14 @@
   #menuButton span.bottom {
     top: 75%;
   }
-  #menuButton.open span.top {
+  #menuButton[aria-expanded] span.top {
     top: 50%;
     rotate: 45deg;
   }
-  #menuButton.open span.center {
+  #menuButton[aria-expanded] span.center {
     opacity: 0;
   }
-  #menuButton.open span.bottom {
+  #menuButton[aria-expanded] span.bottom {
     top: 50%;
     rotate: -45deg;
   }
@@ -93,7 +94,7 @@
   .primaryNav li.subMenu ul a {
     padding-left: 2rem;
   }
-  .primaryNav.menuOpen {
+  .primaryNav[aria-expanded] {
     display: block;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8666666667);
   }
@@ -102,6 +103,27 @@
   }
   .hero .subheading {
     font-size: 1.25rem;
+  }
+  /*.innerFooter {
+      flex-direction: column;
+      .footerNav ul {
+          list-style: inside;
+          display: flex;
+          flex-direction: column;
+          gap: var.$gap-half;
+          .footerNavTitle {
+              margin-bottom: var.$gap-half;
+              font-size: var.$fs-3;
+              font-weight: 700;
+          }
+      }
+  }*/
+  /*****************************/
+  /* Component specific styles */
+  /*****************************/
+  #courses.grid-2 {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
