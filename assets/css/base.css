@@ -297,11 +297,20 @@ a:hover {
 }
 .hero_brands {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 7.5px;
 }
-.hero_brands img {
+.hero_brands > div {
+  flex-basis: 300px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 7.5px;
+}
+.hero_brands > div img {
   width: 150px;
   aspect-ratio: 16/9;
   object-fit: contain;
@@ -420,6 +429,7 @@ a:hover {
   height: 400px;
   background: #012938;
   overflow-x: auto;
+  scroll-behavior: contain;
 }
 .editor_window {
   position: relative;

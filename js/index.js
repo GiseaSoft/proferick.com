@@ -45,12 +45,13 @@ function hijackSelfLinks() {
 
             const param = link.getAttribute('href');
             const url = new URL(window.location);
+            const historyChangeEvent = new Event('url-change');
 
             url.search = param;
 
             history.replaceState(null, '', url);
             
-            window.dispatchEvent(new Event('url-change'));
+            window.dispatchEvent(historyChangeEvent);
         });
     });
 }

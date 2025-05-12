@@ -69,10 +69,14 @@
                     <h3 class="subheading">Ingeniero de software con <script>document.write(new Date().getFullYear() - 2015)</script> años de experiencia en la industria en puestos como desarrollador Front End, Back End y Fullstack.</h3>
                     
                     <div class="hero_brands">
-                        <img src="./assets/img/brands/ford.png" alt="Ford">
-                        <img src="./assets/img/brands/lincoln.png" alt="Lincoln">
-                        <img src="./assets/img/brands/bridgestone.png" alt="bridgestone">
-                        <img src="./assets/img/brands/vml.png" alt="VML">
+                        <div>
+                            <img src="./assets/img/brands/ford.png" alt="Ford">
+                            <img src="./assets/img/brands/lincoln.png" alt="Lincoln">
+                        </div>
+                        <div>
+                            <img src="./assets/img/brands/bridgestone.png" alt="bridgestone">
+                            <img src="./assets/img/brands/vml.png" alt="VML">
+                        </div>
                     </div>
                 </div>
 
@@ -165,39 +169,32 @@
                         <div id="editor_window-html" class="editor_window">
                             <pre>
                                 <code class="language-markup">
-                                    &lt;!DOCTYPE html&gt;
-                                    &lt;html&gt;
-                                        &lt;head&gt;
-                                            &lt;meta charset="UTF-8"&gt;
-                                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                                            &lt;meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack."&gt;
+                                    &lt;!DOCTYPE html&gt; &lt;!-- Documento HTML5, la estructura principal de toda página web --&gt;
+                                    &lt;html lang="es"&gt;
+                                    &lt;head&gt;
+                                        &lt;!-- Aquí van los archivos que dan estilo y funcionalidad a la página --&gt;
+                                        &lt;meta charset="UTF-8"&gt; &lt;!-- Soporte para ñ, tildes, etc. --&gt;
+                                        &lt;title&gt;Mi primera página&lt;/title&gt;
 
-                                            &lt;title&gt;Proferick.com&lt;/title&gt;
+                                        &lt;!-- Estilo en linea (no recomendado para proyectos grandes) --&gt;
+                                        &lt;style&gt;
+                                            body {
+                                                background: #fafafa;
+                                                color: #333;
+                                                font-family: sans-serif;
+                                            }
+                                        &lt;/style&gt;
+                                    &lt;/head&gt;
+                                    &lt;body&gt;
+                                        &lt;!-- Aquí todo el contenido visible de la página --&gt;
+                                        &lt;h1&gt;¡Hola mundo!&lt;/h1&gt;
+                                        &lt;p&gt;Esta es mi primera página con HTML 😊&lt;/p&gt;
 
-                                            &lt;!-- Estilos --&gt;
-                                            &lt;link rel="stylesheet" href="./css/styles.css" media="screen only"&gt;
-                                            &lt;link rel="stylesheet" href="./css/mobile.css" media="(max-width:64em)"&gt;
-                                            &lt;link rel="stylesheet" href="./css/desktop.css" media="(min-width:64em)"&gt;
-
-                                            &lt;!-- Icono --&gt;
-                                            &lt;link href="./favicon.ico" rel="icon" type="image/x-icon"&gt;
-
-                                            &lt;!-- Estilos en linea --&gt;
-                                            &lt;style&gt;
-                                                body {
-                                                    background-color: #f0f0f0;
-                                                }
-                                            &lt;/style&gt;
-                                        &lt;/head&gt;
-                                        &lt;body&gt;
-                                            &lt;h1 class="titulo" &gt;Profe Rick&lt;/h1&gt;
-                                            &lt;span class="titulo_slogan"&gt;Ingeniero de Software&lt;/span&gt;
-                                            
-                                            &lt;!-- JavaScript en linea --&gt;
-                                            &lt;script&gt;
-                                                console.log("Aprendiendo con el Profe Rick");
-                                            &lt;/script&gt;
-                                        &lt;/body&gt;
+                                        &lt;!-- Código JS simple --&gt;
+                                        &lt;script&gt;
+                                            console.log("Bienvenido al mundo web");
+                                        &lt;/script&gt;
+                                    &lt;/body&gt;
                                     &lt;/html&gt;
                                 </code>
                             </pre>
@@ -205,26 +202,56 @@
                         <div id="editor_window-css" class="editor_window">
                             <pre>
                                 <code class="language-css">
-                                    /* Declarando variables */
+                                    /* Variables reutilizables */
                                     :root {
-                                        --font-size-100: 40px;
-                                        --font-size-200: 32px;
-                                        --font-size-300: 22px;
-                                        --font-size-400: 18px;
-                                    }
-                                    
-                                    /* Estilos */
-                                    .titulo {
-                                        font-size: var(--font-size-100);
+                                        --color-primario: #4caf50;
+                                        --color-texto: #222;
+                                        --espaciado: 1.5rem;
                                     }
 
-                                    .titulo_slogan {
-                                        font-size: var(--font-size-300);
+                                    /* Estilos base */
+                                    body {
+                                        font-family: 'Segoe UI', sans-serif;
+                                        color: var(--color-texto);
+                                        margin: 0;
+                                        padding: var(--espaciado);
                                     }
 
-                                    @media (min-width: 767px) {
-                                        .mobileOnly {
-                                            display; none !important;
+                                    /* Botón animado */
+                                    .boton {
+                                        background-color: var(--color-primario);
+                                        color: white;
+                                        border: none;
+                                        padding: 0.75rem 1.5rem;
+                                        border-radius: 0.5rem;
+                                        cursor: pointer;
+                                        animation: entrada 0.6s ease-out both;
+                                        transition: background 0.3s;
+                                    }
+
+                                    .boton:hover {
+                                        background-color: darkgreen;
+                                    }
+
+                                    /* Animación: fade + slide */
+                                    @keyframes entrada {
+                                        from {
+                                            opacity: 0;
+                                            transform: translateY(20px);
+                                        }
+                                        to {
+                                            opacity: 1;
+                                            transform: translateY(0);
+                                        }
+                                    }
+
+                                    /* Media query: pantallas pequeñas */
+                                    @media (max-width: 767px) {
+                                        body {
+                                            background: #f9f9f9;
+                                        }
+                                        .boton {
+                                            width: 100%;
                                         }
                                     }
                                 </code>
@@ -233,92 +260,73 @@
                         <div id="editor_window-js" class="editor_window">
                             <pre>
                                 <code class="language-js">
-                                    const curso = {
-                                        lenguaje: 'Javascript',
-                                        profesor: 'El Profe Rick',
-                                        dificultad: 'dificil'
-                                    };
+                                    // Esperar a que el DOM (la página web) esté listo
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        const boton = document.querySelector(".boton");
+                                        const mensaje = document.querySelector("#mensaje");
 
-                                    if (curso.profesor === 'El Profe Rick') {
-                                        curso.dificultad = 'fácil';
-                                    }
+                                        // Variables y función moderna (arrow function)
+                                        let clicks = 0;
 
-                                    function print() {
-                                        console.log(`Estoy aprendiendo ${curso.lenguaje} de forma ${curso.dificultad} con ${curso.profesor}`);
-                                    };
+                                        boton.addEventListener("click", () => {
+                                            clicks++;
+                                            mensaje.textContent = `Haz hecho click ${clicks} ${clicks === 1 ? 'vez' : 'veces'}.`;
 
-                                    print();
+                                            // Cambiar estilo dinámicamente
+                                            boton.style.transform = "scale(1.05)";
+                                            setTimeout(() => boton.style.transform = "scale(1)", 150);
+                                        });
+
+                                        // Tip: podrías guardar los clicks en localStorage para mantenerlos al recargar
+                                    });
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-sass" class="editor_window">
                             <pre>
                                 <code class="language-scss">
-                                    // Importamoso 'defaults' usando un alias
-                                    @use 'defaults' as d;
+                                    // Variables para colores y tamaños
+                                    $color-primario: #4a90e2;
+                                    $color-texto: #333;
+                                    $espaciado: 1rem;
 
-                                    // Variables
-                                    $primary-color: #3498db;
-                                    $secondary-color: #2ecc71;
-                                    $font-stack: 'Helvetica Neue', sans-serif;
-                                    $base-padding: 1rem;
-
-                                    // Mixins
-                                    @mixin button($bg-color) {
-                                        background-color: $bg-color;
-                                        color: #fff;
-                                        padding: $base-padding;
-                                        border: none;
-                                        border-radius: 4px;
-                                        cursor: pointer;
-
-                                        &:hover {
-                                            opacity: 0.85;
+                                    // Mixin para media queries reutilizable
+                                    @mixin respond($breakpoint) {
+                                        @if $breakpoint == tablet {
+                                            @media (max-width: 768px) { @content; }
+                                        } @else if $breakpoint == mobile {
+                                            @media (max-width: 480px) { @content; }
                                         }
                                     }
 
-                                    // Funciones
-                                    @function rem($px) {
-                                        @return $px / 16 * 1rem;
-                                    }
-
-                                    // Anidación de selectores y herencia
+                                    // Componente base
                                     .card {
-                                        font-family: $font-stack;
-                                        padding: rem(24);
-                                        border: 1px solid lighten($primary-color, 30%);
-
+                                        background: white;
+                                        padding: $espaciado;
+                                        border-radius: 0.5rem;
+                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                                        color: $color-texto;
                                         h2 {
-                                            color: $primary-color;
-                                            margin-bottom: rem(12);
+                                            color: $color-primario;
+                                            margin-bottom: 0.5rem;
                                         }
-
                                         p {
-                                            color: darken($primary-color, 20%);
+                                            font-size: 1rem;
+                                            line-height: 1.5;
+                                        }
+                                        // Responsive usando mixin
+                                        @include respond(mobile) {
+                                            padding: 0.5rem;
+                                            h2 {
+                                                font-size: 1.2rem;
+                                            }
                                         }
                                     }
 
-                                    // Extends
-                                    %flex-center {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                    }
-
-                                    .header {
-                                        @extend %flex-center;
-
-                                        background: $secondary-color;
-                                        height: rem(60);
-                                    }
-
-                                    // Usando un mixin
-                                    .btn-primary {
-                                        @include button($primary-color);
-                                    }
-
-                                    .btn-secondary {
-                                        @include button($secondary-color);
+                                    // Otra clase que hereda estilos básicos
+                                    .card-destacada {
+                                        @extend .card;
+                                        border-left: 4px solid $color-primario;
                                     }
                                 </code>
                             </pre>
@@ -326,37 +334,89 @@
                         <div id="editor_window-bootstrap" class="editor_window">
                             <pre>
                                 <code class="language-markup">
-                                    &lt;!-- Botón con Bootstrap --&gt;
-                                    &lt;button type="button" class="btn btn-primary"&gt;
-                                        Enviar formulario
-                                    &lt;/button&gt;
-                                
-                                    &lt;!-- Alerta --&gt;
-                                    &lt;div class="alert alert-success" role="alert"&gt;
-                                        Operación completada con éxito
-                                    &lt;/div&gt;
+                                    &lt;!DOCTYPE html&gt;
+                                    &lt;html lang="es"&gt;
+                                    &lt;head&gt;
+                                        &lt;meta charset="UTF-8" /&gt;
+                                        &lt;title&gt;Bootstrap Demo&lt;/title&gt;
+                                        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+                                        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"&gt;
+                                    &lt;/head&gt;
+                                    &lt;body class="bg-light p-4"&gt;
+                                        &lt;div class="container text-center shadow p-4 rounded bg-white"&gt;
+                                            &lt;h1 class="mb-3"&gt;&lt;i class="bi bi-lightning-charge"&gt;&lt;/i&gt; Bootstrap Rocks!&lt;/h1&gt;
+                                        
+                                            &lt;p class="lead"&gt;Diseño rápido, responsivo y elegante con clases listas para usar.&lt;/p&gt;
+                                        
+                                            &lt;button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#extraInfo"&gt;
+                                                Ver más
+                                            &lt;/button&gt;
+
+                                            &lt;div id="extraInfo" class="collapse mt-3"&gt;
+                                                &lt;div class="alert alert-info"&gt;
+                                                    Este contenido se muestra con data-bs-toggle="collapse".
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+
+                                            &lt;div class="row mt-4"&gt;
+                                                &lt;div class="col-md-6"&gt;
+                                                    &lt;div class="border p-3 rounded"&gt;Columna 1&lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="col-md-6"&gt;
+                                                    &lt;div class="border p-3 rounded"&gt;Columna 2&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+                                    &lt;/body&gt;
+                                    &lt;/html&gt;
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-vuejs" class="editor_window">
                             <pre>
                                 <code class="language-markup">
-                                    &lt;template&gt;
-                                        &lt;div&gt;
-                                            &lt;p&gt;Profe {{ nombre }}&lt;/p&gt;
-                                            &lt;input v-model="nombre" /&gt;
-                                        &lt;/div&gt;
-                                    &lt;/template&gt;
-                                
-                                    &lt;script&gt;
-                                        export default {
-                                            data() {
-                                                return {
-                                                    nombre: "Rick"
-                                                };
-                                            }
+                                     &lt;template>
+                                         &lt;div class="counter"&gt;
+                                             &lt;h1 :class="{ danger: count &gt; 5 }"&gt;Contador: {{ count }} &lt;/h1&gt;
+                                             &lt;button @click="count++"&gt;Incrementar &lt;/button&gt;
+                                             &lt;button @click="reset"&gt;Reiniciar &lt;/button&gt;
+                                             &lt;p v-if="isHigh"&gt;¡Ya pasaste de 5! &lt;/p&gt;
+                                         &lt;/div&gt;
+                                     &lt;/template&gt;
+
+                                     &lt;script setup&gt;
+                                        import { ref, computed } from 'vue';
+
+                                        const count = ref(0);
+                                        const isHigh = computed(() =&gt; count.value &gt; 5);
+
+                                        function reset() {
+                                        count.value = 0;
                                         }
-                                    &lt;/script&gt;
+                                     &lt;/script&gt;
+
+                                     &lt;style scoped&gt;
+                                        .counter {
+                                            text-align: center;
+                                            margin: 2rem auto;
+                                            transition: all 0.3s ease;
+                                        }
+                                        button {
+                                            margin: 0.5rem;
+                                            padding: 0.5rem 1rem;
+                                        }
+                                        .danger {
+                                            color: red;
+                                            animation: pulse 0.5s ease;
+                                        }
+                                        @keyframes pulse {
+                                            0% { transform: scale(1); }
+                                            50% { transform: scale(1.1); }
+                                            100% { transform: scale(1); }
+                                        }
+                                     &lt;/style&gt;
                                 </code>
                             </pre>
                         </div>
@@ -364,29 +424,76 @@
                             <pre>
                                 <code class="language-php">
                                     &lt;?php
-                                    $users = [
-                                        ["name" =&gt; "Ana", "email" =&gt; "ana@example.com"],
-                                        ["name" =&gt; "Luis", "email" =&gt; "luis@example.com"],
-                                    ];
+                                        // Función para generar una lista de elementos
+                                        function generarLista($arreglo) {
+                                            echo "&lt;ul&gt;"; // Inicia una lista no ordenada
+                                            foreach ($arreglo as $item) {
+                                                echo "&lt;li&gt;" . $item . "&lt;/li&gt;"; // Imprime cada elemento como un ítem de lista
+                                            }
+                                            echo "&lt;/ul&gt;"; // Cierra la lista
+                                        }
 
-                                    foreach ($users as $user) {
-                                        echo "Usuario: " . $user["name"] . "&lt;br&gt;";
-                                    }
+                                        // Un arreglo con algunos elementos
+                                        $frutas = ["Manzana", "Banano", "Cereza", "Fresa", "Kiwi"];
                                     ?&gt;
+
+                                    &lt;!DOCTYPE html&gt;
+                                    &lt;html lang="es"&gt;
+                                    &lt;head&gt;
+                                        &lt;meta charset="UTF-8"&gt;
+                                        &lt;title&gt;Mi página con PHP avanzado&lt;/title&gt;
+                                        &lt;style&gt;
+                                            body {
+                                                background: #fafafa;
+                                                color: #333;
+                                                font-family: sans-serif;
+                                            }
+                                            ul {
+                                                list-style-type: square;
+                                            }
+                                        &lt;/style&gt;
+                                    &lt;/head&gt;
+                                    &lt;body&gt;
+                                        &lt;h1&gt;Lista de Frutas&lt;/h1&gt;
+                                        &lt;p&gt;A continuación, se muestra una lista de frutas:&lt;/p&gt;
+
+                                        &lt;?php
+                                            // Llamamos a la función para generar la lista
+                                            generarLista($frutas);
+                                        ?&gt;
+
+                                        &lt;p&gt;Este ejemplo muestra cómo recorrer un arreglo en PHP.&lt;/p&gt;
+
+                                    &lt;/body&gt;
+                                    &lt;/html&gt;
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-laravel" class="editor_window">
                             <pre>
                                 <code class="language-php">
-                                    // Ruta en web.php
-                                    Route::get('/usuarios', [UsuarioController::class, 'index']);
-                                
-                                    // Controlador
-                                    class UsuarioController extends Controller {
-                                        public function index() {
-                                            $usuarios = Usuario::all();
-                                            return view('usuarios.index', compact('usuarios'));
+                                    // routes/web.php
+                                    use App\Http\Controllers\FrutaController;
+
+                                    // Definimos una ruta que ejecuta el método 'index' del controlador FrutaController
+                                    Route::get('/frutas', [FrutaController::class, 'index']);
+
+                                    // app/Http/Controllers/FrutaController.php
+
+                                    namespace App\Http\Controllers;
+
+                                    use Illuminate\Http\Request;
+
+                                    class FrutaController extends Controller
+                                    {
+                                        // Método que maneja la solicitud GET para la ruta /frutas
+                                        public function index()
+                                        {
+                                            // Creamos un arreglo con nombres de frutas
+                                            $frutas = ["Manzana", "Banano", "Cereza", "Fresa", "Kiwi"];
+
+                                            // Pasamos el arreglo a la vista 'frutas.blade.php'
+                                            return view('frutas', compact('frutas'));
                                         }
                                     }
                                 </code>
@@ -395,88 +502,149 @@
                         <div id="editor_window-git" class="editor_window">
                             <pre>
                                 <code class="language-bash">
-                                    # Clonar un repositorio
-                                    git clone https://github.com/usuario/proyecto.git
-                                
-                                    # Crear una nueva rama
+                                    # 1. Inicializar un nuevo repositorio Git en tu proyecto
+                                    git init
+
+                                    # 2. Ver el estado actual de los archivos en tu repositorio
+                                    git status
+
+                                    # 3. Añadir archivos al área de preparación (staging area)
+                                    git add archivo.txt  # Añadir un archivo específico
+                                    git add .            # Añadir todos los archivos modificados
+
+                                    # 4. Hacer un commit con un mensaje que describa los cambios
+                                    git commit -m "Añadir archivo de configuración"
+
+                                    # 5. Ver el historial de commits
+                                    git log
+
+                                    # 6. Configurar tu nombre y correo (solo necesario si es tu primera vez usando Git)
+                                    git config --global user.name "Tu Nombre"
+                                    git config --global user.email "tuemail@dominio.com"
+
+                                    # 7. Vincular tu repositorio local con un repositorio remoto (como GitHub)
+                                    git remote add origin https://github.com/usuario/repositorio.git
+
+                                    # 8. Subir (push) tus cambios al repositorio remoto
+                                    git push -u origin master  # Enviar al branch principal (master)
+
+                                    # 9. Obtener (pull) los cambios más recientes desde el repositorio remoto
+                                    git pull origin master  # Obtener cambios del branch principal (master)
+
+                                    # 10. Crear una nueva rama para trabajar en nuevas características
                                     git checkout -b nueva-rama
-                                
-                                    # Hacer commit y subir cambios
-                                    git add -A
-                                    git commit -m "Agrega nueva funcionalidad"
-                                    git push origin main
+
+                                    # 11. Cambiar a una rama existente
+                                    git checkout master  # Cambiar a la rama principal (master)
+
+                                    # 12. Fusionar (merge) cambios de una rama a la rama actual
+                                    git merge nueva-rama  # Fusionar los cambios de 'nueva-rama' a 'master'
+
+                                    # 13. Eliminar una rama local que ya no necesitas
+                                    git branch -d nueva-rama  # Elimina la rama local 'nueva-rama'
+
+                                    # 14. Ver las ramas existentes en tu repositorio
+                                    git branch
+
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-json" class="editor_window">
                             <pre>
                                 <code class="language-json">
-                                    [
-                                        {
-                                            "id": 1,
-                                            "nombre": "Juan Pérez",
-                                            "email": "juan.perez@example.com",
-                                            "activo": true,
-                                            "rol": "administrador",
-                                            "telefono": "+52 55 1234 5678",
-                                            "direccion": {
-                                                "calle": "Av. Reforma",
-                                                "numero": 123,
-                                                "ciudad": "Ciudad de México",
-                                                "codigo_postal": "01000"
+                                    {
+                                        "tienda": {
+                                            "nombre": "Mi Tienda Online",  // Nombre de la tienda
+                                            "direccion": "Av. Principal 123, Ciudad XYZ",  // Dirección de la tienda
+                                            "telefono": "+1 234 567 890",  // Número de teléfono de contacto
+                                            "correo": "contacto@mitienda.com",  // Correo de contacto
+                                            "productos": [  // Lista de productos disponibles en la tienda
+                                            {
+                                                "id": 1,  // Identificador único del producto
+                                                "nombre": "Camiseta",  // Nombre del producto
+                                                "descripcion": "Camiseta de algodón, color azul",  // Descripción del producto
+                                                "precio": 19.99,  // Precio del producto
+                                                "categoria": "Ropa",  // Categoría del producto (por ejemplo, ropa, calzado)
+                                                "disponible": true,  // Si el producto está disponible (true o false)
+                                                "tallas": ["S", "M", "L", "XL"],  // Opciones de tallas disponibles para este producto
+                                                "colores": ["Azul", "Rojo", "Verde"]  // Colores disponibles para este producto
+                                            },
+                                            {
+                                                "id": 2,  // Identificador único del producto
+                                                "nombre": "Zapatos Deportivos",  // Nombre del producto
+                                                "descripcion": "Zapatos cómodos para correr",  // Descripción del producto
+                                                "precio": 49.99,  // Precio del producto
+                                                "categoria": "Calzado",  // Categoría del producto
+                                                "disponible": true,  // Si el producto está disponible
+                                                "tallas": [38, 39, 40, 41],  // Tallas disponibles para el calzado
+                                                "colores": ["Negro", "Blanco", "Azul"]  // Colores disponibles para el calzado
+                                            },
+                                            {
+                                                "id": 3,  // Identificador único del producto
+                                                "nombre": "Mochila",  // Nombre del producto
+                                                "descripcion": "Mochila con varios compartimientos",  // Descripción del producto
+                                                "precio": 29.99,  // Precio del producto
+                                                "categoria": "Accesorios",  // Categoría del producto
+                                                "disponible": false,  // El producto no está disponible
+                                                "tallas": ["Única"],  // Solo hay una talla disponible
+                                                "colores": ["Negro", "Gris"]  // Colores disponibles para la mochila
                                             }
-                                        },
-                                        {
-                                            "id": 2,
-                                            "nombre": "Ana Gómez",
-                                            "email": "ana.gomez@example.com",
-                                            "activo": false,
-                                            "rol": "editor",
-                                            "telefono": "+52 33 9876 5432",
-                                            "direccion": {
-                                                "calle": "Calle Independencia",
-                                                "numero": 456,
-                                                "ciudad": "Guadalajara",
-                                                "codigo_postal": "44100"
-                                            }
-                                        },
-                                        {
-                                            "id": 3,
-                                            "nombre": "Carlos Martínez",
-                                            "email": "carlos.martinez@example.com",
-                                            "activo": true,
-                                            "rol": "usuario",
-                                            "telefono": "+52 81 1122 3344",
-                                            "direccion": {
-                                                "calle": "Blvd. Solidaridad",
-                                                "numero": 789,
-                                                "ciudad": "Monterrey",
-                                                "codigo_postal": "64000"
-                                            }
+                                            ]
                                         }
-                                    ]
+                                    }
                                 </code>
                             </pre>
                         </div>
                         <div id="editor_window-sql" class="editor_window">
                             <pre>
                                 <code class="language-sql">
-                                    CREATE TABLE users (
-                                        id INT PRIMARY KEY AUTO_INCREMENT,
-                                        name VARCHAR(50),
-                                        email VARCHAR(100) UNIQUE
+                                    -- Crear una base de datos llamada 'tienda_online'
+                                    CREATE DATABASE tienda_online;
+
+                                    -- Seleccionar la base de datos 'tienda_online' para usarla
+                                    USE tienda_online;
+
+                                    -- Crear una tabla llamada 'productos' para almacenar información de productos
+                                    CREATE TABLE productos (
+                                        id INT AUTO_INCREMENT PRIMARY KEY,  -- 'id' es la clave primaria y se incrementa automáticamente
+                                        nombre VARCHAR(100),  -- 'nombre' es un campo de texto (hasta 100 caracteres)
+                                        descripcion TEXT,  -- 'descripcion' es un campo de texto más largo
+                                        precio DECIMAL(10, 2),  -- 'precio' es un número decimal con hasta 10 dígitos, 2 de ellos después del punto
+                                        categoria VARCHAR(50),  -- 'categoria' es un campo de texto (hasta 50 caracteres)
+                                        disponible BOOLEAN  -- 'disponible' es un valor booleano (true o false)
                                     );
 
-                                    INSERT INTO users (name, email)
-                                    VALUES ('Ana', 'ana@example.com'), ('Luis', 'luis@example.com');
+                                    -- Insertar algunos datos de ejemplo en la tabla 'productos'
+                                    INSERT INTO productos (nombre, descripcion, precio, categoria, disponible)
+                                    VALUES
+                                        ('Camiseta', 'Camiseta de algodón, color azul', 19.99, 'Ropa', TRUE),
+                                        ('Zapatos Deportivos', 'Zapatos cómodos para correr', 49.99, 'Calzado', TRUE),
+                                        ('Mochila', 'Mochila con varios compartimientos', 29.99, 'Accesorios', FALSE);
 
-                                    SELECT * FROM COUNT(users) WHERE email LIKE '%@example.com';
+                                    -- Seleccionar todos los productos disponibles (disponible = TRUE)
+                                    SELECT * FROM productos WHERE disponible = TRUE;
+
+                                    -- Actualizar el precio de un producto (por ejemplo, cambiar el precio de la camiseta)
+                                    UPDATE productos
+                                    SET precio = 22.99
+                                    WHERE nombre = 'Camiseta';
+
+                                    -- Eliminar un producto (por ejemplo, eliminar la mochila que ya no está disponible)
+                                    DELETE FROM productos
+                                    WHERE nombre = 'Mochila';
+
+                                    -- Contar el número de productos en la tabla 'productos'
+                                    SELECT COUNT(*) AS total_productos FROM productos;
+
+                                    -- Consultar los productos en una categoría específica, ordenados por precio
+                                    SELECT * FROM productos
+                                    WHERE categoria = 'Ropa'
+                                    ORDER BY precio DESC;  -- Ordenamos de mayor a menor precio
                                 </code>
                             </pre>
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <h2 class="heading">Cursos</h2>
                     <h3 class="subheading">Diseñados para personas que quieren entrar al mundo tech sin rodeos.</h3>
@@ -582,20 +750,20 @@
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Cursos Front End</h2>
-                    <li><a target="_self" href="?editor=courses&course=html">HTML</a></li>
-                    <li><a target="_self" href="?editor=courses&course=css">CSS</a></li>
-                    <li><a target="_self" href="?editor=courses&course=js">JavaScript</a></li>
-                    <li><a target="_self" href="?editor=courses&course=sass">SASS</a></li>
-                    <li><a target="_self" href="?editor=courses&course=bootstrap">Bootstrap</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=html">HTML</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=css">CSS</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=js">JavaScript</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=sass">SASS</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=bootstrap">Bootstrap</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Cursos Back End</h2>
-                    <li><a target="_self" href="?editor=courses&course=php">PHP</a></li>
-                    <li><a target="_self" href="?editor=courses&course=laravel">Laravel</a></li>
-                    <li><a target="_self" href="?editor=courses&course=sql">SQL</a></li>
-                    <li><a target="_self" href="?editor=courses&course=git">GIT & GitHub</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=php">PHP</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=laravel">Laravel</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=sql">SQL</a></li>
+                    <li><a target="_self" href="?editor=courses&tab=git">GIT & GitHub</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">

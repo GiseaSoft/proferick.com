@@ -22,8 +22,6 @@ code[class*=language-], pre[class*=language-] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  scroll-behavior: contain;
-  scrollbar-width: thin;
 }
 
 /* Code blocks */
@@ -165,6 +163,12 @@ pre[class*=language-] ::selection {
 /* PHP */
 .language-php .token.delimiter.important {
   color: #ff4b66;
+}
+.language-php .token.doctype, .language-php .token.tag {
+  color: #ef6479;
+}
+.language-php .token.name, .language-php .token.attr-name {
+  color: #ffd883;
 }
 .language-php .token.variable {
   color: #f0f0f0;

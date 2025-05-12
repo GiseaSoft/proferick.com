@@ -181,15 +181,25 @@ a:hover {
     }
     &_brands {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        gap: var.$gap-double;
-        img {
-            width: 150px;
-            aspect-ratio: 16/9;
-            object-fit: contain;
-            border-radius: var.$border-radius;
+        flex-wrap: wrap;
+        gap: var.$gap-half;
+        > div {
+            flex-basis: 300px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: var.$gap-half;
+            img {
+                width: 150px;
+                aspect-ratio: 16/9;
+                object-fit: contain;
+                border-radius: var.$border-radius;
+            }
         }
+        
     }
     &_picture {
         width: 60%;
@@ -310,6 +320,7 @@ a:hover {
         height: 400px;
         background: var.$clr-editor-display;
         overflow-x: auto;
+        scroll-behavior: contain;
     }
     &_window {
         position: relative;

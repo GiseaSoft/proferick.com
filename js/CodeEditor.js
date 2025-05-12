@@ -51,16 +51,19 @@ function CodeEditor(id, name) {
         activeWindow.removeAttribute('hidden');
     }
 
-    this.listenHistoryStateChange = () => {
-        window.addEventListener('url-change', () => {
-            const urlParams   = new URLSearchParams(window.location.search);
-            const courseParam = urlParams.get('course');
-            const editorParam = urlParams.get('editor');
+    this.onHistoryChange = () => {
+        const urlParams    = new URLSearchParams(window.location.search);
+        const targetEditor = urlParams.get('editor');
+        const targetTab    = urlParams.get('tab');
 
-            if (courseParam && editorParam === _self.name.toString()) {
-                _self.activateTab(courseParam, true);
-            }
-        });
+        if (targetTab && targetEditor === _self.name.toString()) {
+            _self.activateTab(targetTab, true);
+        }
+    }
+
+    this.listenHistoryStateChange = () => {
+        _self.onHistoryChange(); // Runs once on load and listens to evrey url-change
+        window.addEventListener('url-change', _self.onHistoryChange);
     };
 
     document.addEventListener("DOMContentLoaded", _self.initSetup);

@@ -24,8 +24,6 @@ code[class*="language-"], pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-	scroll-behavior: contain;
-	scrollbar-width: thin;
 }
 
 /* Code blocks */
@@ -173,6 +171,14 @@ pre[class*="language-"] {
 	.token {
 		&.delimiter.important {
 			color: #ff4b66;
+		}
+		&.doctype,
+		&.tag {
+			color: #ef6479;
+		}
+		&.name,
+		&.attr-name {
+			color: #ffd883;
 		}
 		&.variable {
 			color: #f0f0f0;
