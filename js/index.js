@@ -1,3 +1,62 @@
+function initDraggableHorizontal() {
+    let draggables = document.querySelectorAll('.draggable-horizontal');
+    let isDown = false;
+    let startX, scrollLeft, isDragging = false;
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('mousedown', (e) => {
+            isDown = true;
+            isDragging = false;
+            startX = e.pageX - draggable.offsetLeft;
+            scrollLeft = draggable.scrollLeft;
+        });
+
+        draggable.addEventListener('mouseleave', () => {
+            isDown = false;
+            draggable.classList.remove('dragging');
+        });
+
+        draggable.addEventListener('mouseup', () => {
+            isDown = false;
+            isDragging = false;
+            draggable.classList.remove('dragging');
+        });
+
+        draggable.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            isDragging = true;
+            draggable.classList.add('dragging');
+            const x = e.pageX - draggable.offsetLeft;
+            const walk = x - startX;
+            draggable.scrollLeft = scrollLeft - walk;
+        });
+    })
+}
+
+initDraggableHorizontal();
+
+function hijackSelfLinks() {
+    let links = document.querySelectorAll('a[target="_self"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const param = link.getAttribute('href');
+            const url = new URL(window.location);
+
+            url.search = param;
+
+            history.replaceState(null, '', url);
+            
+            window.dispatchEvent(new Event('url-change'));
+        });
+    });
+}
+
+hijackSelfLinks();
+
 /*******************/
 /*** Menu Button ***/
 /*******************/
@@ -40,90 +99,19 @@ const closeItemsInAccordion = (thisAccordion) => {
     itemBodies.forEach(item => item.removeAttribute('aria-expanded'));
 };
 
+/********************/
+/*** Code Editors ***/
+/********************/
 
+let editors = document.querySelectorAll('.editor');
+let editorInstances = [];
 
-/****************************/
-/*** Code Editor and Tabs ***/
-/****************************/
-
-let code_editors = document.querySelectorAll('.editor');
-
-code_editors.forEach(editor => {
-    const editorTabset  = editor.querySelector('.editor_tabset');
-    const editorTabs    = editorTabset.querySelectorAll('li');
-    const editorDisplay = editor.querySelector('.editor_display');
-    const editorWindows = editorDisplay.querySelectorAll('.editor_window');
-
-    // for dragging the tabs
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let isDragging = false;
-
-    editorTabs.forEach((tab, i) => {
-        if (i === 0) {
-            tab.setAttribute('aria-selected', 'true');
-        } else {
-            editorWindows[i].setAttribute('hidden', '');
-        }
-    });
-
-    editorTabset.addEventListener('click', (e) => {
-        if (isDragging) return;
-
-        const clickedLi = e.target.closest('li');
-        const clickedTab = clickedLi.querySelector('span');
-        const activeLanguage = document.querySelector(clickedTab.getAttribute('data-target'));
-
-        if (!clickedLi) return;
-
-        editorTabs.forEach(tab => {
-            tab.setAttribute('aria-selected', 'false');
-        })
-
-        editorWindows.forEach(language => {
-            language.setAttribute('hidden', '');
-        });
-
-        activeLanguage.removeAttribute('hidden');
-        clickedLi.setAttribute('aria-selected', 'true');
-    });
-
-    editorTabset.addEventListener('mousedown', (e) => {
-        isDown = true;
-        isDragging = false;
-        startX = e.pageX - editorTabset.offsetLeft;
-        scrollLeft = editorTabset.scrollLeft;
-    });
-
-    editorTabset.addEventListener('mouseleave', () => {
-        isDown = false;
-        editorTabset.classList.remove('dragging');
-    });
-
-    editorTabset.addEventListener('mouseup', () => {
-        isDown = false;
-        isDragging = false;
-        editorTabset.classList.remove('dragging');
-    });
-
-    editorTabset.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        isDragging = true;
-        editorTabset.classList.add('dragging');
-        const x = e.pageX - editorTabset.offsetLeft;
-        const walk = x - startX;
-        editorTabset.scrollLeft = scrollLeft - walk;
-    });
-
-    // Evitar que se activen los links si se está arrastrando
-    editorTabset.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', (e) => {
-            if (isDragging) e.preventDefault();
-        });
-    });
-});
+editors.forEach((editor, index) => {
+    editor.setAttribute('id', `editor_${index}`);
+    const name = editor.getAttribute('editor-name');
+    const instance = new CodeEditor(index, name);
+    editorInstances.push(instance);
+})
 
 /*******************/
 /*** Back To Top ***/

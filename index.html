@@ -147,8 +147,8 @@
                 </div>
             </section>
             <section id="courses" class="grid-2">
-                <div class="editor">
-                    <ul class="editor_tabset">
+                <div class="editor" editor-name="courses">
+                    <ul class="editor_tabset draggable-horizontal">
                         <li><span data-target="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/code_editor/html.png" alt=""><span>HTML5</span></span></li>
                         <li><span data-target="#editor_window-css"><img class="editor_tabset-ico" src="./assets/img/code_editor/css.png" alt=""><span>CSS</span></span></li>
                         <li><span data-target="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/code_editor/javascript.png" alt=""><span>JavaScript</span></span></li>
@@ -495,8 +495,16 @@
                 <h3 class="subheading">Soy Ricardo, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
                 
                 <p class="paragraph">
-                    Llevo más de <script>document.write(new Date().getFullYear() - 2010)</script> años como docente y <script>document.write(new Date().getFullYear() - 2015)</script> años trabajando en la industria como desarrollador Front End, Back End y Fullstack. A lo largo de los años he enseñado a personas de todas las edades: desde niños curiosos hasta adultos que quieren cambiar de carrera. Me encanta enseñar y me tomo en serio el aprendizaje de cada alumno. Soy paciente, didáctico y muy claro al explicar.
-                    Siempre digo que soy el profesor que me hubiera gustado tener: alguien que no solo sepa programar, sino que también sepa enseñar.
+                    Llevo más de <script>document.write(new Date().getFullYear() - 2010)</script> años como docente
+                    y <script>document.write(new Date().getFullYear() - 2015)</script> años trabajando en la industria como desarrollador Front End, Back End y Fullstack.
+                    <br>
+                    A lo largo de los años he enseñado a personas de todas las edades:
+                    desde niños curiosos hasta adultos que quieren cambiar de carrera.
+                    <br><br>
+                    Me encanta enseñar y me tomo en serio el aprendizaje de cada alumno.
+                    Soy paciente, didáctico y muy claro al explicar.
+                    Siempre digo que soy el profesor que me hubiera gustado tener:
+                    alguien que no solo sepa programar, sino que también sepa enseñar.
                 </p>
             </section>
             <section id="contact" class="grid-2">
@@ -564,35 +572,36 @@
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Servicios</h2>
-                    <li><a href="#">Mentorias Front End</a></li>
-                    <li><a href="#">Mentorias Back End</a></li>
-                    <li><a href="#">Reclutamiento en TI</a></li>
-                    <li><a href="#">Creación de CV</a></li>
-                    <li><a href="#">Perfil TI</a></li>
+                    <li><a target="_self" href="?service=frontend">Mentorias Front End</a></li>
+                    <li><a target="_self" href="?service=backend">Mentorias Back End</a></li>
+                    <li><a target="_self" href="?service=reclutamiento">Reclutamiento en TI</a></li>
+                    <li><a target="_self" href="?service=cv">Creación de CV</a></li>
+                    <li><a target="_self" href="?service=perfil">Perfil TI</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Cursos Front End</h2>
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">SASS</a></li>
-                    <li><a href="#">Bootstrap</a></li>
+                    <li><a target="_self" href="?editor=courses&course=html">HTML</a></li>
+                    <li><a target="_self" href="?editor=courses&course=css">CSS</a></li>
+                    <li><a target="_self" href="?editor=courses&course=js">JavaScript</a></li>
+                    <li><a target="_self" href="?editor=courses&course=sass">SASS</a></li>
+                    <li><a target="_self" href="?editor=courses&course=bootstrap">Bootstrap</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Cursos Back End</h2>
-                    <li><a href="#">PHP</a></li>
-                    <li><a href="#">Laravel</a></li>
-                    <li><a href="#">SQL</a></li>
-                    <li><a href="#">GIT & GitHub</a></li>
+                    <li><a target="_self" href="?editor=courses&course=php">PHP</a></li>
+                    <li><a target="_self" href="?editor=courses&course=laravel">Laravel</a></li>
+                    <li><a target="_self" href="?editor=courses&course=sql">SQL</a></li>
+                    <li><a target="_self" href="?editor=courses&course=git">GIT & GitHub</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">
                 <ul>
                     <h2 class="footerNavTitle">Sobre Mí</h2>
+                    <li><a href="#about">Quen soy?</a></li>
                     <li><a href="#">Linked In</a></li>
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">Facebook</a></li>
@@ -607,8 +616,9 @@
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">
         <i class="pri icon-backToTop"></i>
     </button>
-    <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/CodeEditor.js" defer></script>
     <script src="./assets/js/validator.js" defer></script>
     <script src="./assets/js/prism.js" defer></script>
+    <script src="./assets/js/index.js" defer></script>
 </body>
 </html>

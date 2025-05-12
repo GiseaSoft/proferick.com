@@ -117,6 +117,7 @@ body {
 .subheading {
     margin-block: 0 var.$gap;
     font-size: var.$fs-3;
+    text-wrap: balance;
 }
 .list {
     padding-block: var.$gap;
