@@ -9,6 +9,11 @@
   src: url("../fonts/satisfy/satisfy-regular.ttf");
   font-display: swap;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --thisColor: #222;
+  }
+}
 /* Colors */
 /* Sizes */
 /* Font Sizes */

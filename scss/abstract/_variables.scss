@@ -4,6 +4,12 @@ $font-body: 'Inter', sans-serif;
 @use '../fonts/satisfy';
 $font-title: 'Satisfy', 'Inter', sans-serif;
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --thisColor: #222;
+    }
+}
+
 /* Colors */
 $clr-bg: #FDFDFD;
 $clr-white: #F5F5F5;
@@ -17,6 +23,8 @@ $clr-primary: #fff4e3;
 $clr-secondary: #014E6B;
 $clr-accent: #DA3A2F;
 $clr-error: #C30E0E;
+
+$clr-highlight: #ffef02;
 
 $clr-editor-display: darken($clr-secondary, 10%);
 $clr-editor-tabs: darken($clr-secondary, 5%);

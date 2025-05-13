@@ -22,43 +22,42 @@
 <body>
 
 <!---
-    agregar un link de instagram en el footer CONTACTO,
-    efecto hover cuando se acerque ell mouse cambia a los colores reales de IG   y escalarlo
-    abajo del logotipo mostrar correo electronico
-
-    quitar seccion contacto
-
     agregar modo nocturno
 -->
 
     <a class="sr-only" href="#content">Omitir menu e ir al contenido</a>
     <header id="mainHeader">
         <div class="innerHeader">
-            <a href="#index">
+            <a href="/">
                 <img class="logo" src="./assets/img/imagotype_dark.svg" alt="proferick.com">
             </a>
-            <nav id="primaryNav" class="primaryNav">
-                <ul>
-                    <li class="subMenu">
-                        <a href="#services">Servicios <i class="pri icon-down"></i></a>
-                        <ul>
-                            <li><a href="#">Mentorias Front End</a></li>
-                            <li><a href="#">Mentorias Back End</a></li>
-                            <li><a href="#">Reclutamiento en TI</a></li>
-                            <li><a href="#">Creación de CV</a></li>
-                            <li><a href="#">Perfil TI</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#courses">Cursos</a></li>
-                    <li><a href="#about">Sobre mí</a></li>
-                    <li><a href="#contact" class="contact">Contacto</a></li>
-                </ul>
-            </nav>
-            <button id="menuButton" class="mobileOnly" aria-label="Open Menu">
-                <span class="top"></span>
-                <span class="center"></span>
-                <span class="bottom"></span>
-            </button>
+            <div style="display:flex;gap:7.5px;">
+                <button>
+                    Theme
+                </button>
+                <nav id="primaryNav" class="primaryNav">
+                    <ul>
+                        <li class="subMenu">
+                            <a href="#services">Servicios <i class="pri icon-down"></i></a>
+                            <ul>
+                                <li><a href="#">Mentorias Front End</a></li>
+                                <li><a href="#">Mentorias Back End</a></li>
+                                <li><a href="#">Reclutamiento en TI</a></li>
+                                <li><a href="#">Creación de CV</a></li>
+                                <li><a href="#">Perfil TI</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#courses">Cursos</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#contact" class="contact">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button id="menuButton" class="mobileOnly" aria-label="Open Menu">
+                    <span class="top"></span>
+                    <span class="center"></span>
+                    <span class="bottom"></span>
+                </button>
+            </div>
         </div>
     </header>
     <main id="content">
@@ -89,13 +88,13 @@
                 <h3 class="subheading">Aprende desarrollo web con un enfoque práctico y profesional.</h3>
 
                 <p class="paragraph">
-                    Ofrezco <b>clases personalizadas de programación web</b>
-                    con un enfoque completamente práctico y centrado en <b>lo que realmente se usa en la industria.</b>
+                    Ofrezco <em class="highlight">clases personalizadas de programación web</em>
+                    con un enfoque completamente práctico y centrado en <em class="highlight">lo que realmente se usa en la industria.</em>
                     <br><br>
                     Enseño tecnologías como HTML, CSS, JavaScript, Git, Bootstrap entro otras (Puedes revisar mis cursos <a href="#courses">aqui</a>.),
                     <br>
                     Explico de forma clara y con ejercicios hechos a la medida del alumno.
-                    Las clases están disponibles <b>todos los días del año, en horarios flexibles,</b>
+                    Las clases están disponibles todos los días del año, en horarios flexibles,
                     y son ideales para:
                 </p>
                     
@@ -105,33 +104,38 @@
                     <li>Jóvenes que quieren explorar la informática antes de elegir una universidad.</li>
                 </ul>
 
-                <h3 class="subheading">
-                   Otros servicios:
-                </h3>
-
-                <p class="paragraph">
-                    Además, ofrezco asesoramiento para entrevistas técnicas, orientación a padres sobre opciones educativas,
-                    y apoyo en proyectos de software reales.
-                </p>
-
-                <div class="accordion">
-                    <div class="accordion_item">
-                        <div class="accordion_item-head">Mentorias Front End</div>
-                        <div class="accordion_item-body">
-                            Pensado para desarrolladores que ya trabajan en Front End pero se sienten estancados. Te ayudo a resolver problemas reales que enfrentas en tus proyectos, desde manejar estados complejos hasta mejorar la arquitectura del código. Vemos herramientas modernas, buenas prácticas y cómo trabajar como lo hacen en las empresas grandes.
+                <div class="grid-2">
+                    <div>
+                        <div class="accordion">
+                            <div class="accordion_item">
+                                <div class="accordion_item-head">Mentorias Front End</div>
+                                <div class="accordion_item-body">
+                                    Pensado para desarrolladores que ya trabajan en Front End pero se sienten estancados. Te ayudo a resolver problemas reales que enfrentas en tus proyectos, desde manejar estados complejos hasta mejorar la arquitectura del código. Vemos herramientas modernas, buenas prácticas y cómo trabajar como lo hacen en las empresas grandes.
+                                </div>
+                            </div>
+                            <div class="accordion_item">
+                                <div class="accordion_item-head">Mentorias Back End</div>
+                                <div class="accordion_item-body">
+                                    Si ya estás trabajando con servidores, bases de datos o APIs pero te trabas con ciertos temas, te ayudo a avanzar. Revisamos juntos tus dudas, errores comunes, y cómo estructurar mejor tus proyectos. También podemos ver seguridad, rendimiento y cómo pensar como un desarrollador sénior.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion_item">
-                        <div class="accordion_item-head">Mentorias Back End</div>
-                        <div class="accordion_item-body">
-                            Si ya estás trabajando con servidores, bases de datos o APIs pero te trabas con ciertos temas, te ayudo a avanzar. Revisamos juntos tus dudas, errores comunes, y cómo estructurar mejor tus proyectos. También podemos ver seguridad, rendimiento y cómo pensar como un desarrollador sénior.
-                        </div>
+                    <div>
+                        <h3 class="subheading">
+                            Otros servicios:
+                        </h3>
+
+                        <p class="paragraph">
+                            Además, ofrezco asesoramiento para entrevistas técnicas, orientación a padres sobre opciones educativas,
+                            y apoyo en proyectos de software reales.
+                        </p>
                     </div>
                 </div>
                 <br>
                 <div class="accordion">
                     <div class="accordion_item">
-                        <div class="accordion_item-head">Reclutamiento en TI</div>
+                        <div class="accordion_item-head">Reclutamiento en Tecnologías de la Información</div>
                         <div class="accordion_item-body">
                             Construye tu equipo de desarrolladores, te ayudo a conseguir tus desarrolladores y como gestionarlos, te apoyamos con el rango de precios por tecnología, experiencia e idiomas, las tecnologías que necesita el puesto por stack de tecnología garantizando su éxito en cada paso.
                         </div>
@@ -143,7 +147,7 @@
                         </div>
                     </div>
                     <div class="accordion_item">
-                        <div class="accordion_item-head">Perfil TI</div>
+                        <div class="accordion_item-head">Perfilamiento Técnico</div>
                         <div class="accordion_item-body">
                             Te asesoro para que construyas un perfil profesional sólido en plataformas como LinkedIn, GitHub y otros canales donde los reclutadores buscan talento. Te doy consejos reales y te muestro cómo mostrar tus proyectos, cómo describir tus habilidades, y cómo generar presencia en línea que te abra puertas en la industria.
                         </div>
@@ -186,7 +190,7 @@
                                         &lt;/style&gt;
                                     &lt;/head&gt;
                                     &lt;body&gt;
-                                        &lt;!-- Aquí todo el contenido visible de la página --&gt;
+                                        &lt;!-- Aquí ponemos todo el contenido visible de la página --&gt;
                                         &lt;h1&gt;¡Hola mundo!&lt;/h1&gt;
                                         &lt;p&gt;Esta es mi primera página con HTML 😊&lt;/p&gt;
 
@@ -652,7 +656,7 @@
                     <p class="paragraph">
                         Todo lo que enseño está pensado para que puedas conseguir trabajo o mejorar en el que ya tienes.
                         <br><br>
-                        Mis cursos son prácticos, actualizados y enfocados en lo que realmente se usa en la industria.
+                        Mis cursos son <em class="highlight">prácticos, actualizados y enfocados en lo que realmente se usa en la industria</em>.
                         Te explico paso a paso, con ejemplos reales y acompañamiento cercano.
                         Aprendes a programar como se trabaja en la vida real, no con ejercicios escolares que no te preparan para el mercado.
                     </p>
@@ -663,8 +667,8 @@
                 <h3 class="subheading">Soy Ricardo, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
                 
                 <p class="paragraph">
-                    Llevo más de <script>document.write(new Date().getFullYear() - 2010)</script> años como docente
-                    y <script>document.write(new Date().getFullYear() - 2015)</script> años trabajando en la industria como desarrollador Front End, Back End y Fullstack.
+                    Llevo más de <em class="highlight"><script>document.write(new Date().getFullYear() - 2010)</script> años como docente
+                    y <script>document.write(new Date().getFullYear() - 2015)</script> años trabajando en la industria</em> como desarrollador Front End, Back End y Fullstack.
                     <br>
                     A lo largo de los años he enseñado a personas de todas las edades:
                     desde niños curiosos hasta adultos que quieren cambiar de carrera.
@@ -778,7 +782,7 @@
             </nav>
         </div>
         <div class="footerCopy">
-            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">|</span><span>Diseñado por el alumno <a class="linkEffect" href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
+            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">|</span><span>Creado por el alumno <a class="linkEffect" href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
         </div>
     </footer>
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">

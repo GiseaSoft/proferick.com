@@ -1,62 +1,13 @@
-function initDraggableHorizontal() {
-    let draggables = document.querySelectorAll('.draggable-horizontal');
-    let isDown = false;
-    let startX, scrollLeft, isDragging = false;
+function setThemePreference() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        console.log('Dark please');
+        return;
+    }
 
-    draggables.forEach(draggable => {
-        draggable.addEventListener('mousedown', (e) => {
-            isDown = true;
-            isDragging = false;
-            startX = e.pageX - draggable.offsetLeft;
-            scrollLeft = draggable.scrollLeft;
-        });
-
-        draggable.addEventListener('mouseleave', () => {
-            isDown = false;
-            draggable.classList.remove('dragging');
-        });
-
-        draggable.addEventListener('mouseup', () => {
-            isDown = false;
-            isDragging = false;
-            draggable.classList.remove('dragging');
-        });
-
-        draggable.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            isDragging = true;
-            draggable.classList.add('dragging');
-            const x = e.pageX - draggable.offsetLeft;
-            const walk = x - startX;
-            draggable.scrollLeft = scrollLeft - walk;
-        });
-    })
+    console.log('Lighter please!!');
 }
 
-initDraggableHorizontal();
-
-function hijackSelfLinks() {
-    let links = document.querySelectorAll('a[target="_self"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const param = link.getAttribute('href');
-            const url = new URL(window.location);
-            const historyChangeEvent = new Event('url-change');
-
-            url.search = param;
-
-            history.replaceState(null, '', url);
-            
-            window.dispatchEvent(historyChangeEvent);
-        });
-    });
-}
-
-hijackSelfLinks();
+setThemePreference();
 
 /*******************/
 /*** Menu Button ***/

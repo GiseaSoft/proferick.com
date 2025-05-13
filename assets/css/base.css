@@ -10,6 +10,11 @@
   src: url("../fonts/satisfy/satisfy-regular.ttf");
   font-display: swap;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --thisColor: #222;
+  }
+}
 /* Colors */
 /* Sizes */
 /* Font Sizes */
@@ -121,8 +126,13 @@
   }
 }
 /*************************/
-/*** Header and Footer ***/
+/*** Base layout ***/
 /*************************/
+::selection {
+  background: rgba(218, 58, 47, 0.85) !important;
+  color: #F5F5F5 !important;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
@@ -225,6 +235,11 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
 }
+.heading:not(.hero .heading) {
+  display: inline;
+  text-decoration: 2px underline #DA3A2F;
+  text-underline-offset: 5px;
+}
 
 .subheading {
   margin-block: 0 15px;
@@ -239,6 +254,13 @@ body {
 
 .paragraph {
   margin-block: 7.5px;
+}
+
+.highlight {
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(-100deg, rgba(255, 239, 2, 0.25), rgba(255, 239, 2, 0.4) 20%, rgba(255, 239, 2, 0.4) 80%, rgba(255, 239, 2, 0.3));
 }
 
 a:hover {
@@ -332,11 +354,13 @@ a:hover {
   border: 1pt solid #DDD;
   border-radius: var(--thisRadius);
 }
-.accordion_item:first-child .accordion_item-head {
+.accordion_item {
+  overflow: hidden;
+}
+.accordion_item:first-child {
   border-radius: var(--thisRadius) var(--thisRadius) 0 0;
 }
-.accordion_item:last-child .accordion_item-head {
-  border-bottom: 1pt solid #DDD;
+.accordion_item:last-child {
   border-radius: 0 0 var(--thisRadius) var(--thisRadius);
 }
 .accordion_item-head {
@@ -357,7 +381,7 @@ a:hover {
   height: 0;
   padding-inline: 10px;
   border: 1pt solid #DDD;
-  border-bottom: none;
+  border-top: none;
   overflow: hidden;
   transition: 350ms;
 }
