@@ -57,7 +57,8 @@ body {
             padding-top: calc($gap-double * 2.5);
         }
         :is(a, a:visited, a:focus) {
-            color: $clr-accent;text-decoration: underline;
+            color: darken($clr-accent, 5%);
+            text-decoration: underline;
             text-decoration-color: transparent;
             transition: $transition-time;
         }

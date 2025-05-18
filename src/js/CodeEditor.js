@@ -5,14 +5,21 @@ export default function CodeEditor(id, name) {
 
     this.id = id;
     this.name = name;
-    this.code_editor   = document.querySelector(`#editor_${id}.editor`);
-    this.sectionParent = _self.code_editor.parentElement;
-    this.editorTabset  = _self.code_editor.querySelector('.editor_tabset');
-    this.editorTabs    = _self.editorTabset.querySelectorAll('li');
-    this.editorDisplay = _self.code_editor.querySelector('.editor_display');
-    this.editorWindows = _self.editorDisplay.querySelectorAll('.editor_window');
+    this.code_editor   = {};
+    this.sectionParent = {};
+    this.editorTabset  = {};
+    this.editorTabs    = {};
+    this.editorDisplay = {};
+    this.editorWindows = {};
 
     this.init = () => {
+        _self.code_editor   = document.querySelector(`#editor_${id}.editor`);
+        _self.sectionParent = _self.code_editor.parentElement;
+        _self.editorTabset  = _self.code_editor.querySelector('.editor_tabset');
+        _self.editorTabs    = _self.editorTabset.querySelectorAll('li');
+        _self.editorDisplay = _self.code_editor.querySelector('.editor_display');
+        _self.editorWindows = _self.editorDisplay.querySelectorAll('.editor_window');
+
         const scrollIntoView = false;
         const updateUrl      = true;
 
