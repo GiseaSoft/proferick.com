@@ -1,5 +1,5 @@
 /* Abstract */
-@use './abstract/variables' as var;
+@use './abstract/variables' as *;
 @use './abstract/utilities';
 
 /*************************/
@@ -7,23 +7,23 @@
 /*************************/
 
 ::selection {
-    background: rgba(var.$clr-accent, 0.85) !important;
-    color: var.$clr-white !important;
+    background: rgba($clr-accent, 0.85) !important;
+    color: $clr-white !important;
 }
 body {
-    font-family: var.$font-body;
-    font-size: var.$fs-6;
-    color: var.$clr-black;
+    font-family: $font-body;
+    font-size: $fs-6;
+    color: $clr-black;
     line-height: 1.5;
-    background-color: var.$clr-bg;
+    background-color: $clr-bg;
 }
 #mainHeader {
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 2;
-    height: var.$header-height;
-    background-color: var.$clr-primary;
-    border-bottom: 1pt solid var.$clr-black;
+    height: $header-height;
+    background-color: $clr-primary;
+    border-bottom: 1pt solid $clr-black;
     .innerHeader {
         @extend %container;
         display: flex;
@@ -35,11 +35,11 @@ body {
         .primaryNav {
             li {
                 a {
-                    color: var.$clr-black;
+                    color: $clr-black;
                     &.contact {
-                        color: var.$clr-white;
-                        background-color: var.$clr-accent;
-                        border: 1pt solid var.$clr-black;
+                        color: $clr-white;
+                        background-color: $clr-accent;
+                        border: 1pt solid $clr-black;
                     }
                 }
                 &.subMenu .icon-down {
@@ -50,23 +50,23 @@ body {
     }   
 }
 #content {
-    padding-top: var.$header-height;
+    padding-top: $header-height;
     .contentContainer {
         @extend %container;
         > section {
-            padding-top: calc(var.$gap-double * 2.5);
+            padding-top: calc($gap-double * 2.5);
         }
         :is(a, a:visited, a:focus) {
-            color: var.$clr-accent;text-decoration: underline;
+            color: $clr-accent;text-decoration: underline;
             text-decoration-color: transparent;
-            transition: var.$transition-time;
+            transition: $transition-time;
         }
     }
 }
 #mainFooter {
-    color: var.$clr-white;
-    background: var.$clr-secondary; // fallback
-    background: linear-gradient(90deg, var.$clr-secondary 0, darken(var.$clr-secondary, 10%) 70%);
+    color: $clr-white;
+    background: $clr-secondary; // fallback
+    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
     a {
         color: inherit;
     }
@@ -82,19 +82,21 @@ body {
         justify-content: space-around;
         align-items: baseline;
         flex-wrap: wrap;
-        gap: var.$gap-double;
-        padding-block: var.$gap-double;
-        .footerNav ul {
-            flex-basis: 300px;
-            list-style: inside;
-            display: flex;
-            flex-direction: column;
-            gap: var.$gap-half;
-            margin-bottom: var.$gap-double;
-            .footerNavTitle {
-                margin-bottom: var.$gap-half;
-                font-size: var.$fs-3;
+        gap: $gap-double;
+        padding-block: $gap-double;
+        .footerNav {
+            &Title {
+                margin-bottom: $gap-half;
+                font-size: $fs-3;
                 font-weight: 700;
+            }
+            ul {
+                flex-basis: 300px;
+                list-style: inside;
+                display: flex;
+                flex-direction: column;
+                gap: $gap-half;
+                margin-bottom: $gap-double;
             }
         }
     }
@@ -102,9 +104,9 @@ body {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        column-gap: var.$gap-half;
+        column-gap: $gap-half;
         padding-block: 0.5rem;
-        background-color: darken(var.$clr-secondary, 15%);
+        background-color: darken($clr-secondary, 15%);
     }
 }
 
@@ -113,27 +115,27 @@ body {
 /**********************/
 
 .heading {
-    margin-bottom: var.$gap-half;
-    font-family: var.$font-title;
-    font-size: var.$fs-1;
+    margin-bottom: $gap-half;
+    font-family: $font-title;
+    font-size: $fs-1;
     font-weight: 700;
     &:not(.hero .heading) {
         display: inline;
-        text-decoration: 2px underline var.$clr-accent;
+        text-decoration: 2px underline $clr-accent;
         text-underline-offset: 5px;
     }
 }
 .subheading {
-    margin-block: 0 var.$gap;
-    font-size: var.$fs-3;
+    margin-block: 0 $gap;
+    font-size: $fs-3;
     text-wrap: balance;
 }
 .list {
-    padding-block: var.$gap;
+    padding-block: $gap;
     list-style: inside;
 }
 .paragraph {
-    margin-block: var.$gap-half;
+    margin-block: $gap-half;
 }
 .highlight {
   font-style: normal;
@@ -141,15 +143,15 @@ body {
   border-radius: 1em 0 1em 0;
   background-image:  
     linear-gradient(-100deg, 
-      rgba( var.$clr-highlight, 0.25),
-      rgba( var.$clr-highlight, 0.4) 20%,
-      rgba( var.$clr-highlight, 0.4) 80%,
-      rgba( var.$clr-highlight, 0.3),
+      rgba( $clr-highlight, 0.25),
+      rgba( $clr-highlight, 0.4) 20%,
+      rgba( $clr-highlight, 0.4) 80%,
+      rgba( $clr-highlight, 0.3),
     );
 }
 a:hover {
     text-decoration: underline;
-    text-decoration-color: var.$clr-accent;
+    text-decoration-color: $clr-accent;
 }
 #backToTop {
     --thisOffset: 2rem;
@@ -158,13 +160,13 @@ a:hover {
     right: var(--thisOffset);
     width: 4rem;
     aspect-ratio: 1;
-    border-radius: var.$round;
-    background-color: var.$clr-accent;
+    border-radius: $round;
+    background-color: $clr-accent;
     cursor: pointer;
     border: none;
-    transition: var.$transition-time;
+    transition: $transition-time;
     .icon-backToTop {
-        color: var.$clr-white;
+        color: $clr-white;
         font-size: 35px;
     }
     &[aria-hidden="true"] {
@@ -183,17 +185,17 @@ a:hover {
 
 /* Hero */
 .hero {
-    padding: var.$gap-double;
-    color: var.$clr-white;
+    padding: $gap-double;
+    color: $clr-white;
     background: url("../img/hero.png") center;
     background-attachment: fixed;
-    text-shadow: 2px 2px 2px var.$clr-black;
+    text-shadow: 2px 2px 2px $clr-black;
     .heading {
-        font-family: var.$font-title;
-        font-size: var.$fs-title;
+        font-family: $font-title;
+        font-size: $fs-title;
     }
     .subheading {
-        font-size: var.$fs-3;
+        font-size: $fs-3;
     }
     &_text {
         display: flex;
@@ -205,19 +207,19 @@ a:hover {
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-        gap: var.$gap-half;
+        gap: $gap-half;
         > div {
             flex-basis: 300px;
             flex-grow: 1;
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            gap: var.$gap-half;
+            gap: $gap-half;
             img {
                 width: 150px;
                 aspect-ratio: 16/9;
                 object-fit: contain;
-                border-radius: var.$border-radius;
+                border-radius: $border-radius;
             }
         }
         
@@ -233,10 +235,10 @@ a:hover {
 
 /* Accordions */
 .accordion {
-    --thisRadius: #{var.$border-radius};
+    --thisRadius: #{$border-radius};
     padding: 10px;
     background-color: #FFF;
-    border: 1pt solid var.$clr-gray;
+    border: 1pt solid $clr-gray;
     border-radius: var(--thisRadius);
     &_item {
         overflow: hidden;
@@ -248,25 +250,25 @@ a:hover {
         }
         &-head {
             padding: 10px;
-            font-size: var.$fs-6;
-            border: 1pt solid var.$clr-gray;
+            font-size: $fs-6;
+            border: 1pt solid $clr-gray;
             border-bottom: none;
-            background-color: var.$clr-primary;
+            background-color: $clr-primary;
             cursor: pointer;
             user-select: none;
             &[aria-selected="true"] {
                 font-weight: 700;
-                text-decoration: underline 2pt var.$clr-accent;
+                text-decoration: underline 2pt $clr-accent;
                 text-underline-offset: 5px;
             }
         }
         &-body {
             height: 0;
             padding-inline: 10px;
-            border: 1pt solid var.$clr-gray;
+            border: 1pt solid $clr-gray;
             border-top: none;
             overflow: hidden;
-            transition: var.$transition-time;
+            transition: $transition-time;
             &[aria-expanded="true"] {
                 display: block;
                 padding-block: 20px;
@@ -281,16 +283,16 @@ a:hover {
     display: grid;
     grid-template-rows: 50px 1fr;
     width: 100%;
-    border-radius: var.$border-radius;
+    border-radius: $border-radius;
     overflow: clip; // for border-radius
 	scrollbar-width: thin;
-    scrollbar-color: var.$clr-primary darken(var.$clr-secondary, 12.5%); /* thumb | track */
+    scrollbar-color: $clr-primary darken($clr-secondary, 12.5%); /* thumb | track */
     &_tabset {
         list-style-type: none;
         display: flex;
         overflow-y: clip;
         overflow-x: auto;
-        background: var.$clr-editor-tabs;
+        background: $clr-editor-tabs;
         scrollbar-width: none;
         &.dragging {
             user-select: none !important;
@@ -304,22 +306,22 @@ a:hover {
         li {
             flex-shrink: 0;
             width: fit-content;
-            transition: var.$transition-time-fast;
+            transition: $transition-time-fast;
             cursor: pointer;
             > span {
                 display: block;
                 padding: 15px;
                 span {
                     margin-left: 10px;
-                    color: var.$clr-white;
+                    color: $clr-white;
                 }
             }
             &:hover {
-                background: var.$clr-editor-active-tab;
+                background: $clr-editor-active-tab;
             }
             &[aria-selected="true"] {
                 position: relative;
-                background: var.$clr-editor-active-tab;
+                background: $clr-editor-active-tab;
                 &::after {
                     content: '';
                     position: absolute;
@@ -327,7 +329,7 @@ a:hover {
                     display: block;
                     width: 100%;
                     height: 2px;
-                    background: var.$clr-accent;
+                    background: $clr-accent;
                 }
             }
         }
@@ -335,7 +337,7 @@ a:hover {
     &_display {
         width: 100%;
         height: 400px;
-        background: var.$clr-editor-display;
+        background: $clr-editor-display;
         overflow-x: auto;
         scroll-behavior: contain;
     }
@@ -348,10 +350,10 @@ a:hover {
 .contactForm {
     width: min(35rem, 100%);
     padding: 1rem;
-    border-radius: var.$border-radius;
+    border-radius: $border-radius;
     overflow: hidden;
-    outline: 1pt solid var.$clr-gray-light;
-    box-shadow: var.$box-shadow;
+    outline: 1pt solid $clr-gray-light;
+    box-shadow: $box-shadow;
     background-color: #FFF;
     fieldset {
         border: none;
@@ -359,14 +361,14 @@ a:hover {
             display: block;
         }
         span {
-            font-size: var.$fs-5;
+            font-size: $fs-5;
             cursor: pointer;
             &[aria-errormessage] { /* Hidden by default */ 
                 visibility: hidden;
                 display: none;
                 margin-block: -0.5rem 1.5rem;
-                font-size: var.$fs-6;
-                color: var.$clr-error;
+                font-size: $fs-6;
+                color: $clr-error;
             }
         }
         input:not([type="submit"]), textarea {
@@ -374,14 +376,14 @@ a:hover {
             width: 100%;
             padding: 0.25rem;
             border: none;
-            outline: 1pt solid var.$clr-gray;
-            border-radius: var.$border-radius;
-            background-color: var.$clr-gray-light;
+            outline: 1pt solid $clr-gray;
+            border-radius: $border-radius;
+            background-color: $clr-gray-light;
             &:focus {
-                outline: 2px solid var.$clr-secondary;
+                outline: 2px solid $clr-secondary;
             }
             &[aria-invalid] {
-                outline: 2px solid var.$clr-error !important;
+                outline: 2px solid $clr-error !important;
                 & + span[aria-errormessage] {
                     visibility: visible;
 		            display: block;
@@ -395,8 +397,8 @@ a:hover {
         }
         input[type="submit"] {
             margin-inline: auto 0;
-            background-color: var.$clr-accent;
-            border: 1pt solid var.$clr-black;
+            background-color: $clr-accent;
+            border: 1pt solid $clr-black;
         }
     }   
 }

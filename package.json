@@ -1,43 +1,15 @@
 {
   "name": "proferick.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "sass:icons": "sass --style=compressed ./scss/fonts/profeRickIcons.scss ./assets/css/profeRickIcons.css",
-    "sass:prism": "sass --style=compressed ./scss/prism.scss ./assets/css/prism.css",
-    "sass:base": "sass --style=compressed ./scss/base.scss ./assets/css/base.css",
-    "sass:desktop": "sass --style=compressed ./scss/desktop.scss ./assets/css/desktop.css",
-    "sass:mobile": "sass --style=compressed ./scss/mobile.scss ./assets/css/mobile.css",
-    "sass": "npm-run-all --parallel sass:icons sass:prism sass:base sass:desktop sass:mobile",
-
-    "sass:watch:icons": "sass --watch --style=expanded ./scss/fonts/profeRickIcons.scss ./assets/css/profeRickIcons.css",
-    "sass:watch:prism": "sass --watch --style=expanded ./scss/prism.scss ./assets/css/prism.css",
-    "sass:watch:base": "sass --watch --style=expanded ./scss/base.scss ./assets/css/base.css",
-    "sass:watch:desktop": "sass --watch --style=expanded ./scss/desktop.scss ./assets/css/desktop.css",
-    "sass:watch:mobile": "sass --watch --style=expanded ./scss/mobile.scss ./assets/css/mobile.css",
-    "sass:watch": "npm-run-all --parallel sass:watch:icons sass:watch:prism sass:watch:base sass:watch:desktop sass:watch:mobile",
-
-    "js:build": "node minify-js.js",
-    "js:watch": "nodemon --watch js --ext js --exec \"npm run js:build\"",
-
-    "dev": "npm-run-all --parallel sass:watch js:watch",
-    "build": "npm-run-all sass js:build",
-    "start": "npm run build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Salegomx/proferick.com.git"
-  },
-  "author": "@salegomx | sergiogomez.mx",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Salegomx/proferick.com/issues"
-  },
-  "homepage": "https://github.com/Salegomx/proferick.com",
   "devDependencies": {
-    "esbuild": "^0.25.4",
-    "nodemon": "^3.1.10",
-    "npm-run-all": "^4.1.5"
+    "sass-embedded": "^1.89.0",
+    "vite": "^6.3.5"
   }
 }

@@ -1,3 +1,10 @@
+/* Styles */
+import './scss/base.scss';
+import './scss/desktop.scss';
+import './scss/mobile.scss';
+import './scss/prism.scss';
+
+/* JavaScript */
 function setThemePreference() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         console.log('Dark please');
@@ -54,15 +61,15 @@ const closeItemsInAccordion = (thisAccordion) => {
 /********************/
 /*** Code Editors ***/
 /********************/
+import CodeEditor from './js/CodeEditor.js';
 
 let editors = document.querySelectorAll('.editor');
-let editorInstances = [];
 
 editors.forEach((editor, index) => {
     editor.setAttribute('id', `editor_${index}`);
     const name = editor.getAttribute('editor-name');
-    const instance = new CodeEditor(index, name);
-    editorInstances.push(instance);
+    const thisInstance = new CodeEditor(index, name);
+    thisInstance.init();
 })
 
 /*******************/
@@ -72,7 +79,7 @@ editors.forEach((editor, index) => {
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
-    scrollpos = window.scrollY;
+    let scrollpos = window.scrollY;
 
     if (scrollpos >= 200) {
         backToTop.setAttribute('aria-hidden', 'false');

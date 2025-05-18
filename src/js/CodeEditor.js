@@ -1,9 +1,10 @@
-function CodeEditor(id, name) {
+import './prism.js';
+
+export default function CodeEditor(id, name) {
     const _self = this;
 
     this.id = id;
     this.name = name;
-    
     this.code_editor   = document.querySelector(`#editor_${id}.editor`);
     this.sectionParent = _self.code_editor.parentElement;
     this.editorTabset  = _self.code_editor.querySelector('.editor_tabset');
@@ -108,6 +109,4 @@ function CodeEditor(id, name) {
         url.searchParams.set('tab', targetTab);
         history.replaceState(null, '', url);
     }
-
-    document.addEventListener("DOMContentLoaded", _self.init);
 }
