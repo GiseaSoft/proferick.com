@@ -1,15 +1,12 @@
 {
-  "name": "proferick.com",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.89.0",
-    "vite": "^6.3.5"
-  }
+    "name": "proferick.com",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "sass": "sass --no-source-map --style=compressed --style compressed --watch  ./src/scss:./assets/css",
+        "minify-js": "node minify-js.js"
+    },
+    "dependencies": {
+        "terser": "^5.40.0"
+    }
 }

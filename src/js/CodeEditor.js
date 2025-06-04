@@ -1,6 +1,4 @@
-import './prism.js';
-
-export default function CodeEditor(id, name) {
+function CodeEditor(id, name) {
     const _self = this;
 
     this.id = id;

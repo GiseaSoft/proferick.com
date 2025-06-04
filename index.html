@@ -7,8 +7,14 @@
     <meta name="author" content="sergiogomez.mx">
     <meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack.">
 
+    <link rel="stylesheet" href="./assets/css/base.css" media="all">
+    <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 64rem)">
+    <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 64rem)">
+
+    <link rel="stylesheet" href="./assets/css/prism.css" media="all">
+
     <!-- Favicon -->
-    <link href="./img/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
 
@@ -20,7 +26,7 @@
     <header id="mainHeader">
         <div class="innerHeader">
             <a href="/">
-                <img class="logo" src="./img/imagotype_dark.svg" alt="proferick.com">
+                <img class="logo" src="./assets/img/imagotype_dark.svg" alt="proferick.com">
             </a>
             <div style="display:flex;gap:7.5px;">
                 <button>
@@ -60,17 +66,17 @@
                     
                     <div class="hero_brands">
                         <div>
-                            <img src="./img/brands/ford.png" alt="Ford">
-                            <img src="./img/brands/lincoln.png" alt="Lincoln">
+                            <img src="./assets/img/brands/ford.png" alt="Ford">
+                            <img src="./assets/img/brands/lincoln.png" alt="Lincoln">
                         </div>
                         <div>
-                            <img src="./img/brands/bridgestone.png" alt="bridgestone">
-                            <img src="./img/brands/vml.png" alt="VML">
+                            <img src="./assets/img/brands/bridgestone.png" alt="bridgestone">
+                            <img src="./assets/img/brands/vml.png" alt="VML">
                         </div>
                     </div>
                 </div>
 
-                <img class="hero_picture" src="./img/proferick.jpg" alt="">
+                <img class="hero_picture" src="./assets/img/proferick.jpg" alt="">
             </div>
         </section>
         <div class="contentContainer">
@@ -148,17 +154,17 @@
             <section id="courses" class="grid-2">
                 <div class="editor">
                     <ul class="editor_tabset draggable-horizontal" role="tablist">
-                        <li role="tab"><span data-target="#editor_window-html"><img class="editor_tabset-ico" src="./img/code_editor/html.png" alt=""><span>HTML5</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-css"><img class="editor_tabset-ico" src="./img/code_editor/css.png" alt=""><span>CSS</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-js"><img class="editor_tabset-ico" src="./img/code_editor/javascript.png" alt=""><span>JavaScript</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-sass"><img class="editor_tabset-ico" src="./img/code_editor/sass.png" alt=""><span>SASS</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-bootstrap"><img class="editor_tabset-ico" src="./img/code_editor/bootstrap.png" alt=""><span>Bootstrap</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-vuejs"><img class="editor_tabset-ico" src="./img/code_editor/vue.png" alt=""><span>Vue.js</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-php"><img class="editor_tabset-ico" src="./img/code_editor/php.png" alt=""><span>PHP</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-laravel"><img class="editor_tabset-ico" src="./img/code_editor/laravel.png" alt=""><span>Laravel</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-git"><img class="editor_tabset-ico" src="./img/code_editor/git.png" alt=""><span>Git y Github</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-json"><img class="editor_tabset-ico" src="./img/code_editor/json.png" alt=""><span>JSON</span></span></li>
-                        <li role="tab"><span data-target="#editor_window-sql"><img class="editor_tabset-ico" src="./img/code_editor/sql.png" alt=""><span>SQL</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-html"><img class="editor_tabset-ico" src="./assets/img/code_editor/html.png" alt=""><span>HTML5</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-css"><img class="editor_tabset-ico" src="./assets/img/code_editor/css.png" alt=""><span>CSS</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-js"><img class="editor_tabset-ico" src="./assets/img/code_editor/javascript.png" alt=""><span>JavaScript</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-sass"><img class="editor_tabset-ico" src="./assets/img/code_editor/sass.png" alt=""><span>SASS</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-bootstrap"><img class="editor_tabset-ico" src="./assets/img/code_editor/bootstrap.png" alt=""><span>Bootstrap</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-vuejs"><img class="editor_tabset-ico" src="./assets/img/code_editor/vue.png" alt=""><span>Vue.js</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-php"><img class="editor_tabset-ico" src="./assets/img/code_editor/php.png" alt=""><span>PHP</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-laravel"><img class="editor_tabset-ico" src="./assets/img/code_editor/laravel.png" alt=""><span>Laravel</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-git"><img class="editor_tabset-ico" src="./assets/img/code_editor/git.png" alt=""><span>Git y Github</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-json"><img class="editor_tabset-ico" src="./assets/img/code_editor/json.png" alt=""><span>JSON</span></span></li>
+                        <li role="tab"><span data-target="#editor_window-sql"><img class="editor_tabset-ico" src="./assets/img/code_editor/sql.png" alt=""><span>SQL</span></span></li>
                     </ul>
                     <div class="editor_display line-numbers">
                         <div id="editor_window-html" class="editor_window">
@@ -728,7 +734,7 @@
     </main>
     <footer id="mainFooter" data-skew="1" skew-type="top">
         <a class="logo" href="./index.html">
-            <img src="./img/imagotype_white.svg" alt="proferick.com">
+            <img src="./assets/img/imagotype_white.svg" alt="proferick.com">
         </a>
         <a class="logoEmail linkEffect" href="mailto:contacto@proferick.com">contacto@proferick.com</a>
         <div class="innerFooter">
@@ -780,6 +786,8 @@
         <i class="pri icon-backToTop"></i>
     </button>
 
-    <script type="module" src="./src/main.js"></script>
+    <script src="./assets/js/CodeEditor.js"></script>
+    <script src="./assets/js/prism.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

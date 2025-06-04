@@ -1,12 +1,12 @@
-@use './abstract/variables' as var;
+@use './abstract/variables' as *;
 
-@media (max-width: var.$desktop) {
+@media (width <= $desktop) {
     #menuButton {
         position: relative;
         width: 2.5rem;
         aspect-ratio: 1;
-        background: var.$clr-primary;
-        border-radius: var.$border-radius;
+        background: $clr-primary;
+        border-radius: $border-radius;
         border: none;
         cursor: pointer;
         span {
@@ -15,8 +15,8 @@
             height: 2px;
             width: 80%;
             left: 10%;
-            background-color: var.$clr-black;
-            transition: var.$transition-time;
+            background-color: $clr-black;
+            transition: $transition-time;
             &.top {
                 top: 25%;
             }
@@ -49,19 +49,19 @@
         top: 5rem;
         right: 1rem;
         width: 90%;
-        background-color: var.$clr-white;
-        border-radius: var.$border-radius;
+        background-color: $clr-white;
+        border-radius: $border-radius;
         overflow: hidden;
-        outline: 1pt solid var.$clr-gray;
+        outline: 1pt solid $clr-gray;
         li {
             a {
                 display: block;
                 width: 100%;
                 padding: 1rem;
-                border-bottom: 1pt solid var.$clr-gray;
+                border-bottom: 1pt solid $clr-gray;
                 &.contact {
-                    color: var.$clr-white;
-                    background-color: var.$clr-accent;
+                    color: $clr-white;
+                    background-color: $clr-accent;
                 }
             }
             &.subMenu {
@@ -79,10 +79,10 @@
     }
     .hero {
         .heading {
-            font-size: var.$fs-title-mobile;
+            font-size: $fs-title-mobile;
         }
         .subheading {
-            font-size: var.$fs-4;
+            font-size: $fs-4;
         }
     }
     /*.innerFooter {
@@ -91,10 +91,10 @@
             list-style: inside;
             display: flex;
             flex-direction: column;
-            gap: var.$gap-half;
+            gap: $gap-half;
             .footerNavTitle {
-                margin-bottom: var.$gap-half;
-                font-size: var.$fs-3;
+                margin-bottom: $gap-half;
+                font-size: $fs-3;
                 font-weight: 700;
             }
         }

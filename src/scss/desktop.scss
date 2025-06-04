@@ -1,4 +1,4 @@
-@use './abstract/variables' as var;
+@use './abstract/variables' as *;
 
 .primaryNav ul {
     display: flex;
@@ -11,20 +11,20 @@
             width: 15rem;
             position: absolute;
             top: 1.25rem;
-            border-radius: var.$border-radius;
-            background-color: var.$clr-white;
-            outline: 1pt solid var.$clr-gray;
+            border-radius: $border-radius;
+            background-color: $clr-white;
+            outline: 1pt solid $clr-gray;
             a {
                 display: block;
                 padding: 0.75rem;
                 width: 100%;
-                border-bottom: 1pt solid var.$clr-gray;
+                border-bottom: 1pt solid $clr-gray;
             }
         }
         &.subMenu:hover {
             a i.icon-down {
                 transform: rotate(0.5turn);
-                transition: var.$transition-time;
+                transition: $transition-time;
             }
             ul {
                 display: block;
