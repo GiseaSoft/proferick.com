@@ -7,21 +7,15 @@
     <meta name="author" content="sergiogomez.mx">
     <meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack.">
 
-    <link rel="stylesheet" href="./assets/css/base.css" media="all">
+    <link rel="stylesheet" href="./assets/css/prism.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 64rem)">
     <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 64rem)">
-
-    <link rel="stylesheet" href="./assets/css/prism.css" media="all">
 
     <!-- Favicon -->
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
-
-<!---
-    agregar modo nocturno
--->
-
     <a class="sr-only" href="#content">Omitir menu e ir al contenido</a>
     <header id="mainHeader">
         <div class="innerHeader">
@@ -29,9 +23,9 @@
                 <img class="logo" src="./assets/img/imagotype_dark.svg" alt="proferick.com">
             </a>
             <div style="display:flex;gap:7.5px;">
-                <button>
+                <!--button>
                     Theme
-                </button>
+                </button--->
                 <nav id="primaryNav" class="primaryNav">
                     <ul>
                         <li class="subMenu">
@@ -58,7 +52,7 @@
         </div>
     </header>
     <main id="content">
-        <section id="index" class="hero" data-skew="1" skew-type="bottom">
+        <section id="index" class="hero" data-skew="1" skew-type="bottom" style="background: url('./assets/img/hero.png') center;">
             <div class="contentContainer grid-2">
                 <div class="hero_text">
                     <h1 class="heading">Profe Rick</h1>
@@ -786,8 +780,8 @@
         <i class="pri icon-backToTop"></i>
     </button>
 
-    <script src="./assets/js/CodeEditor.js"></script>
-    <script src="./assets/js/prism.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/CodeEditor.js"></script>
+    <script defer src="./assets/js/prism.js"></script>
+    <script defer src="./assets/js/main.js"></script>
 </body>
 </html>

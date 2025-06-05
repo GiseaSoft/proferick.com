@@ -1,20 +1,18 @@
 
 /* JavaScript */
-function setThemePreference() {
+/*function setThemePreference() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        console.log('Dark please');
+        console.log('Dark pleaseeee!!!!');
         return;
     }
 
-    console.log('Lighter please!!');
+    console.log('Lighter pleaseeeeee!!');
 }
-
-setThemePreference();
+setThemePreference();*/
 
 /*******************/
 /*** Menu Button ***/
 /*******************/
-
 const primaryNav = document.querySelector('.primaryNav');
 const menuButton = document.getElementById('menuButton');
 
@@ -26,7 +24,6 @@ menuButton.addEventListener('click', () => {
 /******************/
 /*** Accordions ***/
 /******************/
-
 const accordions = document.querySelectorAll('.accordion');
 
 accordions.forEach(accordion => {
@@ -56,7 +53,6 @@ const closeItemsInAccordion = (thisAccordion) => {
 /********************/
 /*** Code Editors ***/
 /********************/
-
 let editors = document.querySelectorAll('.editor');
 
 editors.forEach((editor, index) => {
@@ -69,7 +65,6 @@ editors.forEach((editor, index) => {
 /*******************/
 /*** Back To Top ***/
 /*******************/
-
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {

@@ -2,9 +2,9 @@
 @use './abstract/variables' as *;
 @use './abstract/utilities';
 
-/*************************/
+/*******************/
 /*** Base layout ***/
-/*************************/
+/*******************/
 
 ::selection {
     background: rgba($clr-accent, 0.85) !important;
@@ -114,7 +114,6 @@ body {
 /**********************/
 /*** General styles ***/
 /**********************/
-
 .heading {
     margin-bottom: $gap-half;
     font-family: $font-title;
@@ -188,7 +187,6 @@ a:hover {
 .hero {
     padding: $gap-double;
     color: $clr-white;
-    background: url("../img/hero.png") center;
     background-attachment: fixed;
     text-shadow: 2px 2px 2px $clr-black;
     .heading {

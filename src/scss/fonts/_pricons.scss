@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'profeRickIcons';
-  src:  url('../fonts/profeRickIcons/profeRickIcons.eot?puyx8g');
-  src:  url('../fonts/profeRickIcons/profeRickIcons.eot?puyx8g#iefix') format('embedded-opentype'),
-    url('../fonts/profeRickIcons/profeRickIcons.ttf?puyx8g') format('truetype'),
-    url('../fonts/profeRickIcons/profeRickIcons.woff?puyx8g') format('woff'),
-    url('../fonts/profeRickIcons/profeRickIcons.svg?puyx8g#profeRickIcons') format('svg');
+  font-family: 'pricons';
+  src:  url('../fonts/pricons/pricons.eot?puyx8g');
+  src:  url('../fonts/pricons/pricons.eot?puyx8g#iefix') format('embedded-opentype'),
+    url('../fonts/pricons/pricons.ttf?puyx8g') format('truetype'),
+    url('../fonts/pricons/pricons.woff?puyx8g') format('woff'),
+    url('../fonts/pricons/pricons.svg?puyx8g#pricons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 .pri {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'profeRickIcons' !important;
+  font-family: 'pricons' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;

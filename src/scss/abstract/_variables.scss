@@ -1,8 +1,7 @@
 /* Import Fonts */
 @use '../fonts/inter';
-$font-body: 'Inter', sans-serif;
 @use '../fonts/satisfy';
-$font-title: 'Satisfy', 'Inter', sans-serif;
+@use '../fonts/pricons';
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -17,8 +16,6 @@ $clr-gray-light: #F8F8F8;
 $clr-gray: #DDD;
 $clr-gray-dark: #444;
 $clr-black: #2A2A2A;
-//$clr-primary: #F0E2CC;
-//$clr-accent: #FF6F61;
 $clr-primary: #fff4e3;
 $clr-secondary: #014E6B;
 $clr-accent: #DA3A2F;
@@ -31,13 +28,10 @@ $clr-editor-tabs: darken($clr-secondary, 5%);
 $clr-editor-active-tab: $clr-secondary;
 $clr-highlight-tab: $clr-accent;
 
-/* Sizes */
-$header-height: 3.75rem; // 60px
-$gap: 15px;
-$gap-half: calc($gap / 2);
-$gap-double: calc($gap * 2);
+/* Fonts*/
+$font-title: 'Satisfy', 'Inter', sans-serif;
+$font-body: 'Inter', sans-serif;
 
-/* Font Sizes */
 $fs-title: 5rem;
 $fs-title-mobile: 3rem;
 $fs-1: 2.5rem; /* 40px */
@@ -47,6 +41,12 @@ $fs-4: 1.25rem; /* 20px */
 $fs-5: 1.125rem; /* 18px */
 $fs-6: 1rem; /* 16px */
 $fs-caption: 0.875rem; /* 14px */
+
+/* Sizes */
+$header-height: 3.75rem; // 60px
+$gap: 15px;
+$gap-half: calc($gap / 2);
+$gap-double: calc($gap * 2);
 
 /* Shapes */
 $box-shadow: 2px 2px 4px 0 $clr-black;
