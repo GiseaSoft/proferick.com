@@ -134,6 +134,101 @@ body {
     padding-block: $gap;
     list-style: inside;
 }
+
+
+:root {
+    --carouselTech-width: 100%;
+    --carouselTech-height: 50px;
+    /* --carouselTech-elements: 0; */ /* defined with JavaScript */
+    --carouselTech-elements-displayed: 5;
+    --carouselTech-element-width: calc(var(--carouselTech-width) / var(--carouselTech-elements-displayed));
+    --carouselTech-animation-duration: calc(var(--carouselTech-elements) * 2.5s);
+}
+.carouselTech {
+    width: var(--carouselTech-width);
+    height: var(--carouselTech-height);
+    background-color: $clr-bg;
+    color: $clr-gray-dark;
+    overflow: hidden;
+    position: relative;
+}
+.carouselTech:before, .carouselTech:after {
+    position: absolute;
+    top: 0;
+    width: 5rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+}
+.carouselTech:before {
+    left: 0;
+    background: linear-gradient(to right, $clr-bg 0%, transparent 100%);
+}
+.carouselTech:after {
+    right: 0;
+    background: linear-gradient(to left, $clr-bg 0%, transparent 100%);
+}
+.carouselTech-content {
+    position:  absolute;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--carouselTech-animation-duration) linear infinite;
+}
+/*.carouselTech-content:hover {
+    animation-play-state: paused;
+}*/
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--carouselTech-element-width) * var(--carouselTech-elements))); }
+}
+.carouselTech-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: var(--carouselTech-element-width);
+    max-height: 100%;
+    font-size: calc(var(--carouselTech-height)*3/4); /* 5rem; */
+    white-space: nowrap;
+}
+.carouselTech-content li img {
+    width: 100%;
+    border: 2px solid #eee;
+}
+.fa-html5 {
+    color: #E44D26;
+}
+.fa-css {
+    color: rebeccapurple; // https://www.reddit.com/r/webdev/comments/1de8i26/about_ten_years_ago_the_hex_color_rebeccapurple/
+}
+.fa-js {
+    color: #f7df1e;
+}
+.fa-sass {
+    color: #CC6699;
+}
+.fa-bootstrap {
+    color: #7952B3;
+}
+.fa-vuejs {
+    color: #42B883;
+}
+.fa-php {
+    color: #7775fa;
+}
+.fa-laravel {
+    color: #FF4529;
+}
+.fa-git {
+    color: #F05032;
+}
+.fa-json {
+    color: #E6DB74;
+}
+.fa-database {
+    color: #00758F;
+}
 .paragraph {
     margin-block: $gap-half;
 }
@@ -158,17 +253,14 @@ a:hover {
     position: fixed;
     bottom: var(--thisOffset);
     right: var(--thisOffset);
-    width: 4rem;
+    width: 3rem;
+    color: $clr-white;
     aspect-ratio: 1;
     border-radius: $round;
     background-color: $clr-accent;
     cursor: pointer;
     border: none;
     transition: $transition-time;
-    .icon-backToTop {
-        color: $clr-white;
-        font-size: 35px;
-    }
     &[aria-hidden="true"] {
         visibility: hidden;
         opacity: 0;
@@ -176,6 +268,9 @@ a:hover {
     &[aria-hidden="false"] {
         visibility: visible;
         opacity: 1;
+    }
+    &:hover {
+        transform: scale(1.1);
     }
 }
 
@@ -342,6 +437,110 @@ a:hover {
     }
     &_window {
         position: relative;
+    }
+}
+/* Reviews */
+.slider-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: $gap-double;
+    isolation: isolate;
+    .bullet-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $gap;
+        .bullet {
+            --size: 12px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 100px;
+            background-color: $clr-accent;
+            opacity: 0.25;
+            cursor: pointer;
+            transition: $transition-time-slow;
+            &:hover {
+                opacity: 0.5;
+            }
+            &.active {
+                width: calc(var(--size) * 2);
+                opacity: 1;
+            }
+        }
+    }
+    .slider-content {
+        position: relative;
+        width: 700px;
+        height: 250px;
+        .slider-single {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: auto;
+            right: auto;
+            padding: $gap;
+            width: 100%;
+            height: 100%;
+            outline: 1pt solid $clr-accent;
+            background: white;
+            border-radius: $border-radius;
+            transition: $transition-time-slow;
+            &.preactivede {
+                transform: translateX(-50%) scale(0);
+            }
+            &.preactive {
+                z-index: 1;
+                opacity: 0.3;
+                transform: translateX(-50%) scale(0.75);
+            }
+            &.proactive {
+                z-index: 1;
+                opacity: 0.3;
+                transform: translateX(50%) scale(0.75);
+            }
+            &.proactivede {
+                transform: translateX(50%) scale(0);
+            }
+            &.active {
+                z-index: 2;
+                opacity: 1;
+                transform: translateX(0%) scale(1);
+            }
+        }
+        .slider-title {
+            font-family: $font-title;
+            font-size: $fs-2;
+        }
+        .slider-body {
+            margin-top: $gap;
+        }
+    }
+    .slider-left,
+    .slider-right {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        display: block;
+        padding: 20px 15px;
+        color: $clr-secondary;
+        border: 0;
+        background: none;
+        transform: translateY(-50%) scale(2);
+        cursor: pointer;
+    }
+    .slider-left {
+        left: 0%;
+    }
+    .slider-right {
+        right: 0%;
+    }
+    .not-visible {
+        display: none !important;
     }
 }
 

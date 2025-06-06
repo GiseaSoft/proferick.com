@@ -47,6 +47,6 @@
 /*****************************/
 
 // code editor and courses text
-#courses.grid-2 {
-    grid-template-columns: 70% 1fr;
+#courses .grid-2 {
+    grid-template-columns: 1fr 60%;
 }

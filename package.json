@@ -19,8 +19,7 @@
         "js:watch": "nodemon --watch ./src/js --ext js --exec \"npm run js:build\"",
         "js:build": "node minify-js.js",
 
-        "dev": "npm-run-all --parallel sass js:watch",
-        "start": "npm run dev"
+        "start": "npm-run-all --parallel sass js:watch"
     },
     "devDependencies": {
         "esbuild": "^0.25.4",

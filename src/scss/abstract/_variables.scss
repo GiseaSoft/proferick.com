@@ -1,13 +1,12 @@
 /* Import Fonts */
 @use '../fonts/inter';
 @use '../fonts/satisfy';
-@use '../fonts/pricons';
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
     :root {
         --thisColor: #222;
     }
-}
+}*/
 
 /* Colors */
 $clr-bg: #FDFDFD;
@@ -59,8 +58,8 @@ $desktop: 64rem;
 
 /* Time */
 $transition-time: 350ms;
-$transition-time-fast: calc($transition-time / 2);
-$transition-time-slow: calc($transition-time * 2);
+$transition-time-fast: calc($transition-time / 1.25);
+$transition-time-slow: calc($transition-time * 1.25);
 
 /* Extends */
 %container {

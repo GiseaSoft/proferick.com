@@ -62,6 +62,16 @@ editors.forEach((editor, index) => {
     thisInstance.init();
 })
 
+/* Carousel Stack */
+const root = document.documentElement;
+const carouselTechElementsDisplayed = getComputedStyle(root).getPropertyValue("--carouselTech-elements-displayed");
+const carouselTechContent = document.querySelector("ul.carouselTech-content");
+
+root.style.setProperty("--carouselTech-elements", carouselTechContent.children.length);
+
+for(let i=0; i<carouselTechElementsDisplayed; i++) {
+  carouselTechContent.appendChild(carouselTechContent.children[i].cloneNode(true));
+}
 /*******************/
 /*** Back To Top ***/
 /*******************/
