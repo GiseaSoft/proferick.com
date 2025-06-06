@@ -50,18 +50,6 @@ const closeItemsInAccordion = (thisAccordion) => {
     itemBodies.forEach(item => item.removeAttribute('aria-expanded'));
 };
 
-/********************/
-/*** Code Editors ***/
-/********************/
-let editors = document.querySelectorAll('.editor');
-
-editors.forEach((editor, index) => {
-    editor.setAttribute('id', `editor_${index}`);
-    const name = editor.getAttribute('editor-name');
-    const thisInstance = new CodeEditor(index, name);
-    thisInstance.init();
-})
-
 /* Carousel Stack */
 const root = document.documentElement;
 const carouselTechElementsDisplayed = getComputedStyle(root).getPropertyValue("--carouselTech-elements-displayed");
@@ -72,6 +60,7 @@ root.style.setProperty("--carouselTech-elements", carouselTechContent.children.l
 for(let i=0; i<carouselTechElementsDisplayed; i++) {
   carouselTechContent.appendChild(carouselTechContent.children[i].cloneNode(true));
 }
+
 /*******************/
 /*** Back To Top ***/
 /*******************/

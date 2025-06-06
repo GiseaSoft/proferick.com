@@ -9,8 +9,8 @@
 
     <link rel="stylesheet" href="./assets/css/prism.css">
     <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 64rem)">
-    <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 64rem)">
+    <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 48rem)">
+    <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 48rem)">
 
     <!-- Favicon -->
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon">
@@ -177,7 +177,7 @@
                         </p>
                     </div>
                     
-                    <div class="editor">
+                    <div id="courses" class="editor">
                         <ul class="editor_tabset draggable-horizontal" role="tablist">
                             <li role="tab"><span data-target="#editor_window-html"><i class="fa-brands fa-html5"></i><span>HTML5</span></span></li>
                             <li role="tab"><span data-target="#editor_window-css"><i class="fa-brands fa-css"></i><span>CSS</span></span></li>
@@ -454,8 +454,8 @@
                                             // Función para generar una lista de elementos
                                             function generarLista($arreglo) {
                                                 echo "&lt;ul&gt;"; // Inicia una lista no ordenada
-                                                foreach ($arreglo as $item) {
-                                                    echo "&lt;li&gt;" . $item . "&lt;/li&gt;"; // Imprime cada elemento como un ítem de lista
+                                                foreach ($arreglo as $elem) {
+                                                    echo "&lt;li&gt;" . $elem . "&lt;/li&gt;"; // Imprime cada elemento de la lista
                                                 }
                                                 echo "&lt;/ul&gt;"; // Cierra la lista
                                             }
@@ -468,17 +468,7 @@
                                         &lt;html lang="es"&gt;
                                         &lt;head&gt;
                                             &lt;meta charset="UTF-8"&gt;
-                                            &lt;title&gt;Mi página con PHP avanzado&lt;/title&gt;
-                                            &lt;style&gt;
-                                                body {
-                                                    background: #fafafa;
-                                                    color: #333;
-                                                    font-family: sans-serif;
-                                                }
-                                                ul {
-                                                    list-style-type: square;
-                                                }
-                                            &lt;/style&gt;
+                                            &lt;title&gt;Mi página con PHP&lt;/title&gt;
                                         &lt;/head&gt;
                                         &lt;body&gt;
                                             &lt;h1&gt;Lista de Frutas&lt;/h1&gt;
@@ -672,6 +662,10 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <link rel="stylesheet" href="./assets/css/codeEditor.css" media="all">
+                    <script defer src="./assets/js/CodeEditor.js"></script>
+                    <script defer src="./assets/js/prism.js"></script>
                 </div>
             </section>
             <section id="about">
@@ -693,76 +687,48 @@
             </section>
             <section id="reviews">
                 <h2 class="heading">Reviews</h2>
-                <h3 class="subheading">No lo digo yo...</h3>
+                <h3 class="subheading">Los mejores cursos. No lo digo yo...</h3>
 
-                <div class="slider-container">
-                    <div class="slider-content">
+                <div class="reviews-container">
+                    <div class="reviews-content">
 
-                        <div class="slider-single">
-                            <div class="slider-head">
-                                <span class="slider-title">Diego</span>
-                                <span class="slider-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </span>
+                        <div class="review-card" data-stars="5">
+                            <div class="review-head">
+                                <span class="review-title">Diego</span>
                             </div>
-                            <p class="slider-body">
+                            <p class="review-body">
                                 Ricardo es un gran Maestro.
                                 <br>Tiene mucho conocimiento sobre los temas que imparte, se ve que se prepara para dar sus clases, además es muy paciente con las dudas que llegan a surgir, pero sobretodo, elocuente, pues sabe aterrizar sus ideas y expresarlas de tal manera que uno las entienda.
                                 <br>Lo recomiendo mucho.
                             </p>
                         </div>
                 
-                        <div class="slider-single">
-                            <div class="slider-head">
-                                <span class="slider-title">Law</span>
-                                <span class="slider-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
+                        <div class="review-card" data-stars="4">
+                            <div class="review-head">
+                                <span class="review-title">Law</span>
                             </div>
-                            <p class="slider-body">
+                            <p class="review-body">
                                 Es muy profesional, cuando explica no se desespera por resolver dudas, aunque sean muchas, enseña de una forma muy amigable y se toma enserio el aprendizaje del alumno, en un día me preparo para presentar un examen de cálculo y lo que no entendí en dos meses el me lo explico en un día. Via remota también me dio un curso de Github para aprender a utilizarlo desde terminal, y fue muy rápido y claro.
                                 <br>Lo recomiendo ampliamente.
                                 <br>Gracias Ricardo.
                             </p>
                         </div>
 
-                        <div class="slider-single">
-                            <div class="slider-head">
-                                <span class="slider-title">Carlos</span>
-                                <span class="slider-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </span>
+                        <div class="review-card" data-stars="4">
+                            <div class="review-head">
+                                <span class="review-title">Carlos</span>
                             </div>
-                            <p class="slider-body">
+                            <p class="review-body">
                                 Es una profesor muy preparado y profesional, sabe desarrollar sus clases para la completa comprensión de sus alumnos.
                                 <br>Esta dejando una muy buena generación de programadores para el futuro 
                             </p>
                         </div>
 
-                        <div class="slider-single">
-                            <div class="slider-head">
-                                <span class="slider-title">Lia</span>
-                                <span class="slider-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
+                        <div class="review-card" data-stars="5">
+                            <div class="review-head">
+                                <span class="review-title">Lia</span>
                             </div>
-                            <p class="slider-body">
+                            <p class="review-body">
                                 Es respetuoso y maneja perfectamente el tema, se nota su experiencias y su calidad de enseñanza.
                                 <br>Tiene mucha paciencia y atento a no dejarte con ninguna duda.
                                 <br>ALTAMENTE RECOMENDADO 
@@ -771,6 +737,9 @@
                 
                     </div>
                 </div>
+
+                <link rel="stylesheet" href="./assets/css/reviews.css" media="all">
+                <script defer src="./assets/js/Reviews.js"></script>
                 
             </section>
             <section id="contact" class="grid-2">
@@ -876,7 +845,7 @@
             </nav>
         </div>
         <div class="footerCopy">
-            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">|</span><span>Creado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
+            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">•</span><span>Creado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
         </div>
     </footer>
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">
@@ -884,9 +853,6 @@
     </button>
 
     <script defer src="https://kit.fontawesome.com/10e3a8cc09.js" crossorigin="anonymous"></script>
-    <script defer src="./assets/js/silder.js"></script>
-    <script defer src="./assets/js/CodeEditor.js"></script>
-    <script defer src="./assets/js/prism.js"></script>
     <script defer src="./assets/js/main.js"></script>
 </body>
 </html>
