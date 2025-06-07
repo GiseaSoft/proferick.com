@@ -134,6 +134,9 @@ body {
     padding-block: $gap;
     list-style: inside;
 }
+.btn {
+    @extend %btn;
+}
 .grid-2 {
     display: grid;
     justify-items: center;
