@@ -177,14 +177,14 @@ function ReviewsSlider() {
         }
     
         _self.cards.forEach((elem) => {
-            var thisCard = elem;
-            if (thisCard.classList.contains('preactivede')) {
-                _self.cleanClasses(thisCard);
-                thisCard.classList.add('proactivede');
+            elem.setAttribute('aria-hidden', 'true');
+            if (elem.classList.contains('preactivede')) {
+                _self.cleanClasses(elem);
+                elem.classList.add('proactivede');
             }
-            if (thisCard.classList.contains('preactive')) {
-                _self.cleanClasses(thisCard);
-                thisCard.classList.add('preactivede');
+            if (elem.classList.contains('preactive')) {
+                _self.cleanClasses(elem);
+                elem.classList.add('preactivede');
             }
         });
 
@@ -211,15 +211,15 @@ function ReviewsSlider() {
         }
     
         _self.cards.forEach((elem) => {
-            var thisCard = elem;
+            elem.setAttribute('aria-hidden', 'true');
             
-            if (thisCard.classList.contains('proactive')) {
-                _self.cleanClasses(thisCard);
-                thisCard.classList.add('proactivede');
+            if (elem.classList.contains('proactive')) {
+                _self.cleanClasses(elem);
+                elem.classList.add('proactivede');
             }
-            if (thisCard.classList.contains('proactivede')) {
-                _self.cleanClasses(thisCard);
-                thisCard.classList.add('preactivede');
+            if (elem.classList.contains('proactivede')) {
+                _self.cleanClasses(elem);
+                elem.classList.add('preactivede');
             }
         });
         
@@ -244,6 +244,7 @@ function ReviewsSlider() {
         preactiveCard.classList.add('preactive');
     
         _self.cleanClasses(activeCard);
+        activeCard.removeAttribute('aria-hidden');
         activeCard.classList.add('active');
     
         _self.cleanClasses(proactiveCard);
