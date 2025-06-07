@@ -1,11 +1,12 @@
-/* Abstract */
+// Abstract
 @use './abstract/reset';
 @use './abstract/variables' as *;
 
-/*******************/
-/*** Base layout ***/
-/*******************/
+// Import Fonts
+@use './fonts/inter';
+@use './fonts/satisfy';
 
+// Base layout
 ::selection {
     background: rgba($clr-accent, 0.85) !important;
     color: $clr-white !important;
@@ -112,9 +113,7 @@ body {
     }
 }
 
-/************************/
-/*** Reusable Classes ***/
-/************************/
+// Reusable Classes
 .heading {
     margin-bottom: $gap-half;
     font-family: $font-title;
@@ -156,20 +155,18 @@ body {
     --skew-height: 3.5vw;
     &[skew-type="top"] {
         padding-top: var(--skew-height);
-        //clip-path: polygon(0 var(--skew-height), 100% 0, 100% 100%, 0% 100%);
         clip-path: polygon(100% var(--skew-height), 0 0, 0 100%, 100% 100%);
     }
     &[skew-type="bottom"] {
         padding-bottom: var(--skew-height);
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--skew-height)), 0% 100%);
-        //clip-path: polygon(100% 0, 0 0, 0 calc(100% - var(--skew-height)), 100% 100%);
     }
 }
 
 :root {
     --carouselTech-width: 100%;
     --carouselTech-height: 50px;
-    /* --carouselTech-elements: 0; */ /* defined with JavaScript */
+    // --carouselTech-elements: 0; // defined with JavaScript
     --carouselTech-elements-displayed: 5;
     --carouselTech-element-width: calc(var(--carouselTech-width) / var(--carouselTech-elements-displayed));
     --carouselTech-animation-duration: calc(var(--carouselTech-elements) * 2.5s);
@@ -205,9 +202,9 @@ body {
     display: flex;
     animation: scrolling var(--carouselTech-animation-duration) linear infinite;
 }
-/*.carouselTech-content:hover {
-    animation-play-state: paused;
-}*/
+//.carouselTech-content:hover {
+//    animation-play-state: paused;
+//}
 @keyframes scrolling {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-1 * var(--carouselTech-element-width) * var(--carouselTech-elements))); }
@@ -269,11 +266,7 @@ a:hover {
     }
 }
 
-/****************/
-/*** Sections ***/
-/****************/
-
-/* Hero */
+// Sections
 .hero {
     padding: $gap-double;
     color: $clr-white;
@@ -322,7 +315,7 @@ a:hover {
     }
 }
 
-/* Accordions */
+// Accordions
 .accordion {
     --thisRadius: #{$border-radius};
     padding: 10px;
@@ -368,7 +361,7 @@ a:hover {
     }
 }
 
-/* Contact */
+// Contact
 .contactForm {
     width: min(35rem, 100%);
     padding: 1rem;
@@ -385,7 +378,7 @@ a:hover {
         span {
             font-size: $fs-5;
             cursor: pointer;
-            &[aria-errormessage] { /* Hidden by default */ 
+            &[aria-errormessage] { // Hidden by default 
                 visibility: hidden;
                 display: none;
                 margin-block: -0.5rem 1.5rem;

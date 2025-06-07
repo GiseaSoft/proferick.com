@@ -1,10 +1,10 @@
-/* PrismJS 1.30.0 https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+bash+ignore+javadoclike+jsdoc+js-extras+json+js-templates+markup-templating+php+phpdoc+php-extras+plsql+jsx+tsx+scss+sql+typescript+typoscript+uri&plugins=line-numbers+normalize-whitespace */
+// PrismJS 1.30.0 https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+bash+ignore+javadoclike+jsdoc+js-extras+json+js-templates+markup-templating+php+phpdoc+php-extras+plsql+jsx+tsx+scss+sql+typescript+typoscript+uri&plugins=line-numbers+normalize-whitespace
 
-/**********************************************************/
-/*   prism.js Custom theme for proferick.com @dark-mode   */
-/*          Author: @salegomx | sergiogomez.mx            */
-/*    Heavily inspired on 'Nihgt Owl' theme for VSCode    */
-/**********************************************************/
+/*!
+ * prism.js Custom theme for proferick.com @dark-mode
+ * Author: @salegomx | https://sergiogomez.mx 
+ * Heavily inspired on 'Nihgt Owl' theme for VSCode
+ */
 
 code[class*="language-"], pre[class*="language-"] {
 	font-family: Consolas, Monaco, 'Ubuntu Mono', monospace;
@@ -26,19 +26,19 @@ code[class*="language-"], pre[class*="language-"] {
 	hyphens: none;
 }
 
-/* Code blocks */
+// Code blocks
 pre[class*="language-"] {
 	padding: 0.5em;
-	/* Firefox */
+	// Firefox
 	& ::-moz-selection {
 		background: #305971;
 	}
-	/* Rest of browsers */
+	// Rest of browsers
 	& ::selection {
 		background: #305971;
 	}
 }
-/* Defaults */
+// Defaults
 .token {
 	&.comment,
 	&.prolog,
@@ -92,7 +92,7 @@ pre[class*="language-"] {
 		cursor: help;
 	}
 }
-/* Markup */
+// Markup
 .language-markup {
 	.token {
 		&.name,
@@ -111,7 +111,7 @@ pre[class*="language-"] {
 		}
 	}
 }
-/* Inline styles, CSS, SCSS, SASS */
+// Inline styles, CSS, SCSS, SASS
 :is( .style, .language-css, .language-scss, .language-sass) {
 	.token {
 		&.atrule {
@@ -136,7 +136,7 @@ pre[class*="language-"] {
 		}
 	}
 }
-/* inline Scritps, JS, TS, JSX, TSX, JSON */
+// inline Scritps, JS, TS, JSX, TSX, JSON
 :is(
 	.script,
 	.language-js,
@@ -166,7 +166,7 @@ pre[class*="language-"] {
 		}
 	}
 }
-/* PHP */
+// PHP
 .language-php {
 	.token {
 		&.delimiter.important {
@@ -223,9 +223,7 @@ pre[class*="language-"] {
 	}
 }
 
-/*****************************************************************/
-/* Plugin: Line Numbers https://prismjs.com/plugins/line-numbers */
-/*****************************************************************/
+// Plugin: Line Numbers https://prismjs.com/plugins/line-numbers
 
 pre[class*="language-"].line-numbers {
 	position: relative;
@@ -242,7 +240,7 @@ pre[class*="language-"].line-numbers {
 	top: 0;
 	font-size: 100%;
 	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
+	width: 3em; // works for line-numbers below 1000 lines
 	letter-spacing: -1px;
 	border-right: 1px solid #ccc;
 	-webkit-user-select: none;

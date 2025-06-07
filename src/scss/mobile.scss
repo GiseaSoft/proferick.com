@@ -86,10 +86,7 @@
         }
     }
     
-    /*****************************/
-    /* Component specific styles */
-    /*****************************/
-
+    // Component specific styles
     #courses.grid-2 {
         display: flex;
         flex-direction: column-reverse; // invert order of text and code editor
