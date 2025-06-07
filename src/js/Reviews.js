@@ -53,7 +53,7 @@ function ReviewsSlider() {
         const leftArrow = document.createElement('button');
         const iLeft = document.createElement('i');
     
-        iLeft.classList.add('fa');
+        iLeft.classList.add('fas');
         iLeft.classList.add('fa-arrow-left');
     
         leftArrow.classList.add('arrows');
@@ -67,7 +67,7 @@ function ReviewsSlider() {
         const rightArrow = document.createElement('button');
         const iRight = document.createElement('i');
     
-        iRight.classList.add('fa');
+        iRight.classList.add('fas');
         iRight.classList.add('fa-arrow-right');
     
         rightArrow.classList.add('arrows');
@@ -92,13 +92,14 @@ function ReviewsSlider() {
 
             for (let i = 0; i < 5; i++) {
                 let star = document.createElement('i');
-                star.classList.add('fa-star');
 
                 if (i < starCount) {
-                    star.classList.add('fa-solid');
+                    star.classList.add('fas');
                 } else {
-                    star.classList.add('fa-regular');
+                    star.classList.add('far');
                 }
+                
+                star.classList.add('fa-star');
 
                 starsContainer.appendChild(star);
             }
