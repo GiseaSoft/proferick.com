@@ -58,6 +58,7 @@ function ReviewsSlider() {
     
         leftArrow.classList.add('arrows');
         leftArrow.classList.add('arrow-left');
+        leftArrow.setAttribute('aria-label', 'Previous Review');
         leftArrow.appendChild(iLeft);
     
         leftArrow.addEventListener('click', () => {
@@ -72,6 +73,7 @@ function ReviewsSlider() {
     
         rightArrow.classList.add('arrows');
         rightArrow.classList.add('arrow-right');
+        rightArrow.setAttribute('aria-label', 'Next Review');
         rightArrow.appendChild(iRight);
     
         rightArrow.addEventListener('click', () => {

@@ -14,7 +14,7 @@
     },
     "homepage": "https://github.com/Salegomx/proferick.com",
     "scripts": {
-        "sass": "sass --no-source-map --style=expanded --watch  ./src/scss:./assets/css",
+        "sass": "sass --no-source-map --style=compressed --watch  ./src/scss:./assets/css",
                 
         "js:watch": "nodemon --watch ./src/js --ext js --exec \"npm run js:build\"",
         "js:build": "node minify-js.js",
