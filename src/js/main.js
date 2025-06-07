@@ -21,6 +21,16 @@ menuButton.addEventListener('click', () => {
     menuButton.toggleAttribute('aria-expanded');
 });
 
+/* Years Experience */
+const yearsExperience = document.querySelectorAll('.years_experience');
+yearsExperience.forEach(span => span.textContent = new Date().getFullYear() - 2015);
+
+const yearsTeacher = document.getElementById('years_teacher');
+yearsTeacher.textContent = new Date().getFullYear() - 2010;
+
+const currentYear = document.getElementById('year_current');
+currentYear.textContent = new Date().getFullYear();
+
 /******************/
 /*** Accordions ***/
 /******************/

@@ -58,7 +58,7 @@
             <div class="contentContainer grid-2">
                 <div class="hero_text">
                     <h1 class="heading">Profe Rick</h1>
-                    <p class="subheading">Ingeniero de software con <script>document.write(new Date().getFullYear() - 2015)</script> años de experiencia en la industria en puestos como desarrollador Front End, Back End y Fullstack.</p>
+                    <p class="subheading">Ingeniero de software con <span class="years_experience"></span> años de experiencia en la industria en puestos como desarrollador Front End, Back End y Fullstack.</p>
                     
                     <div class="hero_brands">
                         <div>
@@ -675,8 +675,8 @@
                 <h3 class="subheading">Soy Ricardo, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
                 
                 <p class="paragraph">
-                    Llevo más de <em class="highlight"><script>document.write(new Date().getFullYear() - 2010)</script> años como docente
-                    y <script>document.write(new Date().getFullYear() - 2015)</script> años trabajando en la industria</em> como desarrollador Front End, Back End y Fullstack.
+                    Llevo más de <em class="highlight"><span id="years_teacher"></span> años como docente
+                    y <span class="years_experience"></span> años trabajando en la industria</em> como desarrollador Front End, Back End y Fullstack.
                     <br>
                     A lo largo de los años he enseñado a personas de todas las edades:
                     desde niños curiosos hasta adultos que quieren cambiar de carrera.
@@ -847,14 +847,13 @@
             </nav>
         </div>
         <div class="footerCopy">
-            <span>© <script>document.write(new Date().getFullYear())</script> proferick.com</span><span class="desktopOnly">•</span><span>Creado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
+            <span>© <span id="year_current"></span> proferick.com</span><span class="desktopOnly">•</span><span>Creado por el alumno <a href="//sergiogomez.mx" target="_blank">Sergio Gómez</a></span>
         </div>
     </footer>
     <button id="backToTop" class="invisible" aria-label="Click to go back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!--script defer src="https://kit.fontawesome.com/10e3a8cc09.js" crossorigin="anonymous"></script-->
     <script defer src="./assets/js/main.js"></script>
 </body>
 </html>
