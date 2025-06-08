@@ -7,7 +7,7 @@
     <meta name="author" content="sergiogomez.mx">
     <meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack.">
 
-    <link rel="stylesheet" href="./assets/css/base.css" meida="all">
+    <link rel="stylesheet" href="./assets/css/styles.css" meida="all">
     <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 48rem)">
     <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 48rem)">
 
@@ -23,7 +23,7 @@
             <a href="/">
                 <img class="logo" src="./assets/img/imagotype_dark.svg" alt="proferick.com">
             </a>
-            <div style="display:flex;gap:7.5px;">
+            <div>
                 <!--button>
                     <i class="fas fa-circle-half-stroke"></i>
                 </button-->
@@ -32,11 +32,11 @@
                         <li class="subMenu">
                             <a href="#services">Servicios <i class="fas fa-caret-down"></i></a>
                             <ul>
-                                <li><a href="#">Mentorias Front End</a></li>
-                                <li><a href="#">Mentorias Back End</a></li>
-                                <li><a href="#">Reclutamiento en TI</a></li>
-                                <li><a href="#">Creación de CV</a></li>
-                                <li><a href="#">Perfil TI</a></li>
+                                <li><a href="?tabset=mentorship&tab=frontend">Mentorias Front End</a></li>
+                                <li><a href="?tabset=mentorship&tab=backend">Mentorias Back End</a></li>
+                                <li><a href="?tabset=otherServices&tab=recruitment">Reclutamiento en TI</a></li>
+                                <li><a href="?tabset=otherServices&tab=resume">Creación de CV</a></li>
+                                <li><a href="?tabset=otherServices&tab=profile">Perfil TI</a></li>
                             </ul>
                         </li>
                         <li><a href="#courses">Cursos</a></li>
@@ -99,14 +99,14 @@
 
                 <div class="grid-2">
                     <div>
-                        <div class="accordion">
-                            <div class="accordion_item">
+                        <div id="mentorship" class="accordion">
+                            <div id="frontend" class="accordion_item">
                                 <div class="accordion_item-head">Mentorias Front End</div>
                                 <div class="accordion_item-body">
                                     Pensado para desarrolladores que ya trabajan en Front End pero se sienten estancados. Te ayudo a resolver problemas reales que enfrentas en tus proyectos, desde manejar estados complejos hasta mejorar la arquitectura del código. Vemos herramientas modernas, buenas prácticas y cómo trabajar como lo hacen en las empresas grandes.
                                 </div>
                             </div>
-                            <div class="accordion_item">
+                            <div id="backend" class="accordion_item">
                                 <div class="accordion_item-head">Mentorias Back End</div>
                                 <div class="accordion_item-body">
                                     Si ya estás trabajando con servidores, bases de datos o APIs pero te trabas con ciertos temas, te ayudo a avanzar. Revisamos juntos tus dudas, errores comunes, y cómo estructurar mejor tus proyectos. También podemos ver seguridad, rendimiento y cómo pensar como un desarrollador sénior.
@@ -126,26 +126,29 @@
                     </div>
                 </div>
                 <br>
-                <div class="accordion">
-                    <div class="accordion_item">
+                <div id="otherServices" class="accordion">
+                    <div id="recruitment" class="accordion_item">
                         <div class="accordion_item-head">Reclutamiento en Tecnologías de la Información</div>
                         <div class="accordion_item-body">
                             Construye tu equipo de desarrolladores, te ayudo a conseguir tus desarrolladores y como gestionarlos, te apoyamos con el rango de precios por tecnología, experiencia e idiomas, las tecnologías que necesita el puesto por stack de tecnología garantizando su éxito en cada paso.
                         </div>
                     </div>
-                    <div class="accordion_item">
+                    <div id="resume" class="accordion_item">
                         <div class="accordion_item-head">Creación de CV</div>
                         <div class="accordion_item-body">
                             Te ayudo a construir un currículum enfocado a tecnología, destacando tus proyectos, conocimientos y habilidades de manera clara y efectiva. He trabajado con reclutadores y sé lo que buscan. Juntos armamos un CV que muestre lo mejor de ti, aunque estés empezando o cambiando de carrera.
                         </div>
                     </div>
-                    <div class="accordion_item">
+                    <div id="profile" class="accordion_item">
                         <div class="accordion_item-head">Perfilamiento Técnico</div>
                         <div class="accordion_item-body">
                             Te asesoro para que construyas un perfil profesional sólido en plataformas como LinkedIn, GitHub y otros canales donde los reclutadores buscan talento. Te doy consejos reales y te muestro cómo mostrar tus proyectos, cómo describir tus habilidades, y cómo generar presencia en línea que te abra puertas en la industria.
                         </div>
                     </div>
                 </div>
+
+                <link rel="stylesheet" href="./assets/css/accordions.css" media="all">
+                <script defer src="./assets/js/accordions.js"></script>
             </section>
             <section id="courses">
                 <div class="grid-2">
@@ -153,8 +156,8 @@
                         <h2 class="heading">Cursos</h2>
                         <h3 class="subheading">Diseñados para personas que quieren entrar al mundo tech sin rodeos.</h3>
                         
-                        <div class="carouselTech">
-                            <ul class="carouselTech-content">
+                        <div class="sliding-logos">
+                            <ul class="sliding-logos-content">
                                 <li><i class="fab fa-html5"></i></li>
                                 <li><i class="fab fa-css"></i></li>
                                 <li><i class="fab fa-js"></i></li>
@@ -168,6 +171,9 @@
                                 <li><i class="fas fa-database"></i></li>
                             </ul>
                         </div>
+
+                        <link rel="stylesheet" href="./assets/css/slidingLogos.css" media="all">
+                        <script defer src="./assets/js/slidingLogos.js"></script>
                         
                         <p class="paragraph">
                             Todo lo que enseño está pensado para que puedas conseguir trabajo o mejorar en el que ya tienes.
@@ -665,9 +671,10 @@
                     </div>
                     
                     <link rel="stylesheet" href="./assets/css/codeEditor.css" media="all">
-                    <script defer src="./assets/js/CodeEditor.js"></script>
+                    <script defer src="./assets/js/codeEditor.js"></script>
                     <link rel="stylesheet" href="./assets/css/prism.css">
                     <script defer src="./assets/js/prism.js"></script>
+                    
                 </div>
             </section>
             <section id="about">
@@ -741,7 +748,7 @@
                 </div>
 
                 <link rel="stylesheet" href="./assets/css/reviews.css" media="all">
-                <script defer src="./assets/js/Reviews.js"></script>
+                <script defer src="./assets/js/reviews.js"></script>
                 
             </section>
             <section id="contact" class="grid-2">
@@ -758,45 +765,6 @@
                         estaré encantado de escucharte y ayudarte.
                     </p>
                 </div>
-
-                <!--form id="contactForm" class="contactForm">
-                    <fieldset>
-                        <legend class="sr-only">Tu información personal</legend>
-                        <label for="firstName">
-                            <span>Nombre:</span>
-                            <input id="firstName" name="firstName" type="text">
-                            <span aria-errormessage="firstName">Introduce tu nombre</span>
-                        </label>
-                        <label for="lastName">
-                            <span>Apellido</span>
-                            <input id="lastName" name="lastName" type="text">
-                            <span aria-errormessage="lastName">Introduce tu apellido</span>
-                        </label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend class="sr-only">Tus datos de contacto</legend>
-                        <label for="phone">
-                            <span>Teléfono:</span>
-                            <input id="phone" name="phone" type="text">
-                            <span aria-errormessage="phone">Introduce un número de teléfono valido</span>
-                        </label>
-                        <label for="email">
-                            <span>Correo Electrónico:</span>
-                            <input id="email" name="email" type="text">
-                            <span aria-errormessage="email">Introduce tu correo electrónico</span>
-                        </label>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <legend class="sr-only">Comentarios:</legend>
-                        <label for="comments">
-                            <span>Comentarios</span>
-                            <textarea id="comments" name="comments" rows="3"></textarea>
-                        </label>
-                        <input type="submit" class="btn" value="Enviar">
-                    </fieldset>
-                </form-->
             </section>
         </div>
     </main>
@@ -819,20 +787,20 @@
             <nav class="footerNav">
                 <h2 class="footerNavTitle">Cursos Front End</h2>
                 <ul>
-                    <li><a target="_self" href="?editor=courses&tab=html">HTML</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=css">CSS</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=js">JavaScript</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=sass">SASS</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=bootstrap">Bootstrap</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=html">HTML</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=css">CSS</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=js">JavaScript</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=sass">SASS</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=bootstrap">Bootstrap</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">
                 <h2 class="footerNavTitle">Cursos Back End</h2>
                 <ul>
-                    <li><a target="_self" href="?editor=courses&tab=php">PHP</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=laravel">Laravel</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=sql">SQL</a></li>
-                    <li><a target="_self" href="?editor=courses&tab=git">GIT & GitHub</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=php">PHP</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=laravel">Laravel</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=sql">SQL</a></li>
+                    <li><a target="_self" href="?tabset=courses&tab=git">GIT & GitHub</a></li>
                 </ul>
             </nav>
             <nav class="footerNav">

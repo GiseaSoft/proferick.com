@@ -3,7 +3,6 @@ function CodeEditor(id) {
 
     this.id = id;
     this.code_editor   = {};
-    this.sectionParent = {};
     this.editorTabset  = {};
     this.editorTabs    = {};
     this.editorDisplay = {};
@@ -11,7 +10,6 @@ function CodeEditor(id) {
 
     this.init = () => {
         _self.code_editor   = document.querySelector(`#${id}.editor`);
-        _self.sectionParent = _self.code_editor.closest('section');
         _self.editorTabset  = _self.code_editor.querySelector('.editor_tabset');
         _self.editorTabs    = _self.editorTabset.querySelectorAll('li');
         _self.editorDisplay = _self.code_editor.querySelector('.editor_display');
@@ -64,7 +62,7 @@ function CodeEditor(id) {
         });
     }
 
-    this.activateTab = (targetId, scrollIntoView = false, updateUrl) => {
+    this.activateTab = (targetId, scrollIntoView = false, updateUrl = false) => {
         const targetSelector = `#editor_window-${targetId}`;
         const activeTab      = _self.code_editor.querySelector(`span[data-target="${targetSelector}"]`).closest('li');
         const activeWindow   = _self.editorDisplay.querySelector(targetSelector);
@@ -77,7 +75,7 @@ function CodeEditor(id) {
 
             tab.removeAttribute('aria-selected');
             if (isActive && scrollIntoView) {
-                _self.sectionParent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                _self.code_editor.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
 
@@ -89,8 +87,9 @@ function CodeEditor(id) {
     }
 
     this.onStart = () => {
+        if (!window.location.search) return;
         const urlParams      = new URLSearchParams(window.location.search);
-        const targetEditor   = urlParams.get('editor');
+        const targetEditor   = urlParams.get('tabset');
         const targetTab      = urlParams.get('tab');
         const scrollIntoView = true;
 
@@ -106,7 +105,7 @@ function CodeEditor(id) {
 
     this.updateUrl = (targetTab) => {
         const url = new URL(window.location);
-        url.searchParams.set('editor', _self.id);
+        url.searchParams.set('tabset', _self.id);
         url.searchParams.set('tab', targetTab);
         history.replaceState(null, '', url);
     }

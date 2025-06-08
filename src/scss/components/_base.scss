@@ -1,0 +1,109 @@
+@use '../abstract/variables' as *;
+
+::selection {
+    background: rgba($clr-accent, 0.85) !important;
+    color: $clr-white !important;
+}
+body {
+    font-family: $font-body;
+    font-size: $fs-6;
+    color: $clr-black;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    background-color: $clr-bg;
+}
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: $clr-accent;
+}
+#mainHeader {
+    position: sticky;
+    inset: 0 0 auto 0;
+    z-index: 2;
+    height: $header-height;
+    background-color: $clr-primary;
+    border-bottom: 1pt solid $clr-black;
+    .innerHeader {
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            height: 3.25rem;
+        }
+        .primaryNav {
+            li {
+                a {
+                    color: $clr-black;
+                    &.contact {
+                        color: $clr-white;
+                        background-color: $clr-accent;
+                        border: 1pt solid $clr-black;
+                    }
+                }
+                &.subMenu .icon-down {
+                    font-size: 15px
+                }
+            }
+        }
+    }   
+}
+#content {
+    .contentContainer {
+        @extend %container;
+        > section {
+            padding-block: calc($gap-double * 2.5) 10vw;
+        }
+        :is(a, a:visited, a:focus) {
+            color: darken($clr-accent, 5%);
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition: $transition-time;
+        }
+    }
+}
+#mainFooter {
+    color: $clr-white;
+    background: linear-gradient(90deg, $clr-secondary 0, darken($clr-secondary, 10%) 70%);
+    a {
+        color: inherit;
+    }
+    .logo, .logoEmail {
+        display: block;
+        max-width: 20rem;
+        margin-inline: auto;
+        text-align: center;
+    }
+    .innerFooter {
+        @extend %container;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: $gap-double;
+        padding-block: $gap-double;
+        .footerNav {
+            &Title {
+                margin-bottom: $gap-half;
+                font-size: $fs-4;
+                font-weight: 700;
+            }
+            ul {
+                flex-basis: 300px;
+                list-style: inside;
+                display: flex;
+                flex-direction: column;
+                gap: $gap-half;
+                margin-bottom: $gap-double;
+            }
+        }
+    }
+    .footerCopy {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: $gap-half;
+        padding-block: 0.5rem;
+        background-color: darken($clr-secondary, 15%);
+    }
+}
