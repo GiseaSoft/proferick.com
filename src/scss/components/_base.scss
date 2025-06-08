@@ -52,7 +52,7 @@ a:hover {
     .contentContainer {
         @extend %container;
         > section {
-            padding-block: calc($gap-double * 2.5) 10vw;
+            padding-block: calc($gap-double * 2.5) 5vw;
         }
         :is(a, a:visited, a:focus) {
             color: darken($clr-accent, 5%);
