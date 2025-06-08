@@ -2550,6 +2550,8 @@ $fa-icons: (
 	"caret-down": $fa-var-caret-down,
 	"arrow-up": $fa-var-arrow-up,
 	"database": $fa-var-database,
+
+	// turned off
 	//"0": $fa-var-0,
 	//"1": $fa-var-1,
 	//"2": $fa-var-2,
@@ -4508,6 +4510,7 @@ $fa-icons: (
 );
 
 $fa-brand-icons: (
+	// tech
 	"vuejs": $fa-var-vuejs,
 	"laravel": $fa-var-laravel,
 	"css": $fa-var-css,
@@ -4518,6 +4521,13 @@ $fa-brand-icons: (
 	"git": $fa-var-git,
 	"github": $fa-var-github,
 	"php": $fa-var-php,
+
+	// social
+	"linkedin-in": $fa-var-linkedin-in,
+	"instagram": $fa-var-instagram,
+	"facebook-f": $fa-var-facebook-f,
+
+	// turned off
 	//"monero": $fa-var-monero,
 	//"hooli": $fa-var-hooli,
 	//"yelp": $fa-var-yelp,
@@ -4600,7 +4610,7 @@ $fa-brand-icons: (
 	//"square-font-awesome-stroke": $fa-var-square-font-awesome-stroke,
 	//"font-awesome-alt": $fa-var-font-awesome-alt,
 	//"atlassian": $fa-var-atlassian,
-	//"linkedin-in": $fa-var-linkedin-in,
+	//"linkedin": $fa-var-linkedin,
 	//"digital-ocean": $fa-var-digital-ocean,
 	//"nimblr": $fa-var-nimblr,
 	//"chromecast": $fa-var-chromecast,
@@ -4794,7 +4804,7 @@ $fa-brand-icons: (
 	//"gofore": $fa-var-gofore,
 	//"bimobject": $fa-var-bimobject,
 	//"brave-reverse": $fa-var-brave-reverse,
-	//"facebook-f": $fa-var-facebook-f,
+	//"facebook": $fa-var-facebook,
 	//"square-google-plus": $fa-var-square-google-plus,
 	//"google-plus-square": $fa-var-google-plus-square,
 	//"web-awesome": $fa-var-web-awesome,
@@ -4861,7 +4871,6 @@ $fa-brand-icons: (
 	//"renren": $fa-var-renren,
 	//"linux": $fa-var-linux,
 	//"glide": $fa-var-glide,
-	//"linkedin": $fa-var-linkedin,
 	//"hubspot": $fa-var-hubspot,
 	//"deploydog": $fa-var-deploydog,
 	//"twitch": $fa-var-twitch,
@@ -4877,10 +4886,8 @@ $fa-brand-icons: (
 	//"creative-commons-remix": $fa-var-creative-commons-remix,
 	//"cc-amazon-pay": $fa-var-cc-amazon-pay,
 	//"dropbox": $fa-var-dropbox,
-	//"instagram": $fa-var-instagram,
 	//"cmplid": $fa-var-cmplid,
 	//"upwork": $fa-var-upwork,
-	//"facebook": $fa-var-facebook,
 	//"gripfire": $fa-var-gripfire,
 	//"jedi-order": $fa-var-jedi-order,
 	//"uikit": $fa-var-uikit,

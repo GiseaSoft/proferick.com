@@ -7,9 +7,7 @@
 .#{$fa-css-prefix}-solid, .fas,
 .#{$fa-css-prefix}-regular, .far,
 .#{$fa-css-prefix}-brands,.fab {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: var(--#{$fa-css-prefix}-display, #{$fa-display});
+  display: #{$fa-display};
   font-style: normal;
   font-variant: normal;
   line-height: 1;

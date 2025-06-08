@@ -95,6 +95,9 @@ a:hover {
                 flex-direction: column;
                 gap: $gap-half;
                 margin-bottom: $gap-double;
+                i {
+                    width: 15px
+                }
             }
         }
     }
