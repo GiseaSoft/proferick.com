@@ -6,7 +6,7 @@
     width: 100%;
     border-radius: $border-radius;
     overflow: clip; // for border-radius
-    scroll-margin-top: $header-height;
+    scroll-margin-top: calc($header-height + 10px);
 	scrollbar-width: thin;
     scrollbar-color: $clr-primary darken($clr-secondary, 12.5%); // thumb | track
     &_tabset {

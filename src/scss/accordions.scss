@@ -6,7 +6,7 @@
     background-color: #FFF;
     border: 1pt solid $clr-gray;
     border-radius: var(--thisRadius);
-    scroll-margin-top: $header-height;
+    scroll-margin-top: calc($header-height + 10px);
     &_item {
         overflow: hidden;
         &:first-child {
