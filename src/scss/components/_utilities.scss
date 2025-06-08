@@ -1,5 +1,8 @@
 @use '../abstract/variables' as *;
 
+h1 {
+    font-size: $fs-title;
+}
 .heading {
     margin-bottom: $gap-half;
     font-family: $font-title;
