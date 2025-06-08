@@ -70,6 +70,7 @@ function InitAccordions() {
     }
 }
 
-const initAccordions = new InitAccordions();
-
-initAccordions.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const initAccordions = new InitAccordions();
+    initAccordions.init();
+});

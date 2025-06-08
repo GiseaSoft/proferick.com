@@ -110,11 +110,12 @@ function CodeEditor(id) {
         history.replaceState(null, '', url);
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    let editors = document.querySelectorAll('.editor');
 
-let editors = document.querySelectorAll('.editor');
-
-editors.forEach(editor => {
-    const id = editor.getAttribute('id');
-    const thisInstance = new CodeEditor(id);
-    thisInstance.init();
-})
+    editors.forEach(editor => {
+        const id = editor.getAttribute('id');
+        const thisInstance = new CodeEditor(id);
+        thisInstance.init();
+    });
+});

@@ -14,6 +14,7 @@ function SlidingLogos() {
     }
 }
 
-const slidingLogos = new SlidingLogos();
-
-slidingLogos.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const slidingLogos = new SlidingLogos();
+    slidingLogos.init();
+});

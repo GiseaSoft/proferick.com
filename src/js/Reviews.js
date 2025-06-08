@@ -1,4 +1,4 @@
-function ReviewsSlider() {
+function ReviewSlider() {
     const _self = this;
     
     this.repeat = true;
@@ -265,5 +265,7 @@ function ReviewsSlider() {
     }
 }
 
-const reviewsSlider = new ReviewsSlider();
-reviewsSlider.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewSlider = new ReviewSlider();
+    reviewSlider.init();
+});
