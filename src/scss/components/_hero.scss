@@ -3,8 +3,12 @@
 .hero {
     padding: $gap-double;
     color: $clr-white;
-    background-attachment: fixed;
     text-shadow: 2px 2px 2px $clr-black;
+    background-size: cover;
+    background-position: center;
+    @media (width > $mobile) {
+        background-attachment: fixed;
+    }
     .heading {
         font-family: $font-title;
         font-size: $fs-title;
@@ -19,19 +23,19 @@
     }
     &_brands {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: $gap-half;
         > div {
             flex-basis: 300px;
             flex-grow: 1;
+            flex-shrink: 1;
             display: flex;
             justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: $gap-half;
+            gap: $gap;
             img {
-                width: 150px;
+                width: 125px;
                 aspect-ratio: 16/9;
                 object-fit: contain;
                 border-radius: $border-radius;
