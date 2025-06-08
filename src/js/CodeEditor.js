@@ -83,7 +83,7 @@ function CodeEditor(id) {
         activeTab.setAttribute('aria-selected', 'true');
         activeWindow.removeAttribute('hidden');
 
-        if (updateUrl) _self.updateUrl(targetId);
+        //if (updateUrl) _self.updateUrl(targetId);
     }
 
     this.onStart = () => {

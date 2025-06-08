@@ -6,6 +6,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 :where(img, picture, video, canvas, svg) {
     max-width: 100%;
 }
@@ -19,7 +22,7 @@
 :where(ul, ol) {
     list-style: none;
 }
-:is(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6) {
     font-size: 1em;
     font-weight: 400;
 }

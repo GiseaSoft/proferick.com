@@ -24,7 +24,7 @@ function InitAccordions() {
     this.activateTab = function(thisAccordion, thisItem, scrollIntoView = false) {
         _self.closeOtherItems(thisAccordion);
         _self.openThisItem(thisAccordion, thisItem, scrollIntoView);
-        _self.updateUrl(thisItem.getAttribute('id'));
+        //_self.updateUrl(thisItem.getAttribute('id'));
     };
 
     this.openThisItem = function(thisAccordion, thisItem, scrollIntoView) {
