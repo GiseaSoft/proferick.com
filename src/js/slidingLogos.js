@@ -1,6 +1,6 @@
 function SlidingLogos() {
     var _self = this;
-
+    
     this.root = document.documentElement;
     this.slidingLogosElementsDisplayed = getComputedStyle(_self.root).getPropertyValue("--sliding-logos-elements-displayed");
     this.slidingLogosContent = document.querySelector("ul.sliding-logos-content");
