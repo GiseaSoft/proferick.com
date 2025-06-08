@@ -44,15 +44,16 @@
         }
     }
     .primaryNav {
-        display: none;
+        max-height: 0;
+        width: 0;
         position: absolute;
-        top: 5rem;
+        top: $header-height;
         right: 1rem;
-        width: 90%;
         background-color: $clr-white;
         border-radius: $border-radius;
         overflow: hidden;
         outline: 1pt solid $clr-gray;
+        transition: width $transition-time, max-height $transition-time;
         li {
             a {
                 display: block;
@@ -74,6 +75,9 @@
         }
         &[aria-expanded] {
             display: block;
+            max-height: 80dvh;
+            width: 95%;
+            overflow: auto;
             box-shadow: 0 0 0 100vmax #000d;
         }
     }

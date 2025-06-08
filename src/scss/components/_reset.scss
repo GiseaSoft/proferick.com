@@ -1,4 +1,6 @@
-/* Reset Browser Defaults */
+@use '../abstract/variables' as *;
+
+// Reset Browser Defaults
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,12 +24,12 @@
     font-weight: 400;
 }
 
-@media(max-width: 63.9em) {
+@media(width <= $mobile) {
     .desktopOnly {
       display:none !important;
     }
 }
-@media(min-width: 64em) {
+@media(width > $mobile) {
     .mobileOnly {
         display:none !important;
     }

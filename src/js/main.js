@@ -4,10 +4,18 @@
 
 const primaryNav = document.querySelector('.primaryNav');
 const menuButton = document.getElementById('menuButton');
+const navLinks = primaryNav.querySelectorAll('a');
 
 menuButton.addEventListener('click', () => {
     primaryNav.toggleAttribute('aria-expanded');
     menuButton.toggleAttribute('aria-expanded');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        primaryNav.removeAttribute('aria-expanded');
+        menuButton.removeAttribute('aria-expanded');
+    });
 });
 
 /*************/
