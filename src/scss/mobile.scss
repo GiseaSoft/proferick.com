@@ -45,15 +45,14 @@
     }
     .primaryNav {
         max-height: 0;
-        width: 0;
+        width: 95%;
         position: absolute;
         top: $header-height;
         right: 1rem;
         background-color: $clr-white;
         border-radius: $border-radius;
         overflow: hidden;
-        outline: 1pt solid $clr-gray;
-        transition: width $transition-time, max-height $transition-time;
+        transition: $transition-time;
         li {
             a {
                 display: block;
@@ -74,11 +73,10 @@
             }
         }
         &[aria-expanded] {
-            display: block;
             max-height: 90dvh;
-            width: 95%;
             overflow: auto;
             box-shadow: 0 0 0 100vmax #000d;
+            outline: 1pt solid $clr-gray;
         }
     }
     .hero {

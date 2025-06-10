@@ -16,6 +16,17 @@ a:hover {
     text-decoration: underline;
     text-decoration-color: $clr-accent;
 }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 #mainHeader {
     position: sticky;
     inset: 0 0 auto 0;
@@ -118,5 +129,15 @@ a:hover {
         column-gap: $gap-half;
         padding-block: 0.5rem;
         background-color: darken($clr-secondary, 15%);
+    }
+}
+@media(width <= $mobile) {
+    .desktopOnly {
+        display: none !important;
+    }
+}
+@media(width > $mobile) {
+    .mobileOnly {
+        display: none !important;
     }
 }

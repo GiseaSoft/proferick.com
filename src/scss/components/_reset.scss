@@ -26,19 +26,7 @@ html {
     font-size: 1em;
     font-weight: 400;
 }
-
-@media(width <= $mobile) {
-    .desktopOnly {
-      display:none !important;
-    }
-}
-@media(width > $mobile) {
-    .mobileOnly {
-        display:none !important;
-    }
-}
-
-/* REMOVE ALL ANIMATIONS, TRANSITIONS AND SMOOTH SCROLL FOR PEOPLE THAT PREFER NOT TO SEE THEM */
+// REMOVE ALL ANIMATIONS, TRANSITIONS AND SMOOTH SCROLL FOR PEOPLE THAT PREFER NOT TO SEE THEM
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
         scroll-behavior: auto;
