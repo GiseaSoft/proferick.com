@@ -31,6 +31,16 @@ a:hover {
         .logo {
             height: 3.25rem;
         }
+        .header_actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: $gap-half;
+        }
+        .theme_button {
+            @extend %btn;
+            background: none;
+        }
         .primaryNav {
             li {
                 a {

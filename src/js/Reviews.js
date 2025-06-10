@@ -18,9 +18,10 @@ function ReviewSlider() {
         _self.initBullets();
         _self.initArrows();
         _self.initStars();
+        _self.initSwipe();
         setTimeout(function () {
             _self.slideRight();
-        }, 500);
+        }, 50);
     }
 
     this.initBullets = function() {
@@ -110,11 +111,37 @@ function ReviewSlider() {
         })
     }
 
-    /* **************** */
-    /* Update Functions */
-    /* **************** */
+    this.initSwipe = function() {
+        let swipeStartX = 0;
+        let swipeEndX = 0;
     
-    this.updateBullet = function() {
+        _self.container.addEventListener('touchstart', (e) => {
+            swipeStartX = e.changedTouches[0].screenX;
+        }, false);
+    
+        _self.container.addEventListener('touchend', (e) => {
+            swipeEndX = e.changedTouches[0].screenX;
+            _self.updateSwipe(swipeStartX, swipeEndX);
+        }, false);
+    }
+
+    /* **************** */
+    /* Core Functions */
+    /* **************** */
+
+    this.updateSwipe = function(swipeStartX, swipeEndX) {
+        const swipeThreshold = 50; // Minimum distance to consider a "swipe"
+    
+        if (swipeEndX < swipeStartX - swipeThreshold) {
+            _self.slideRight();
+        }
+
+        if (swipeEndX > swipeStartX + swipeThreshold) {
+            _self.slideLeft();
+        }
+    }
+    
+    this.updateBullets = function() {
         _self.container.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
             elem.classList.remove('active');
             if (i === _self.currentCard) {
@@ -188,7 +215,7 @@ function ReviewSlider() {
             }
         });
 
-        _self.updatecardss(preactiveCard, proactiveCard);
+        _self.updateCards(preactiveCard, proactiveCard);
     }
     
     this.slideLeft = function() {
@@ -223,7 +250,7 @@ function ReviewSlider() {
             }
         });
         
-        _self.updatecardss(preactiveCard, proactiveCard);
+        _self.updateCards(preactiveCard, proactiveCard);
     }
 
     this.goToIndexcards = function(index) {
@@ -237,7 +264,7 @@ function ReviewSlider() {
     /* Helper Functions */
     /* **************** */
 
-    this.updatecardss = function(preactiveCard, proactiveCard) {
+    this.updateCards = function(preactiveCard, proactiveCard) {
         var activeCard = _self.cards[_self.currentCard];
 
         _self.cleanClasses(preactiveCard);
@@ -252,7 +279,7 @@ function ReviewSlider() {
     
         
         if (_self.bullets) {
-            _self.updateBullet();
+            _self.updateBullets();
         }
     }
 

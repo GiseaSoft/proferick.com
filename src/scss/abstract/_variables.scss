@@ -58,7 +58,7 @@ $transition-time-slow: calc($transition-time * 1.25);
 %btn {
     display: block;
     padding: 5px 15px;
-    color: $clr-white;
-    cursor: pointer;
     border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
 }
