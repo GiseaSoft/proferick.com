@@ -51,6 +51,7 @@ a:hover {
         .theme_button {
             @extend %btn;
             background: none;
+            scale: 1.25;
         }
         .primaryNav {
             li {
