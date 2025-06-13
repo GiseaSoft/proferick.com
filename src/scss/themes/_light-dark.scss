@@ -23,9 +23,8 @@
 .theme-light,
 .theme-dark {
     transition:
-        background-color $transition-time-fast, 
-        color $transition-time-fast, 
-        color-scheme $transition-time-fast;
+        color $transition-time, 
+        color-scheme $transition-time;
 }
 .theme-light {
     color-scheme: light;
