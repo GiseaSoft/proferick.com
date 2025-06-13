@@ -58,9 +58,6 @@ function LayoutManager() {
 
     this.initTheme = () => {
         const theme_button = document.querySelector('.theme_button');
-        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-        prefersDarkScheme ? this.setTheme('theme-dark') : this.setTheme('theme-light');
         theme_button.addEventListener('click', this.switchTheme);
     }
 
@@ -68,8 +65,7 @@ function LayoutManager() {
         const body = document.body;
         body.classList.remove('theme-light');
         body.classList.remove('theme-dark');
-
-        (preference === 'theme-dark') ? body.classList.add(preference) : body.classList.add('theme-light')
+        body.classList.add(preference);
     }
 
     this.switchTheme = () => {

@@ -19,6 +19,7 @@
 
     
 }
+
 .theme-light,
 .theme-dark {
     transition:
@@ -40,6 +41,8 @@
     --clr-bg-review-card: var(--clr-white);
     --clr-sliding-logos: var(--clr-secondary);
     --clr-review-stars: var(--clr-secondary);
+
+    .theme_icon {--fa:'\f186';}
 }
 .theme-dark {
     color-scheme: dark;
@@ -56,7 +59,7 @@
     --clr-sliding-logos: var(--clr-white);
     --clr-review-stars: var(--clr-white);
 
+    .theme_icon { --fa: '\f185';}
     .innerHeader .logo{filter:invert(1)}
-    .theme_button{transform: scaleX(-1);}
-    .editor{outline:1pt solid var(--clr-white)}
+    .editor {outline:1pt solid var(--clr-white)}
 }
