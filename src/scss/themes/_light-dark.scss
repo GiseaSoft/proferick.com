@@ -1,6 +1,5 @@
 @use '../abstract/variables' as *;
 
-
 :root {
     // Static. These don't vary depending on the color scheme.
     --clr-white: #F5F5F5;
@@ -19,7 +18,6 @@
 
     
 }
-
 .theme-light,
 .theme-dark {
     transition:
