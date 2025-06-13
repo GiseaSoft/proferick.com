@@ -37,6 +37,7 @@
     --clr-bg-footer: linear-gradient(90deg, var(--clr-secondary) 0, var(--clr-secondary-dark) 70%);
     --clr-bg-accordrion: var(--clr-primary);
     --clr-bg-accordrion-active: var(--clr-primary);
+    --clr-bg-review-card: var(--clr-white);
 }
 .theme-dark {
     color-scheme: dark;
@@ -49,6 +50,7 @@
     --clr-bg-footer: linear-gradient(90deg, var(--clr-secondary-dark) 0, var(--clr-secondary-darkest) 70%);
     --clr-bg-accordrion: var(--clr-secondary-dark);
     --clr-bg-accordrion-active: var(--clr-secondary-darkest);
+    --clr-bg-review-card: var(--clr-secondary-darkest);
 
     .innerHeader .logo{filter:invert(1)}
     .theme_button{transform: scaleX(-1);}

@@ -1,4 +1,4 @@
-function InitAccordions() {
+function AccordionManager() {
     let id = '';
     const accordions = document.querySelectorAll('.accordion');
 
@@ -71,6 +71,6 @@ function InitAccordions() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const initAccordions = new InitAccordions();
-    initAccordions.start();
+    const accordionManager = new AccordionManager();
+    accordionManager.start();
 });
