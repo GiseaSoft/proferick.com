@@ -1,5 +1,8 @@
 @use './abstract/variables' as *;
 
+.theme_button {
+    scale: 1.25;
+}
 .primaryNav ul {
     display: flex;
     align-items: center;

@@ -1,6 +1,9 @@
 @use './abstract/variables' as *;
 
 @media (width <= $mobile) {
+    .theme_button {
+        scale: 1.5;
+    }
     #menuButton {
         position: relative;
         width: 2.5rem;
