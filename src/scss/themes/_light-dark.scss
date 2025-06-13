@@ -38,6 +38,8 @@
     --clr-bg-accordrion: var(--clr-primary);
     --clr-bg-accordrion-active: var(--clr-primary);
     --clr-bg-review-card: var(--clr-white);
+    --clr-sliding-logos: var(--clr-secondary);
+    --clr-review-stars: var(--clr-secondary);
 }
 .theme-dark {
     color-scheme: dark;
@@ -51,6 +53,8 @@
     --clr-bg-accordrion: var(--clr-secondary-dark);
     --clr-bg-accordrion-active: var(--clr-secondary-darkest);
     --clr-bg-review-card: var(--clr-secondary-darkest);
+    --clr-sliding-logos: var(--clr-white);
+    --clr-review-stars: var(--clr-white);
 
     .innerHeader .logo{filter:invert(1)}
     .theme_button{transform: scaleX(-1);}

@@ -7,7 +7,8 @@
     --sliding-logos-element-width: calc(var(--sliding-logos-width) / var(--sliding-logos-elements-displayed));
     --sliding-logos-animation-duration: calc(var(--sliding-logos-elements) * 2.5s);
 
-    // --sliding-logos-elements: 0; // defined with JavaScript
+    // defined with JavaScript
+    // --sliding-logos-elements: 0
 
     width: var(--sliding-logos-width);
     height: var(--sliding-logos-height);
@@ -46,7 +47,7 @@
             width: var(--sliding-logos-element-width);
             max-height: 100%;
             font-size: calc( var(--sliding-logos-height) * 3/4 );
-            color: var(--clr-text);
+            color: var(--clr-sliding-logos);
             white-space: nowrap;
         }
     }

@@ -1,5 +1,5 @@
 function SlidingLogos() {
-    const root = document.documentElement;
+    const root = document.querySelector('.sliding-logos');
     const elementsDisplayed = getComputedStyle(root).getPropertyValue("--sliding-logos-elements-displayed");
     const content = document.querySelector("ul.sliding-logos-content");
 

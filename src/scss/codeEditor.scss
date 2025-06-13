@@ -65,11 +65,11 @@
                 }
             }
             &:hover {
-                background: var(--clr-secondary);
+                background: var(--clr-secondary-dark);
             }
             &[aria-selected="true"] {
                 position: relative;
-                background: var(--clr-secondary);
+                background: var(--clr-secondary-dark);
                 &::after {
                     content: '';
                     position: absolute;

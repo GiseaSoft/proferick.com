@@ -7,14 +7,13 @@ function AccordionManager() {
             id = thisAccordion.getAttribute('id');
             const items = thisAccordion.querySelectorAll('.accordion_item');
         
-            items.forEach((item, index) => {    
+            items.forEach(item => {    
                 const itemHead = item.querySelector('.accordion_item-head');
                    
                 itemHead.addEventListener('click', () => {
                     this.activateTab(thisAccordion, item);
                 });
 
-                if (index === 0)  this.activateTab(thisAccordion, item);
             });
 
             this.onStart();
@@ -24,10 +23,9 @@ function AccordionManager() {
     this.activateTab = (thisAccordion, thisItem, scrollIntoView = false) => {
         this.closeOtherItems(thisAccordion);
         this.openThisItem(thisAccordion, thisItem, scrollIntoView);
-        //this.updateUrl(thisItem.getAttribute('id'));
     };
 
-    this.openThisItem = (thisAccordion, thisItem, scrollIntoView) => {
+    this.openThisItem = (thisAccordion, thisItem, scrollIntoView = false) => {
         const itemHead = thisItem.querySelector('.accordion_item-head');
         const itemBody = thisItem.querySelector('.accordion_item-body');
         const isActive = itemBody.getAttribute('aria-expanded') === 'true';
@@ -57,17 +55,10 @@ function AccordionManager() {
         const thisAccordion = document.querySelector(`#${targetAccordion}`);
         const thisItem = document.querySelector(`#${targetTab}`);
 
-        if (targetTab && targetAccordion=== id) {
+        if (targetTab && targetAccordion === id) {
             this.activateTab(thisAccordion, thisItem, scrollIntoView);
         }
     };
-
-    this.updateUrl = targetTab => {
-        const url = new URL(window.location);
-        url.searchParams.set('tabset', id);
-        url.searchParams.set('tab', targetTab);
-        history.replaceState(null, '', url);
-    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
