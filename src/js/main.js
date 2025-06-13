@@ -1,13 +1,12 @@
 function LayoutManager() {
-    var _self = this;
-
-    this.init = function() {
-        _self.initMenu();
-        _self.initDates();
-        _self.initBackToTop();
+    this.init = () => {
+        this.initMenu();
+        this.initDates();
+        this.initBackToTop();
+        this.initTheme();
     }
 
-    this.initMenu = function() {
+    this.initMenu = () => {
         const primaryNav = document.querySelector('.primaryNav');
         const menuButton = document.getElementById('menuButton');
         const navLinks = primaryNav.querySelectorAll('a');
@@ -25,7 +24,7 @@ function LayoutManager() {
         });
     }
 
-    this.initDates = function() {
+    this.initDates = () => {
         const yearsExperience = document.querySelectorAll('.years_experience');
         yearsExperience.forEach(span => span.textContent = new Date().getFullYear() - 2015);
         
@@ -36,7 +35,7 @@ function LayoutManager() {
         currentYear.textContent = new Date().getFullYear();
     }
     
-    this.initBackToTop = function() {
+    this.initBackToTop = () => {
         const backToTop = document.getElementById('backToTop');
 
         window.addEventListener('scroll', () => {
@@ -55,6 +54,27 @@ function LayoutManager() {
                 block: 'start'
             });
         });
+    }
+
+    this.initTheme = () => {
+        const theme_button = document.querySelector('.theme_button');
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        prefersDarkScheme ? this.setTheme('theme-dark') : this.setTheme('theme-light');
+        theme_button.addEventListener('click', this.switchTheme);
+    }
+
+    this.setTheme = preference => {
+        const body = document.body;
+        body.classList.remove('theme-light');
+        body.classList.remove('theme-dark');
+
+        (preference === 'theme-dark') ? body.classList.add(preference) : body.classList.add('theme-light')
+    }
+
+    this.switchTheme = () => {
+        const body = document.body;
+        body.classList.contains('theme-light') ? this.setTheme('theme-dark') : this.setTheme('theme-light');
     }
 }
 

@@ -1,6 +1,4 @@
 function CodeEditor(id) {
-    const _self = this;
-
     this.id = id;
     this.code_editor   = {};
     this.editorTabset  = {};
@@ -9,81 +7,81 @@ function CodeEditor(id) {
     this.editorWindows = {};
 
     this.init = () => {
-        _self.code_editor   = document.querySelector(`#${id}.editor`);
-        _self.editorTabset  = _self.code_editor.querySelector('.editor_tabset');
-        _self.editorTabs    = _self.editorTabset.querySelectorAll('li');
-        _self.editorDisplay = _self.code_editor.querySelector('.editor_display');
-        _self.editorWindows = _self.editorDisplay.querySelectorAll('.editor_window');
+        this.code_editor   = document.querySelector(`#${id}.editor`);
+        this.editorTabset  = this.code_editor.querySelector('.editor_tabset');
+        this.editorTabs    = this.editorTabset.querySelectorAll('li');
+        this.editorDisplay = this.code_editor.querySelector('.editor_display');
+        this.editorWindows = this.editorDisplay.querySelectorAll('.editor_window');
 
         const scrollIntoView = false;
         const updateUrl      = true;
 
-        _self.editorTabset.addEventListener('click', (e) => {
+        this.editorTabset.addEventListener('click', (e) => {
             const clickedLi = e.target.closest('li');
             if (!clickedLi) return;
 
             const clickedTab = clickedLi.querySelector('span');
             const targetId   = clickedTab.getAttribute('data-target').replace('#editor_window-', '');
 
-            _self.activateTab(targetId, scrollIntoView, updateUrl);
+            this.activateTab(targetId, scrollIntoView, updateUrl);
         });
 
-        _self.setupDraggable();
-        _self.onStart();
+        this.setupDraggable();
+        this.onStart();
     }
 
     this.setupDraggable= () => {
         let isDown = false;
         let startX, scrollLeft;
 
-        _self.editorTabset.addEventListener('mousedown', (e) => {
+        this.editorTabset.addEventListener('mousedown', (e) => {
             isDown = true;
-            startX = e.pageX - _self.editorTabset.offsetLeft;
-            scrollLeft = _self.editorTabset.scrollLeft;
+            startX = e.pageX - this.editorTabset.offsetLeft;
+            scrollLeft = this.editorTabset.scrollLeft;
         });
 
-        _self.editorTabset.addEventListener('mouseleave', () => {
+        this.editorTabset.addEventListener('mouseleave', () => {
             isDown = false;
-            _self.editorTabset.classList.remove('dragging');
+            this.editorTabset.classList.remove('dragging');
         });
 
-        _self.editorTabset.addEventListener('mouseup', () => {
+        this.editorTabset.addEventListener('mouseup', () => {
             isDown = false;
-            _self.editorTabset.classList.remove('dragging');
+            this.editorTabset.classList.remove('dragging');
         });
 
-        _self.editorTabset.addEventListener('mousemove', (e) => {
+        this.editorTabset.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            _self.editorTabset.classList.add('dragging');
-            const x = e.pageX - _self.editorTabset.offsetLeft;
+            this.editorTabset.classList.add('dragging');
+            const x = e.pageX - this.editorTabset.offsetLeft;
             const walk = x - startX;
-            _self.editorTabset.scrollLeft = scrollLeft - walk;
+            this.editorTabset.scrollLeft = scrollLeft - walk;
         });
     }
 
     this.activateTab = (targetId, scrollIntoView = false, updateUrl = false) => {
         const targetSelector = `#editor_window-${targetId}`;
-        const activeTab      = _self.code_editor.querySelector(`span[data-target="${targetSelector}"]`).closest('li');
-        const activeWindow   = _self.editorDisplay.querySelector(targetSelector);
+        const activeTab      = this.code_editor.querySelector(`span[data-target="${targetSelector}"]`).closest('li');
+        const activeWindow   = this.editorDisplay.querySelector(targetSelector);
         if (!activeWindow) return;
 
-        _self.editorTabs.forEach(tab => {
+        this.editorTabs.forEach(tab => {
             const tabSpan    = tab.querySelector('span');
             const dataTarget = tabSpan.getAttribute('data-target');
             const isActive   = dataTarget === targetSelector;
 
             tab.removeAttribute('aria-selected');
             if (isActive && scrollIntoView) {
-                _self.code_editor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                this.code_editor.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
 
-        _self.editorWindows.forEach(editorWindow => editorWindow.setAttribute('hidden', ''));
+        this.editorWindows.forEach(editorWindow => editorWindow.setAttribute('hidden', ''));
         activeTab.setAttribute('aria-selected', 'true');
         activeWindow.removeAttribute('hidden');
 
-        //if (updateUrl) _self.updateUrl(targetId);
+        //if (updateUrl) this.updateUrl(targetId);
     }
 
     this.onStart = () => {
@@ -93,19 +91,19 @@ function CodeEditor(id) {
         const targetTab      = urlParams.get('tab');
         const scrollIntoView = true;
 
-        const firstTab      = _self.editorTabs[0].querySelector('span');
+        const firstTab      = this.editorTabs[0].querySelector('span');
         const firstTargetId = firstTab.getAttribute('data-target').replace('#editor_window-', '');
 
-        if (targetTab && targetEditor === _self.id) {
-            _self.activateTab(targetTab, scrollIntoView);
+        if (targetTab && targetEditor === this.id) {
+            this.activateTab(targetTab, scrollIntoView);
         } else {  
-            _self.activateTab(firstTargetId); // opens first tab on load
+            this.activateTab(firstTargetId); // opens first tab on load
         }
     }
 
     this.updateUrl = (targetTab) => {
         const url = new URL(window.location);
-        url.searchParams.set('tabset', _self.id);
+        url.searchParams.set('tabset', this.id);
         url.searchParams.set('tab', targetTab);
         history.replaceState(null, '', url);
     }

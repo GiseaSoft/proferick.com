@@ -22,7 +22,7 @@
             width: var(--size);
             height: var(--size);
             border-radius: 100px;
-            background-color: $clr-accent;
+            background-color: var(--clr-accent);
             opacity: 0.25;
             cursor: pointer;
             transition: $transition-time-slow;
@@ -49,8 +49,8 @@
             padding: $gap;
             width: 100%;
             height: 100%;
-            outline: 1pt solid $clr-gray;
-            background: white;
+            outline: 1pt solid var(--clr-gray);
+            background: var(--clr-bg);
             border-radius: $border-radius;
             user-select: none;
             transition: $transition-time-slow;
@@ -88,17 +88,15 @@
             }
             .review-stars {
                 font-size: $fs-caption;
-                color: $clr-secondary;
             }
         }
         .review-body {
             max-height: 80%;
-            color: $clr-gray-dark;
             overflow: auto;
             scroll-behavior: contain;
         }
     }
-    .arrows {
+    .arrow {
         position: absolute;
         top: 50%;
         @media (width <= $mobile) {
@@ -107,7 +105,7 @@
         z-index: 3;
         display: block;
         padding: 20px 15px;
-        color: $clr-secondary;
+        color: var(--clr-text);
         border: 0;
         background: none;
         transform: translateY(-50%) scale(1.5);

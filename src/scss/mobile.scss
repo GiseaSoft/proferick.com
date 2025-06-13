@@ -5,7 +5,7 @@
         position: relative;
         width: 2.5rem;
         aspect-ratio: 1;
-        background: $clr-primary;
+        background: var(--clr-bg-header);
         border-radius: $border-radius;
         border: none;
         cursor: pointer;
@@ -15,7 +15,7 @@
             height: 2px;
             width: 80%;
             left: 10%;
-            background-color: $clr-black;
+            background-color: var(--clr-text);
             transition: $transition-time;
             &.top {
                 top: 25%;
@@ -49,7 +49,7 @@
         position: absolute;
         top: $header-height;
         right: 1rem;
-        background-color: $clr-white;
+        background-color: var(--clr-bg);
         border-radius: $border-radius;
         overflow: hidden;
         transition: $transition-time;
@@ -58,10 +58,10 @@
                 display: block;
                 width: 100%;
                 padding: 1rem;
-                border-bottom: 1pt solid $clr-gray;
+                border-bottom: 1pt solid var(--clr-gray);
                 &.contact {
-                    color: $clr-white;
-                    background-color: $clr-accent;
+                    color: var(--clr-white);
+                    background-color: var(--clr-accent);
                 }
             }
             &.subMenu {
@@ -76,7 +76,7 @@
             max-height: 90dvh;
             overflow: auto;
             box-shadow: 0 0 0 100vmax #000d;
-            outline: 1pt solid $clr-gray;
+            outline: 1pt solid var(--clr-gray);
         }
     }
     .hero {

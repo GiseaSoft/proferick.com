@@ -1,33 +1,33 @@
 function InitAccordions() {
-    var _self = this;
+    let id = '';
+    const accordions = document.querySelectorAll('.accordion');
 
-    this.id = '';
-    this.accordions = document.querySelectorAll('.accordion');
-
-    this.init = function() {
-        _self.accordions.forEach(thisAccordion => {
-            _self.id = thisAccordion.getAttribute('id');
+    this.start = () => {
+        accordions.forEach(thisAccordion => {
+            id = thisAccordion.getAttribute('id');
             const items = thisAccordion.querySelectorAll('.accordion_item');
         
             items.forEach((item, index) => {    
                 const itemHead = item.querySelector('.accordion_item-head');
                    
                 itemHead.addEventListener('click', () => {
-                    _self.activateTab(thisAccordion, item);
+                    this.activateTab(thisAccordion, item);
                 });
+
+                if (index === 0)  this.activateTab(thisAccordion, item);
             });
 
-            _self.onStart();
+            this.onStart();
         });
     };
 
-    this.activateTab = function(thisAccordion, thisItem, scrollIntoView = false) {
-        _self.closeOtherItems(thisAccordion);
-        _self.openThisItem(thisAccordion, thisItem, scrollIntoView);
-        //_self.updateUrl(thisItem.getAttribute('id'));
+    this.activateTab = (thisAccordion, thisItem, scrollIntoView = false) => {
+        this.closeOtherItems(thisAccordion);
+        this.openThisItem(thisAccordion, thisItem, scrollIntoView);
+        //this.updateUrl(thisItem.getAttribute('id'));
     };
 
-    this.openThisItem = function(thisAccordion, thisItem, scrollIntoView) {
+    this.openThisItem = (thisAccordion, thisItem, scrollIntoView) => {
         const itemHead = thisItem.querySelector('.accordion_item-head');
         const itemBody = thisItem.querySelector('.accordion_item-body');
         const isActive = itemBody.getAttribute('aria-expanded') === 'true';
@@ -40,7 +40,7 @@ function InitAccordions() {
         }
     };
     
-    this.closeOtherItems = function(thisAccordion) {
+    this.closeOtherItems = thisAccordion => {
         const itemHeads = thisAccordion.querySelectorAll('.accordion_item-head');
         const itemBodies = thisAccordion.querySelectorAll('.accordion_item-body');
     
@@ -48,7 +48,7 @@ function InitAccordions() {
         itemBodies.forEach(itemBody => itemBody.removeAttribute('aria-expanded'));
     };
 
-    this.onStart = function() {
+    this.onStart = () => {
         const urlParams        = new URLSearchParams(window.location.search);
         const targetAccordion  = urlParams.get('tabset');
         const targetTab        = urlParams.get('tab');
@@ -57,14 +57,14 @@ function InitAccordions() {
         const thisAccordion = document.querySelector(`#${targetAccordion}`);
         const thisItem = document.querySelector(`#${targetTab}`);
 
-        if (targetTab && targetAccordion=== _self.id) {
-            _self.activateTab(thisAccordion, thisItem, scrollIntoView);
+        if (targetTab && targetAccordion=== id) {
+            this.activateTab(thisAccordion, thisItem, scrollIntoView);
         }
     };
 
-    this.updateUrl = function(targetTab) {
+    this.updateUrl = targetTab => {
         const url = new URL(window.location);
-        url.searchParams.set('tabset', _self.id);
+        url.searchParams.set('tabset', id);
         url.searchParams.set('tab', targetTab);
         history.replaceState(null, '', url);
     }
@@ -72,5 +72,5 @@ function InitAccordions() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const initAccordions = new InitAccordions();
-    initAccordions.init();
+    initAccordions.start();
 });

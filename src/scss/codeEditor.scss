@@ -6,15 +6,15 @@
     width: 100%;
     border-radius: $border-radius;
     overflow: clip; // for border-radius
-    scroll-margin-top: calc($header-height + 10px);
+    scroll-margin-top: $scroll-margin-top;
 	scrollbar-width: thin;
-    scrollbar-color: $clr-primary darken($clr-secondary, 12.5%); // thumb | track
+    scrollbar-color: var(--clr-primary) var(--clr-secondary-dark); // thumb | track
     &_tabset {
         list-style-type: none;
         display: flex;
         overflow-y: clip;
         overflow-x: auto;
-        background: $clr-editor-tabs;
+        background: var(--clr-secondary-darkest);
         scrollbar-width: none;
         &.dragging {
             user-select: none !important;
@@ -23,7 +23,7 @@
             }
         }
         i {
-            color: $clr-white;
+            color: var(--clr-white);
             &.fa-html5 {
                 color: #E44D26;
             }
@@ -55,22 +55,21 @@
         li {
             flex-shrink: 0;
             width: fit-content;
-            transition: $transition-time-fast;
             cursor: pointer;
             > span {
                 display: block;
                 padding: 15px;
                 span {
                     margin-left: 10px;
-                    color: $clr-white;
+                    color: var(--clr-white);
                 }
             }
             &:hover {
-                background: $clr-editor-active-tab;
+                background: var(--clr-secondary);
             }
             &[aria-selected="true"] {
                 position: relative;
-                background: $clr-editor-active-tab;
+                background: var(--clr-secondary);
                 &::after {
                     content: '';
                     position: absolute;
@@ -78,7 +77,7 @@
                     display: block;
                     width: 100%;
                     height: 2px;
-                    background: $clr-accent;
+                    background: var(--clr-accent);
                 }
             }
         }
@@ -86,7 +85,7 @@
     &_display {
         width: 100%;
         height: 400px;
-        background: $clr-editor-display;
+        background: var(--clr-secondary-dark);
         overflow-x: auto;
         scroll-behavior: contain;
     }

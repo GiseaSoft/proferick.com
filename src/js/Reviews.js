@@ -1,92 +1,99 @@
 function ReviewSlider() {
-    const _self = this;
-    
-    this.repeat = true;
-    this.arrows = true;
-    this.bullets = true;
+    // Config | Public variables
+    this.allowArrows = true;
+    this.allowBullets = true;
+    this.allowAutoplay = true;
+    this.autoplayTime = 10000; // 10s
 
-    this.container = document.querySelector('.reviews-container');
-    this.cards = _self.container.querySelectorAll('.review-card');
-    this.totalCards = _self.cards.length - 1;
-    this.currentCard = -1;
+    // Used by the pogram | Private
+    const container = document.querySelector('.reviews-container');
+    const cards = container.querySelectorAll('.review-card');
+    const totalCards = cards.length - 1;
+    let currentCard = -1;
+    let playState = 0; // 0 = paused | 1 = playing
+    let autoplay = setInterval;
+
+    /* *************** */
+    /*      Start      */
+    /* *************** */
+
+    this.start = () => {
+        this.setBullets();
+        this.setArrows();
+        this.setStars();
+        this.setSwipe();
+        this.slideRight(); // necessary to start
+        if (this.allowAutoplay) this.setAutoplay();
+    }
 
     /* *************** */
     /* Setup Functions */
     /* *************** */
 
-    this.init = function() {
-        _self.initBullets();
-        _self.initArrows();
-        _self.initStars();
-        _self.initSwipe();
-        setTimeout(function () {
-            _self.slideRight();
-        }, 50);
-    }
-
-    this.initBullets = function() {
-        if (!_self.bullets) {
-            return;
-        }
+    this.setBullets = () => {
+        if (!this.allowBullets) return;
     
         const bulletContainer = document.createElement('div');
         bulletContainer.classList.add('bullet-container');
     
-        _self.cards.forEach((elem, i) => {
+        cards.forEach((card, i) => {
             const bullet = document.createElement('div');
             bullet.classList.add('bullet')
             bullet.id = `bullet-index-${i}`
-            bullet.addEventListener('click', () => {
-                _self.goToIndexcards(i);
+            bullet.addEventListener('click', () => { 
+                if (this.allowAutoplay && playState) this.stopAutoplay();
+                this.goToIndex(i);
             })
             bulletContainer.appendChild(bullet);
-            elem.classList.add('proactivede');
+            card.classList.add('proactivede');
         });
     
-        _self.container.appendChild(bulletContainer);
+        container.appendChild(bulletContainer);
     }
     
-    this.initArrows = function() {
-        if (!_self.arrows) {
-            return;
-        }
+    this.setArrows = () => {
+        if (!this.allowArrows) return;
     
+        // Left arrow
         const leftArrow = document.createElement('button');
         const iLeft = document.createElement('i');
     
         iLeft.classList.add('fas');
         iLeft.classList.add('fa-arrow-left');
     
-        leftArrow.classList.add('arrows');
+        leftArrow.classList.add('arrow');
         leftArrow.classList.add('arrow-left');
         leftArrow.setAttribute('aria-label', 'Previous Review');
         leftArrow.appendChild(iLeft);
     
-        leftArrow.addEventListener('click', () => {
-            _self.slideLeft();
+        leftArrow.addEventListener('click', () => {  
+            if (this.allowAutoplay && playState) this.stopAutoplay();
+            this.slideLeft();
         });
     
+        // Right arrow
         const rightArrow = document.createElement('button');
         const iRight = document.createElement('i');
     
         iRight.classList.add('fas');
         iRight.classList.add('fa-arrow-right');
     
-        rightArrow.classList.add('arrows');
+        rightArrow.classList.add('arrow');
         rightArrow.classList.add('arrow-right');
         rightArrow.setAttribute('aria-label', 'Next Review');
         rightArrow.appendChild(iRight);
     
         rightArrow.addEventListener('click', () => {
-            _self.slideRight();
+            if (this.allowAutoplay && playState) this.stopAutoplay();
+            this.slideRight();
         });
     
-        _self.container.appendChild(leftArrow);
-        _self.container.appendChild(rightArrow);
+        container.appendChild(leftArrow);
+        container.appendChild(rightArrow);
     }
 
-    this.initStars = function() {
-        _self.cards.forEach(card => {
+    this.setStars = () => {
+        cards.forEach(card => {
             const starCount = parseInt(card.getAttribute('data-stars'));
             const starsContainer = document.createElement('div');
             starsContainer.classList.add('review-stars');
@@ -97,9 +104,9 @@ function ReviewSlider() {
                 let star = document.createElement('i');
 
                 if (i < starCount) {
-                    star.classList.add('fas');
+                    star.classList.add('fas'); // full
                 } else {
-                    star.classList.add('far');
+                    star.classList.add('far'); // empty
                 }
                 
                 star.classList.add('fa-star');
@@ -111,151 +118,132 @@ function ReviewSlider() {
         })
     }
 
-    this.initSwipe = function() {
+    this.setSwipe = () => {
         let swipeStartX = 0;
         let swipeEndX = 0;
     
-        _self.container.addEventListener('touchstart', (e) => {
+        container.addEventListener('touchstart', (e) => {
             swipeStartX = e.changedTouches[0].screenX;
         }, false);
     
-        _self.container.addEventListener('touchend', (e) => {
+        container.addEventListener('touchend', (e) => {
             swipeEndX = e.changedTouches[0].screenX;
-            _self.updateSwipe(swipeStartX, swipeEndX);
+            this.updateSwipe(swipeStartX, swipeEndX);
         }, false);
+    }
+
+    this.setAutoplay = () => {
+        playState = 1;
+        autoplay = setInterval( this.slideRight, this.autoplayTime);
     }
 
     /* **************** */
     /* Core Functions */
     /* **************** */
 
-    this.updateSwipe = function(swipeStartX, swipeEndX) {
+    this.stopAutoplay = () => {
+        playState = 0;
+        clearTimeout(autoplay);
+    }
+
+    this.updateSwipe = (swipeStartX, swipeEndX) => {
         const swipeThreshold = 50; // Minimum distance to consider a "swipe"
     
         if (swipeEndX < swipeStartX - swipeThreshold) {
-            _self.slideRight();
+            if (this.allowAutoplay && playState) this.stopAutoplay();
+            this.slideRight();
         }
 
         if (swipeEndX > swipeStartX + swipeThreshold) {
-            _self.slideLeft();
+            if (this.allowAutoplay && playState) this.stopAutoplay();
+            this.slideLeft();
         }
     }
     
-    this.updateBullets = function() {
-        _self.container.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
-            elem.classList.remove('active');
-            if (i === _self.currentCard) {
-                elem.classList.add('active');
+    this.updateBullets = () => {
+        container.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((bullet, i) => {
+            bullet.classList.remove('active');
+            if (i === currentCard) {
+                bullet.classList.add('active');
             }
         })
-
-        if (!_self.repeat) {
-            _self.stopRepeat();
-        }
     }
     
-    this.stopRepeat = function() {
-        if (_self.currentCard === _self.cards.length - 1) {
-            _self.cards[0].classList.add('not-visible');
-            _self.cards[_self.cards.length - 1].classList.remove('not-visible');
-            if (!_self.arrows) {
-                _self.container.querySelector('.reviews-right').classList.add('not-visible');
-                _self.container.querySelector('.reviews-left').classList.remove('not-visible');
-            }
-        }
-        else if (_self.currentCard === 0) {
-            _self.cards[_self.cards.length - 1].classList.add('not-visible');
-            _self.cards[0].classList.remove('not-visible');
-
-            if (!_self.arrows) {
-                _self.container.querySelector('.reviews-left').classList.add('not-visible');
-                _self.container.querySelector('.reviews-right').classList.remove('not-visible');
-            }
-
+    this.slideRight = () => {
+        if (currentCard < totalCards) {
+            currentCard++;
         } else {
-            _self.cards[_self.cards.length - 1].classList.remove('not-visible');
-            _self.cards[0].classList.remove('not-visible');
-
-            if (!_self.arrows) {
-                _self.container.querySelector('.reviews-left').classList.remove('not-visible');
-                _self.container.querySelector('.reviews-right').classList.remove('not-visible');
+            currentCard = 0;
+        }
+    
+        if (currentCard > 0) {
+            var preactiveCard = cards[currentCard - 1];
+        } else {
+            var preactiveCard = cards[totalCards];
+        }
+    
+        if (currentCard < totalCards) {
+            var proactiveCard = cards[currentCard + 1];
+        } else {
+            var proactiveCard = cards[0];
+    
+        }
+    
+        cards.forEach(card => {
+            card.setAttribute('aria-hidden', 'true');
+            
+            if (card.classList.contains('preactivede')) {
+                this.cleanClasses(card);
+                card.classList.add('proactivede');
             }
-        }
-    }
-    
-    this.slideRight = function() {
-        if (_self.currentCard < _self.totalCards) {
-            _self.currentCard++;
-        } else {
-            _self.currentCard = 0;
-        }
-    
-        if (_self.currentCard > 0) {
-            var preactiveCard = _self.cards[_self.currentCard - 1];
-        } else {
-            var preactiveCard = _self.cards[_self.totalCards];
-        }
-    
-        if (_self.currentCard < _self.totalCards) {
-            var proactiveCard = _self.cards[_self.currentCard + 1];
-        } else {
-            var proactiveCard = _self.cards[0];
-    
-        }
-    
-        _self.cards.forEach((elem) => {
-            elem.setAttribute('aria-hidden', 'true');
-            if (elem.classList.contains('preactivede')) {
-                _self.cleanClasses(elem);
-                elem.classList.add('proactivede');
-            }
-            if (elem.classList.contains('preactive')) {
-                _self.cleanClasses(elem);
-                elem.classList.add('preactivede');
+            if (card.classList.contains('preactive')) {
+                this.cleanClasses(card);
+                card.classList.add('preactivede');
             }
         });
 
-        _self.updateCards(preactiveCard, proactiveCard);
+        this.updateCards(preactiveCard, proactiveCard);
     }
     
-    this.slideLeft = function() {
-        if (_self.currentCard > 0) {
-            _self.currentCard--;
+    this.slideLeft = () => {
+        if (currentCard > 0) {
+            currentCard--;
         } else {
-            _self.currentCard = _self.totalCards;
+            currentCard = totalCards;
         }
     
-        if (_self.currentCard < _self.totalCards) {
-            var proactiveCard = _self.cards[_self.currentCard + 1];
+        if (currentCard < totalCards) {
+            var proactiveCard = cards[currentCard + 1];
         } else {
-            var proactiveCard = _self.cards[0];
+            var proactiveCard = cards[0];
         }
     
-        if (_self.currentCard > 0) {
-            var preactiveCard = _self.cards[_self.currentCard - 1];
+        if (currentCard > 0) {
+            var preactiveCard = cards[currentCard - 1];
         } else {
-            var preactiveCard = _self.cards[_self.totalCards];
+            var preactiveCard = cards[totalCards];
         }
     
-        _self.cards.forEach((elem) => {
-            elem.setAttribute('aria-hidden', 'true');
+        cards.forEach(card => {
+            card.setAttribute('aria-hidden', 'true');
             
-            if (elem.classList.contains('proactive')) {
-                _self.cleanClasses(elem);
-                elem.classList.add('proactivede');
+            if (card.classList.contains('proactive')) {
+                this.cleanClasses(card);
+                card.classList.add('proactivede');
             }
-            if (elem.classList.contains('proactivede')) {
-                _self.cleanClasses(elem);
-                elem.classList.add('preactivede');
+            if (card.classList.contains('proactivede')) {
+                this.cleanClasses(card);
+                card.classList.add('preactivede');
             }
         });
         
-        _self.updateCards(preactiveCard, proactiveCard);
+        this.updateCards(preactiveCard, proactiveCard);
     }
 
-    this.goToIndexcards = function(index) {
-        const slideTilYouGetThere = (_self.currentCard > index) ? () => _self.slideRight() : () => _self.slideLeft();
-        while (_self.currentCard !== index) {
+    this.goToIndex = thisIndex => {
+        const slideTilYouGetThere = (currentCard > thisIndex) ? this.slideRight : this.slideLeft;
+
+        while (currentCard !== thisIndex) {
             slideTilYouGetThere();
         }
     }
@@ -264,35 +252,32 @@ function ReviewSlider() {
     /* Helper Functions */
     /* **************** */
 
-    this.updateCards = function(preactiveCard, proactiveCard) {
-        var activeCard = _self.cards[_self.currentCard];
+    this.updateCards = (preactiveCard, proactiveCard) => {
+        var activeCard = cards[currentCard];
 
-        _self.cleanClasses(preactiveCard);
+        this.cleanClasses(preactiveCard);
         preactiveCard.classList.add('preactive');
     
-        _self.cleanClasses(activeCard);
+        this.cleanClasses(activeCard);
         activeCard.removeAttribute('aria-hidden');
         activeCard.classList.add('active');
     
-        _self.cleanClasses(proactiveCard);
+        this.cleanClasses(proactiveCard);
         proactiveCard.classList.add('proactive');
     
-        
-        if (_self.bullets) {
-            _self.updateBullets();
-        }
+        if (this.allowBullets) this.updateBullets();
     }
 
-    this.cleanClasses = function(elem) {
-        elem.classList.remove('preactivede');
-        elem.classList.remove('preactive');
-        elem.classList.remove('active');
-        elem.classList.remove('proactive');
-        elem.classList.remove('proactivede');
+    this.cleanClasses = el => {
+        el.classList.remove('preactivede');
+        el.classList.remove('preactive');
+        el.classList.remove('active');
+        el.classList.remove('proactive');
+        el.classList.remove('proactivede');
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const reviewSlider = new ReviewSlider();
-    reviewSlider.init();
+    reviewSlider.start();
 });

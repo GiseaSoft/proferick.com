@@ -1,22 +1,3 @@
-// Colors
-$clr-bg: #FFFCF6;
-$clr-white: #F5F5F5;
-$clr-gray-light: #F8F8F8;
-$clr-gray: #DDD;
-$clr-gray-dark: #444;
-$clr-black: #2A2A2A;
-$clr-primary: #FFF4E3;
-$clr-secondary: #014E6B;
-$clr-accent: #C43122;
-$clr-error: #C30E0E;
-
-$clr-highlight: #FFEF02;
-
-$clr-editor-display: darken($clr-secondary, 10%);
-$clr-editor-tabs: darken($clr-secondary, 5%);
-$clr-editor-active-tab: $clr-secondary;
-$clr-highlight-tab: $clr-accent;
-
 // Fonts
 $font-title: 'Satisfy', 'Inter', sans-serif;
 $font-body: 'Inter', sans-serif;
@@ -37,8 +18,10 @@ $gap: 15px;
 $gap-half: calc($gap / 2);
 $gap-double: calc($gap * 2);
 
+$scroll-margin-top: calc($header-height + 10px);
+
 // Shapes
-$box-shadow: 2px 2px 4px 0 $clr-black;
+$box-shadow: 2px 2px 4px 0 var(--clr-black);
 $border-radius: 4px;
 $round: 100%;
 

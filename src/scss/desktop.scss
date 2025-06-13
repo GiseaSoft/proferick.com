@@ -12,13 +12,13 @@
             position: absolute;
             top: 1.5rem;
             border-radius: $border-radius;
-            background-color: $clr-white;
-            outline: 1pt solid $clr-gray;
+            background-color: var(--clr-bg);
+            outline: 1pt solid var(--clr-gray);
             a {
                 display: block;
                 padding: 0.75rem;
                 width: 100%;
-                border-bottom: 1pt solid $clr-gray;
+                border-bottom: 1pt solid var(--clr-gray);
             }
         }
         &.subMenu:hover {

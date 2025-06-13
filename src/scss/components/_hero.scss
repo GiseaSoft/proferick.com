@@ -2,8 +2,8 @@
 
 .hero {
     padding: $gap-double;
-    color: $clr-white;
-    text-shadow: 2px 2px 2px $clr-black;
+    color: var(--clr-white);
+    text-shadow: 2px 2px 2px var(--clr-black);
     background-size: cover;
     background-position: center;
     @media (width > $mobile) {

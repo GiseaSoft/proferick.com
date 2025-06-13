@@ -1,9 +1,12 @@
 // Abstract
 @use './abstract/variables' as *;
 
-// Import Fonts
+// Fonts
 @use './fonts/inter';
 @use './fonts/satisfy';
+
+// Themes
+@use './themes/light-dark';
 
 // Styles
 @use './components/reset';
@@ -12,5 +15,5 @@
 @use './components/hero';
 @use './components/backToTop'
 
-// optional
+// Optional
 //@use './components/forms';

@@ -6,10 +6,10 @@
     bottom: var(--thisOffset);
     right: var(--thisOffset);
     width: 3rem;
-    color: $clr-white;
+    color: var(--clr-white);
     aspect-ratio: 1;
     border-radius: $round;
-    background-color: $clr-accent;
+    background-color: var(--clr-accent);
     cursor: pointer;
     border: none;
     transition: $transition-time;

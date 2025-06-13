@@ -1,18 +1,18 @@
 @use './abstract/variables' as *;
 
-:root {
+.sliding-logos{
     --sliding-logos-width: 100%;
     --sliding-logos-height: 50px;
-    // --sliding-logos-elements: 0; // defined with JavaScript
     --sliding-logos-elements-displayed: 5;
     --sliding-logos-element-width: calc(var(--sliding-logos-width) / var(--sliding-logos-elements-displayed));
     --sliding-logos-animation-duration: calc(var(--sliding-logos-elements) * 2.5s);
-}
-.sliding-logos{
+
+    // --sliding-logos-elements: 0; // defined with JavaScript
+
     width: var(--sliding-logos-width);
     height: var(--sliding-logos-height);
-    background-color: $clr-bg;
-    color: $clr-gray-dark;
+    background-color: transparent;
+    color: var(--clr-gray-dark);
     overflow: hidden;
     position: relative;
     &::before,
@@ -26,11 +26,11 @@
     }
     &::before {
         left: 0;
-        background: linear-gradient(to right, $clr-bg 0%, transparent 100%);
+        background: linear-gradient(to right, var(--clr-bg) 0%, transparent 100%);
     }
     &::after {
         right: 0;
-        background: linear-gradient(to left, $clr-bg 0%, transparent 100%);
+        background: linear-gradient(to left, var(--clr-bg) 0%, transparent 100%);
     }
     &-content {
         position:  absolute;
@@ -46,7 +46,7 @@
             width: var(--sliding-logos-element-width);
             max-height: 100%;
             font-size: calc( var(--sliding-logos-height) * 3/4 );
-            color: $clr-secondary;
+            color: var(--clr-text);
             white-space: nowrap;
         }
     }

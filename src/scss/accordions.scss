@@ -3,10 +3,10 @@
 .accordion {
     --thisRadius: #{$border-radius};
     padding: 10px;
-    background-color: #FFF;
-    border: 1pt solid $clr-gray;
+    background-color: var(--clr-bg);
+    border: 1pt solid var(--clr-gray);
     border-radius: var(--thisRadius);
-    scroll-margin-top: calc($header-height + 10px);
+    scroll-margin-top: $scroll-margin-top;
     &_item {
         overflow: hidden;
         &:first-child {
@@ -18,24 +18,24 @@
         &-head {
             padding: 10px;
             font-size: $fs-6;
-            border: 1pt solid $clr-gray;
+            border: 1pt solid var(--clr-gray);
             border-bottom: none;
-            background-color: $clr-white;
+            background-color: var(--clr-bg-accordrion);
             cursor: pointer;
             user-select: none;
             &[aria-selected="true"] {
                 font-weight: 700;
-                background-color: $clr-primary;
+                background-color: var(--clr-bg-accordrion-active);
                 &::before {
                     content: '• ';
-                    color: $clr-accent;
+                    color: var(--clr-accent);
                 }
             }
         }
         &-body {
             height: 0;
             padding-inline: 10px;
-            border: 1pt solid $clr-gray;
+            border: 1pt solid var(--clr-gray);
             border-top: none;
             overflow: hidden;
             transition: $transition-time;
