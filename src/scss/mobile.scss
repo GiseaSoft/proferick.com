@@ -90,6 +90,9 @@
             font-size: $fs-4;
         }
     }
+    .footerNav {
+        flex-basis: 250px
+    }
     
     // Component specific styles
     #courses.grid-2 {

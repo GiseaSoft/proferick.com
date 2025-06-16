@@ -1,7 +1,7 @@
 @use '../abstract/variables' as *;
 
 :root {
-    // Static. These don't vary depending on the color scheme.
+    // Static. These colors don't vary depending on the color scheme.
     --clr-white: #F5F5F5;
     --clr-gray-light: #F8F8F8;
     --clr-gray: #DDD;
@@ -14,9 +14,7 @@
     --clr-secondary-darkest: #001118;    
 
     --clr-accent: #C43122;
-    --clr-error: #C30E0E;
-
-    
+    //--clr-error: #C30E0E;   
 }
 .theme-light,
 .theme-dark {
