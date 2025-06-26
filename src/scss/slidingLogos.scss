@@ -16,6 +16,7 @@
     color: var(--clr-gray-dark);
     overflow: hidden;
     position: relative;
+    isolation: isolate;
     &::before,
     &::after {
         position: absolute;
