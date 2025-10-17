@@ -33,8 +33,8 @@
                         <li class="subMenu">
                             <a href="#services">Servicios <i class="fas fa-caret-down"></i></a>
                             <ul>
-                                <li><a href="?tabset=mentorship&tab=frontend">Mentorias Front End</a></li>
-                                <li><a href="?tabset=mentorship&tab=backend">Mentorias Back End</a></li>
+                                <li><a href="?tabset=mentorship&tab=mentor-frontend">Mentorias Front End</a></li>
+                                <li><a href="?tabset=mentorship&tab=mentor-backend">Mentorias Back End</a></li>
                                 <li><a href="?tabset=otherServices&tab=recruitment">Reclutamiento en TI</a></li>
                                 <li><a href="?tabset=otherServices&tab=resume">Creación de CV</a></li>
                                 <li><a href="?tabset=otherServices&tab=profile">Perfil Técnico</a></li>
@@ -75,6 +75,7 @@
                 <img class="hero_picture" src="./assets/img/hero/proferick.png" alt="" loading="lazy">
             </div>
         </section>
+        
         <div class="contentContainer">
             <section id="services">
                 <h2 class="heading">Servicios</h2>
@@ -100,13 +101,13 @@
                 <div class="grid-2">
                     <div>
                         <div id="mentorship" class="accordion">
-                            <div id="frontend" class="accordion_item">
+                            <div id="mentor-frontend" class="accordion_item">
                                 <div class="accordion_item-head">Mentorias Front End</div>
                                 <div class="accordion_item-body">
                                     Pensado para desarrolladores que ya trabajan en Front End pero se sienten estancados. Te ayudo a resolver problemas reales que enfrentas en tus proyectos, desde manejar estados complejos hasta mejorar la arquitectura del código. Vemos herramientas modernas, buenas prácticas y cómo trabajar como lo hacen en las empresas grandes.
                                 </div>
                             </div>
-                            <div id="backend" class="accordion_item">
+                            <div id="mentor-backend" class="accordion_item">
                                 <div class="accordion_item-head">Mentorias Back End</div>
                                 <div class="accordion_item-body">
                                     Si ya estás trabajando con servidores, bases de datos o APIs pero te trabas con ciertos temas, te ayudo a avanzar. Revisamos juntos tus dudas, errores comunes, y cómo estructurar mejor tus proyectos. También podemos ver seguridad, rendimiento y cómo pensar como un desarrollador sénior.
@@ -115,9 +116,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="subheading">
-                            Otros servicios:
-                        </h3>
+                        <h3 class="subheading">Otros servicios:</h3>
 
                         <p class="paragraph">
                             Además, ofrezco asesoramiento para entrevistas técnicas, orientación a padres sobre opciones educativas,
@@ -131,12 +130,25 @@
                         <div class="accordion_item-head">Reclutamiento en Tecnologías de la Información</div>
                         <div class="accordion_item-body">
                             Construye tu equipo de desarrolladores, te ayudo a conseguir tus desarrolladores y como gestionarlos, te apoyamos con el rango de precios por tecnología, experiencia e idiomas, las tecnologías que necesita el puesto por stack de tecnología garantizando su éxito en cada paso.
+                            <br><br>Te ayudo a reclutar:
+                            <br>
+                            <ul class="list">
+                                <li>Maquetadores</li>
+                                <li><a href="#frontend">Desarrolladores Frontend</a></li>
+                                <li><a href="#backend">Desarrolladores Backend</a></li>
+                                <li>Desarrolladores Fullstack</li>
+                                <li>Diseñadores UX/UI</li>
+                                <li>Reclutadores IT</li>
+                                <li>Project Managers</li>
+                                <li>Community Managers</li>
+                            </ul>
                         </div>
                     </div>
                     <div id="resume" class="accordion_item">
                         <div class="accordion_item-head">Creación de CV</div>
                         <div class="accordion_item-body">
-                            Te ayudo a construir un currículum enfocado a tecnología, destacando tus proyectos, conocimientos y habilidades de manera clara y efectiva. He trabajado con reclutadores y sé lo que buscan. Juntos armamos un CV que muestre lo mejor de ti, aunque estés empezando o cambiando de carrera.
+                            Te ayudo a construir un currículum enfocado a tecnología, destacando tus proyectos, conocimientos y habilidades de manera clara y efectiva.
+                            <br>He trabajado con reclutadores y sé lo que buscan. Juntos armamos un CV que muestre lo mejor de ti, aunque estés empezando o cambiando de carrera.
                         </div>
                     </div>
                     <div id="profile" class="accordion_item">
@@ -150,6 +162,70 @@
                 <link rel="stylesheet" href="./assets/css/accordions.css" media="all">
                 <script defer src="./assets/js/accordions.js"></script>
             </section>
+
+            <section id="frontend">
+                <h2 class="heading">Desarrollador Frontend</h2>
+                <h3 class="subheading">Especialistas en desarrollo de interfaces de usuario modernas y responsivas</h3>
+
+                <ul class="cards">
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/react.jpg" loading="lazy" fetchpriority="high" alt="React.js">
+                        <h3 class="card-title">Desarrollador React</h3>
+                        <p class="card-text">Desarrolla interfaces interactivas y dinámicas con componentes reutilizables.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/angular.jpg" loading="lazy" fetchpriority="high" alt="Angular">
+                        <h3 class="card-title">Desarrollador Angular</h3>
+                        <p class="card-text">Crea aplicaciones web estructuradas y escalables con arquitectura MVC y TypeScript.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/vue.jpg" loading="lazy" fetchpriority="high" alt="Vue.js">
+                        <h3 class="card-title">Desarrollador Vue.js</h3>
+                        <p class="card-text">Construye interfaces ligeras y reactivas con una curva de aprendizaje sencilla y flexible.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="backend">
+                <h2 class="heading">Desarrollador Backend</h2>
+                <h3 class="subheading">Especialistas en desarrollo del lado del servidor y arquitectura de aplicaciones</h3>
+
+                <ul class="cards">
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/ruby.jpg" loading="lazy" fetchpriority="high" alt="React.js">
+                        <h3 class="card-title">Desarrollador Ruby on Rails</h3>
+                        <p class="card-text">Desarrolla aplicaciones web completas rápidamente con un enfoque en la productividad.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/php-laravel.jpg" loading="lazy" fetchpriority="high" alt="Angular">
+                        <h3 class="card-title">Desarrollador PHP - Laravel</h3>
+                        <p class="card-text">Crea aplicaciones web robustas y seguras con un framework elegante y sintaxis limpia y practica.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/python-django.jpg" loading="lazy" fetchpriority="high" alt="Vue.js">
+                        <h3 class="card-title">Desarrollador Python - Django</h3>
+                        <p class="card-text">Desarrolla sitios web potentes y mantenibles con un enfoque en la rapidez, la seguridad y la practicidad.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/java-springboot.png" loading="lazy" fetchpriority="high" alt="Vue.js">
+                        <h3 class="card-title">Desarrollador Java - Springboot</h3>
+                        <p class="card-text">Construye aplicaciones empresariales escalables con una arquitectura sólida y modular.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/csharp.png" loading="lazy" fetchpriority="high" alt="Vue.js">
+                        <h3 class="card-title">Desarrollador C# - .NET</h3>
+                        <p class="card-text">Desarrolla soluciones web y de escritorio eficientes con una plataforma versátil y moderna.</p>
+                    </li>
+                    <li class="card">
+                        <img class="card-img" src="./assets/img/nodejs.png" loading="lazy" fetchpriority="high" alt="Vue.js">
+                        <h3 class="card-title">Desarrollador Node.js</h3>
+                        <p class="card-text">Crea aplicaciones rápidas y escalables del lado del servidor usando JavaScript asíncrono de toda la vida.</p>
+                    </li>
+                </ul>
+                
+                <link rel="stylesheet" href="./assets/css/cards.css" media="all">
+            </section>
+
             <section id="courses">
                 <div class="grid-2">
                     <div>
@@ -158,17 +234,17 @@
                         
                         <div class="sliding-logos">
                             <ul class="sliding-logos-content">
-                                <li><i class="fab fa-html5"></i></li>
-                                <li><i class="fab fa-css"></i></li>
-                                <li><i class="fab fa-js"></i></li>
-                                <li><i class="fab fa-sass"></i></li>
-                                <li><i class="fab fa-bootstrap"></i></li>
-                                <li><i class="fab fa-vuejs"></i></li>
-                                <li><i class="fab fa-php"></i></li>
-                                <li><i class="fab fa-laravel"></i></li>
-                                <li><i class="fab fa-git"></i></li>
-                                <li><i class="fab fa-github"></i></li>
-                                <li><i class="fas fa-database"></i></li>
+                                <li><span>HTML 5</span><i class="sliding-icon fab fa-html5"></i></li>
+                                <li><span>CSS 3</span><i class="sliding-icon fab fa-css"></i></li>
+                                <li><span>JavaScript</span><i class="sliding-icon fab fa-js"></i></li>
+                                <li><span>SASS</span><i class="sliding-icon fab fa-sass"></i></li>
+                                <li><span>Bootstrap 5</span><i class="sliding-icon fab fa-bootstrap"></i></li>
+                                <li><span>Vue.js</span><i class="sliding-icon fab fa-vuejs"></i></li>
+                                <li><span>PHP</span><i class="sliding-icon fab fa-php"></i></li>
+                                <li><span>Laravel</span><i class="sliding-icon fab fa-laravel"></i></li>
+                                <li><span>Git</span><i class="sliding-icon fab fa-git"></i></li>
+                                <li><span>Github</span><i class="sliding-icon fab fa-github"></i></li>
+                                <li><span>SQL</span><i class="sliding-icon fas fa-database"></i></li>
                             </ul>
                         </div>
 
@@ -186,8 +262,8 @@
                     
                     <div id="courses" class="editor">
                         <ul class="editor_tabset draggable-horizontal" role="tablist">
-                            <li role="tab"><span data-target="#editor_window-html"><i class="fab fa-html5"></i><span>HTML5</span></span></li>
-                            <li role="tab"><span data-target="#editor_window-css"><i class="fab fa-css"></i><span>CSS</span></span></li>
+                            <li role="tab"><span data-target="#editor_window-html"><i class="fab fa-html5"></i><span>HTML 5</span></span></li>
+                            <li role="tab"><span data-target="#editor_window-css"><i class="fab fa-css"></i><span>CSS 3</span></span></li>
                             <li role="tab"><span data-target="#editor_window-js"><i class="fab fa-js"></i><span>JavaScript</span></span></li>
                             <li role="tab"><span data-target="#editor_window-sass"><i class="fab fa-sass"></i><span>SASS</span></span></li>
                             <li role="tab"><span data-target="#editor_window-bootstrap"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></span></li>
@@ -677,6 +753,7 @@
                     
                 </div>
             </section>
+
             <section id="about">
                 <h2 class="heading">Sobre Mí</h2>
                 <h3 class="subheading">Soy Ricardo, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
@@ -694,6 +771,7 @@
                     alguien que no solo sepa programar, sino que también sepa enseñar.
                 </p>
             </section>
+
             <section id="reviews">
                 <h2 class="heading">Reviews</h2>
                 <h3 class="subheading">Los mejores cursos. No lo digo yo...</h3>
@@ -898,6 +976,7 @@
                 <script defer src="./assets/js/reviews.js"></script>
                 
             </section>
+
             <section id="contact" class="grid-2">
                 <div>
                     <h2 class="heading">Contacto</h2>
@@ -943,8 +1022,8 @@
             <nav class="footerNav">
                 <h2 class="footerNavTitle">Servicios</h2>
                 <ul>
-                    <li><a target="_self" href="?tabset=mentorship&tab=frontend">Mentorias Front End</a></li>
-                    <li><a target="_self" href="?tabset=mentorship&tab=backend">Mentorias Back End</a></li>
+                    <li><a target="_self" href="?tabset=mentorship&tab=mentor-frontend">Mentorias Front End</a></li>
+                    <li><a target="_self" href="?tabset=mentorship&tab=mentor-backend">Mentorias Back End</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=recruitment">Reclutamiento en TI</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=resume">Creación de CV</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=profile">Perfil Técnico</a></li>

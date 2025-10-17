@@ -64,9 +64,6 @@
                     color: var(--clr-white);
                 }
             }
-            &:hover {
-                background: var(--clr-secondary-dark);
-            }
             &[aria-selected="true"] {
                 position: relative;
                 background: var(--clr-secondary-dark);

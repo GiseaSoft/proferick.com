@@ -1,8 +1,8 @@
 @use '../abstract/variables' as *;
 
 ::selection {
-    background: rgba(var(--clr-secondary), 0.75) !important;
-    color: var(--clr-white) !important;
+    background: var(--clr-highlight);
+    color: var(--clr-white);
 }
 body {
     font-family: $font-body;

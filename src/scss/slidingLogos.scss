@@ -1,9 +1,9 @@
 @use './abstract/variables' as *;
 
-.sliding-logos{
+.sliding-logos {
     --sliding-logos-width: 100%;
-    --sliding-logos-height: 50px;
-    --sliding-logos-elements-displayed: 5;
+    --sliding-logos-height: 100px;
+    --sliding-logos-elements-displayed: 10;
     --sliding-logos-element-width: calc(var(--sliding-logos-width) / var(--sliding-logos-elements-displayed));
     --sliding-logos-animation-duration: calc(var(--sliding-logos-elements) * 2.5s);
 
@@ -43,13 +43,19 @@
         li {
             flex-shrink: 0;
             display: flex;
+            flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
+            gap: 5px;
+            text-align: center;
             width: var(--sliding-logos-element-width);
-            max-height: 100%;
-            font-size: calc( var(--sliding-logos-height) * 3/4 );
             color: var(--clr-sliding-logos);
             white-space: nowrap;
+            .sliding-icon {
+                /* Si necesitas cambiar el tamaño del icono "juega" con el font-size. */
+                /*        usar width/height te va a dar resultados inesperados        */
+                font-size: calc( var(--sliding-logos-height) * 1/3 );
+            }
         }
     }
 }

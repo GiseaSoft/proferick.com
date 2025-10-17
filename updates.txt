@@ -1,0 +1,19 @@
+Buenas tardes Sergio, te dejo un poco de información sobre lo que quiero que postees en la sección de RH de la página del profe rick please
+
+1. [ready] En la sección quiero que agregues que reclutamos:
+-Maquetadores
+-Frontends
+-Diseñadores UX/UI
+-Backend developers
+-Reclutadores IT
+-Fullstack developers
+-Project Manager
+-Community managers
+
+2. [ready] Quiero que agregues el nombre de la tecnología y sus iconos, porque muchos de los que se meten a la web, no son ingenieros, entonces que conozcan que tecnologías se usan y sus logotipos.
+
+3. [pending] Quiero que cuando den click a un enlace como frontend developer los lleve a la sección de frontend(que estara en la isma página, solo estara obvio pixeles más abajo), y muestre los 3 tipos de frontend, "react developer, angular developer y vue js developer" y a su vez que tecnologías usa un react/angular/vue developer", pon lo que tu consideres que haga que se vea más bonito, ponle algunas sombras a los iconos de las tecnologías, transiciones, animaciones, lo que tu consideres.
+
+Lo mismo harás con los backend developer, una subrama para los de ruby on rails, los de php/laravel, phyton/django, java/spring boot, c#/.net etc
+
+Te lo revisaré y te diré que te falto en las tecnologías de dichas vacantes. Quiero que busques entre las vacantes, lo más pedido de cada uno de los stacks de tecnologías y que pongas la vacante, yo lo reviso despúes, verifica que si ponen ORM, administrador de paqueterías o cualquier otra herramienta, corresponda al stack, no vayas a poner alguna herramienta que sea de otro stack de tecnologías, ya que en muchas vacantes suelen mezclar tecnologías de distintos stacks
