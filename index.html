@@ -7,6 +7,9 @@
     <meta name="author" content="sergiogomez.mx">
     <meta name="description" content="Ingeniero de software con años de experiencia en la industria en puestos como Front End, Back End y Fullstack.">
 
+    <meta name="keywords" content="mentorias,cursos,javascript,html,css,bootstrap,git,github,github pages,frontend,backend">
+
+    
     <link rel="stylesheet" href="./assets/css/styles.css" meida="all">
     <link rel="stylesheet" href="./assets/css/mobile.css" media="(width <= 50rem)">
     <link rel="stylesheet" href="./assets/css/desktop.css" media="(width > 50rem)">
@@ -29,20 +32,20 @@
                 </button>
                 <nav id="primaryNav" class="primaryNav">
                     <ul>
-                        <li><a href="#courses">Cursos</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
                         <li class="subMenu">
                             <a href="#services">Servicios <i class="fas fa-caret-down"></i></a>
                             <ul>
-                                <li><a href="?tabset=mentorship&tab=mentor-frontend">Mentorias Front End</a></li>
-                                <li><a href="?tabset=mentorship&tab=mentor-backend">Mentorias Back End</a></li>
+                                <li><a href="?tabset=consulting&tab=mentor-frontend">Asesoramiento Front End</a></li>
+                                <li><a href="?tabset=consulting&tab=mentor-backend">Asesoramiento Back End</a></li>
                                 <li><a href="?tabset=otherServices&tab=recruitment">Reclutamiento en TI</a></li>
                                 <li><a href="?tabset=otherServices&tab=resume">Creación de CV</a></li>
                                 <li><a href="?tabset=otherServices&tab=profile">Perfil Técnico</a></li>
                             </ul>
                         </li>
-                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#mentorship">Mentorías</a></li>
                         <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact" class="contact">Contacto</a></li>
+                        <li><a href='https://wa.me/523327909070?text=Hola%20Ricardo,%20Vi%20tu%20página%20proferick.com%20y%20me%20gustaría%20contactarte' target="_blank" class="contact">Contacto</a></li>
                     </ul>
                 </nav>
                 <button id="menuButton" class="mobileOnly" aria-label="Open Menu">
@@ -77,38 +80,68 @@
         </section>
         
         <div class="contentContainer">
+            <section id="about">
+                <h2 class="heading">Sobre Mí</h2>
+                <h3 class="subheading">Soy Ricardo Garrido, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
+                
+                <p class="paragraph">
+                    Llevo más de <span class="years_experience"></span> años trabajando en la industria como desarrollador
+                    Front-End, Back-End, Fullstack y <span class="years_entrepreneur"></span> años como empresario, ayudando a las empresas a
+                    <b class="highlight">crear proyectos, gestionar proyectos y personal, reclutar personal de IT para empresas,
+                    y aplicar entrevistas técnicas.</b>
+                    <br><br>
+
+                    A lo largo de los años he enseñado a personas de todas las edades, carreras y giros,
+                    desde <b class="highlight">niños y adolescentes</b> curiosos hasta adultos que quieren entrar a las industria IT, desde
+                    orientar <b class="highlight">empresarios y directivos</b> en el negocio de tecnologías de la información, hasta
+                    entrenar <b class="highlight">ingenieros junior.</b>
+                    <br><br>
+
+                    Me encanta enseñar y me tomo en serio el aprendizaje de cada alumno.
+                    Soy paciente, didáctico, personalizo cada sesión a las necesidades de mis clientes/alumnos.
+                    Siempre digo que soy el profesor que me hubiera gustado tener:
+                    Alguien que no solo sepa programar, sino que también sepa enseñar <b class="highlight">y con experiencia
+                    en la industia</b>.
+                </p>
+            </section>
+
             <section id="services">
                 <h2 class="heading">Servicios</h2>
                 <h3 class="subheading">Aprende desarrollo web con un enfoque práctico y profesional.</h3>
 
                 <p class="paragraph">
-                    Ofrezco <em class="highlight">clases personalizadas de programación web</em>
-                    con un enfoque completamente práctico y centrado en <em class="highlight">lo que realmente se usa en la industria.</em>
+                    Ofrezco mentorias/clases personalizadas de programación web completamente práctico y centrado en lo que realmente se usa en la industria.
                     <br><br>
-                    Enseño tecnologías como HTML, CSS, JavaScript, Git, Bootstrap entro otras (Puedes revisar mis cursos <a href="#courses">aqui</a>.),
+
+                    Enseño tecnologías como HTML, CSS, JavaScript, Git, Bootstrap entro otras (Puedes verlas <a href="#mentorship">aqui</a>).
                     <br>
-                    Explico de forma clara y con ejercicios hechos a la medida del alumno.
-                    Las clases están disponibles todos los días del año, en horarios flexibles,
+                    Explico de forma clara y con ejercicios hechos a la medida del alumno/cliente.
+                    <br><br>
+                    Las mentorías están disponibles todos los días del año, en horarios flexibles,
                     y son ideales para:
                 </p>
                     
                 <ul class="list">
-                    <li>Adultos que quieren cambiar de carrera,</li>
+                    <li>Personas que quieren ingresar a la industria IT</li>
+                    <li>Project managers JR que buscan aprender como gestionar equipos, reclutar ingenieros, solicitar avances, medir riesgos, atención al cliente, negociación con el cliente, etc.</li>
                     <li>Estudiantes que desean prepararse para el mundo laboral</li>
-                    <li>Jóvenes que quieren explorar la informática antes de elegir una universidad.</li>
+                    <li>Empresarios y directivos que buscan empezar y/o gestionar un proyecto de IT, cotizar reclutar personal, vender proyectos, etc.</li>
+                    <li>Niños/adolescentes/jovenes que quieren explorar la informática antes de elegir una universidad o carrera</li>
+                    <li>Reclutadores JR que buscan mejorar sus habilidades de reclutamiento, conocer stacks, tecnologías, como entrevistar candidatos y elegir CV's</li>
+                    <li>Estudiantes de bootcamp que buscan ayuda extra</li>
                 </ul>
 
                 <div class="grid-2">
                     <div>
-                        <div id="mentorship" class="accordion">
+                        <div id="consulting" class="accordion">
                             <div id="mentor-frontend" class="accordion_item">
-                                <div class="accordion_item-head">Mentorias Front End</div>
+                                <div class="accordion_item-head">Asesoramiento Front End</div>
                                 <div class="accordion_item-body">
                                     Pensado para desarrolladores que ya trabajan en Front End pero se sienten estancados. Te ayudo a resolver problemas reales que enfrentas en tus proyectos, desde manejar estados complejos hasta mejorar la arquitectura del código. Vemos herramientas modernas, buenas prácticas y cómo trabajar como lo hacen en las empresas grandes.
                                 </div>
                             </div>
                             <div id="mentor-backend" class="accordion_item">
-                                <div class="accordion_item-head">Mentorias Back End</div>
+                                <div class="accordion_item-head">Asesoramiento Back End</div>
                                 <div class="accordion_item-body">
                                     Si ya estás trabajando con servidores, bases de datos o APIs pero te trabas con ciertos temas, te ayudo a avanzar. Revisamos juntos tus dudas, errores comunes, y cómo estructurar mejor tus proyectos. También podemos ver seguridad, rendimiento y cómo pensar como un desarrollador sénior.
                                 </div>
@@ -226,11 +259,11 @@
                 <link rel="stylesheet" href="./assets/css/cards.css" media="all">
             </section>
 
-            <section id="courses">
+            <section id="mentorship">
                 <div class="grid-2">
                     <div>
-                        <h2 class="heading">Cursos</h2>
-                        <h3 class="subheading">Diseñados para personas que quieren entrar al mundo tech sin rodeos.</h3>
+                        <h2 class="heading">Mentorías</h2>
+                        <h3 class="subheading">Diseñadas para personas que quieren entrar al mundo tech sin rodeos.</h3>
                         
                         <div class="sliding-logos">
                             <ul class="sliding-logos-content">
@@ -252,11 +285,10 @@
                         <script defer src="./assets/js/slidingLogos.js"></script>
                         
                         <p class="paragraph">
-                            Todo lo que enseño está pensado para que puedas conseguir trabajo o mejorar en el que ya tienes.
+                            Todo lo que enseño está pensado para que puedas conseguir trabajo, mejorar en el que ya tienes, vender proyectos, reclutar ingenieros, project managers, cotizar proyectos, calcular tiempos de entrega, desarrollar productos digitales etc.
                             <br><br>
-                            Mis cursos son <em class="highlight">prácticos, actualizados y enfocados en lo que realmente se usa en la industria</em>.
-                            Te explico paso a paso, con ejemplos reales y acompañamiento cercano.
-                            Aprendes a programar como se trabaja en la vida real, no con ejercicios escolares que no te preparan para el mercado.
+                            Mis <b class="highlight">mentorias</b> son prácticas, actualizadas y enfocadas en lo que realmente se usa en la industria. Te explico paso a paso, con ejemplos reales y acompañamiento cercano.
+                            Aprendes como se trabaja en la vida real.
                         </p>
                     </div>
                     
@@ -754,27 +786,9 @@
                 </div>
             </section>
 
-            <section id="about">
-                <h2 class="heading">Sobre Mí</h2>
-                <h3 class="subheading">Soy Ricardo, licenciado en Informática con especialidad en Ingeniería de Software.</h3>
-                
-                <p class="paragraph">
-                    Llevo más de <em class="highlight"><span id="years_teacher"></span> años como docente
-                    y <span class="years_experience"></span> años trabajando en la industria</em> como desarrollador Front End, Back End y Fullstack.
-                    <br>
-                    A lo largo de los años he enseñado a personas de todas las edades:
-                    desde niños curiosos hasta adultos que quieren cambiar de carrera.
-                    <br><br>
-                    Me encanta enseñar y me tomo en serio el aprendizaje de cada alumno.
-                    Soy paciente, didáctico y muy claro al explicar.
-                    Siempre digo que soy el profesor que me hubiera gustado tener:
-                    alguien que no solo sepa programar, sino que también sepa enseñar.
-                </p>
-            </section>
-
             <section id="reviews">
                 <h2 class="heading">Reviews</h2>
-                <h3 class="subheading">Los mejores cursos. No lo digo yo...</h3>
+                <h3 class="subheading">Las mejores mentorías. No lo digo yo...</h3>
 
                 <div class="reviews-container">
                     <div class="reviews-content">
@@ -983,7 +997,7 @@
                     <h3 class="subheading">¿Tienes dudas? ¿Quieres saber si esto es para ti?</h3>
 
                     <p class="paragraph">
-                        <b>Escríbeme sin compromiso.</b>
+                        <b class="highlight">Escríbeme sin compromiso.</b>
                         <br>
                         Te ayudo a entender por dónde empezar o cómo mejorar lo que ya sabes.
                         Me puedes contactar todos los días del año.
@@ -1001,7 +1015,7 @@
         <a class="logoEmail" href="mailto:contacto@proferick.com">contacto@proferick.com</a>
         <div class="innerFooter">
             <nav class="footerNav">
-                <h2 class="footerNavTitle">Cursos Front End</h2>
+                <h2 class="footerNavTitle">Mentorías Front End</h2>
                 <ul>
                     <li><a target="_self" href="?tabset=courses&tab=html">HTML</a></li>
                     <li><a target="_self" href="?tabset=courses&tab=css">CSS</a></li>
@@ -1011,7 +1025,7 @@
                 </ul>
             </nav>
             <nav class="footerNav">
-                <h2 class="footerNavTitle">Cursos Back End</h2>
+                <h2 class="footerNavTitle">Mentorías Back End</h2>
                 <ul>
                     <li><a target="_self" href="?tabset=courses&tab=sql">SQL</a></li>
                     <li><a target="_self" href="?tabset=courses&tab=php">PHP</a></li>
@@ -1022,8 +1036,8 @@
             <nav class="footerNav">
                 <h2 class="footerNavTitle">Servicios</h2>
                 <ul>
-                    <li><a target="_self" href="?tabset=mentorship&tab=mentor-frontend">Mentorias Front End</a></li>
-                    <li><a target="_self" href="?tabset=mentorship&tab=mentor-backend">Mentorias Back End</a></li>
+                    <li><a target="_self" href="?tabset=consulting&tab=mentor-frontend">Asesoramiento Front End</a></li>
+                    <li><a target="_self" href="?tabset=consulting&tab=mentor-backend">Asesoramiento Back End</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=recruitment">Reclutamiento en TI</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=resume">Creación de CV</a></li>
                     <li><a target="_self" href="?tabset=otherServices&tab=profile">Perfil Técnico</a></li>
@@ -1033,10 +1047,9 @@
                 <h2 class="footerNavTitle">Sobre Mí</h2>
                 <ul>
                     <li><a href="#about">Quién soy?</a></li>
-                    <li><a href="mailto:ricgarridoc@hotmail.com" target="_blank"><i class="fa-regular fa-envelope"></i> | Email</a></li>
-                    <li><a href="https://www.linkedin.com/in/ricardo-garrido-a2a1b167/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> | Linked In</a></li>
-                    <li><a href="https://www.facebook.com/ricardo.garrido.7169" target="_blank"><i class="fa-brands fa-facebook-f"></i> | Facebook</a></li>
-                    <li><a href="https://www.instagram.com/rych182" target="_blank"><i class="fa-brands fa-instagram"></i> | Instagram</a></li>
+                    <li><a href='https://wa.me/523327909070?text=Hola%20Ricardo,%20Vi%20tu%20página%20proferick.com%20y%20me%20gustaría%20contactarte' target="_blank"><i class="fa-brands fa-whatsapp"></i> | Whatsapp</a></li>
+                    <li><a href="https://www.linkedin.com/in/ricardo-garrido-a2a1b167/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> | Linked In</a></li>
+                    <li><a href="https://www.instagram.com/codementorrick" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> | Instagram</a></li>
                 </ul>
             </nav>
         </div>

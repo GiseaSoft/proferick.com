@@ -25,14 +25,17 @@ function LayoutManager() {
     }
 
     this.initDates = () => {
-        const yearsExperience = document.querySelectorAll('.years_experience');
-        yearsExperience.forEach(span => span.textContent = new Date().getFullYear() - 2015);
+        const currentYear = new Date().getFullYear();
+        const yearsExperience =  currentYear - 2015;
+        const yearsEntrepreneur = currentYear - 2021;
+
+        const expSpans = document.querySelectorAll('.years_experience');
+        const entSpans = document.querySelectorAll('.years_entrepreneur');
+        const yearSpan = document.getElementById('year_current');
         
-        const yearsTeacher = document.getElementById('years_teacher');
-        yearsTeacher.textContent = new Date().getFullYear() - 2010;
-        
-        const currentYear = document.getElementById('year_current');
-        currentYear.textContent = new Date().getFullYear();
+        expSpans.forEach(span => span.textContent = yearsExperience);
+        entSpans.forEach(span => span.textContent = yearsEntrepreneur);
+        yearSpan.textContent = currentYear;
     }
     
     this.initBackToTop = () => {

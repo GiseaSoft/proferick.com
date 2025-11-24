@@ -25,6 +25,7 @@ h6 {font-size: $fs-6;}
 .list {
     padding-block: $gap;
     list-style: inside;
+    line-height: 2
 }
 .btn {
     @extend %btn;
@@ -49,8 +50,7 @@ h6 {font-size: $fs-6;}
     margin-block: $gap-half;
 }
 .highlight {
-  font-style: normal;
-  font-weight: 600;
+    border-bottom: 3px solid var(--clr-highlighter-yellow);
 }
 [data-skew="1"] {
     --skew-height: 3.5vw;

@@ -2550,7 +2550,6 @@ $fa-icons: (
 	"caret-down": $fa-var-caret-down,
 	"arrow-up": $fa-var-arrow-up,
 	"database": $fa-var-database,
-	"envelope": $fa-var-envelope,
 
 	// turned off
 	//"0": $fa-var-0,
@@ -2563,6 +2562,7 @@ $fa-icons: (
 	//"7": $fa-var-7,
 	//"8": $fa-var-8,
 	//"9": $fa-var-9,
+	//"envelope": $fa-var-envelope,
 	//"circle-half-stroke": $fa-var-circle-half-stroke,
 	//"fill-drip": $fa-var-fill-drip,
 	//"arrows-to-circle": $fa-var-arrows-to-circle,
@@ -4525,9 +4525,10 @@ $fa-brand-icons: (
 	// social
 	"linkedin-in": $fa-var-linkedin-in,
 	"instagram": $fa-var-instagram,
-	"facebook-f": $fa-var-facebook-f,
+	"whatsapp": $fa-var-whatsapp,
 
 	// turned off
+	//"facebook-f": $fa-var-facebook-f,
 	//"monero": $fa-var-monero,
 	//"hooli": $fa-var-hooli,
 	//"yelp": $fa-var-yelp,
@@ -4897,7 +4898,6 @@ $fa-brand-icons: (
 	//"earlybirds": $fa-var-earlybirds,
 	//"trade-federation": $fa-var-trade-federation,
 	//"autoprefixer": $fa-var-autoprefixer,
-	//"whatsapp": $fa-var-whatsapp,
 	//"square-upwork": $fa-var-square-upwork,
 	//"slideshare": $fa-var-slideshare,
 	//"google-play": $fa-var-google-play,

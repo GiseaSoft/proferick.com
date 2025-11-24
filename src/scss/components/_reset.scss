@@ -26,6 +26,10 @@ html {
     font-size: 1em;
     font-weight: 400;
 }
+:where(b, em) {
+    font-style: normal;
+    font-weight: 600;
+}
 // REMOVE ALL ANIMATIONS, TRANSITIONS AND SMOOTH SCROLL FOR PEOPLE THAT PREFER NOT TO SEE THEM
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
