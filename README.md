@@ -19,7 +19,7 @@ Este es el repositorio del código fuente para el sitio web **proferick.com**. E
 
 1.  Clona el repositorio en tu máquina local:
     ```bash
-    git clone https://github.com/Salegomx/proferick.com.git
+    git clone git@github.com:GiseaSoft/proferick.com.git
     ```
 
 2.  Navega al directorio del proyecto:
